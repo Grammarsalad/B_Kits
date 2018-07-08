@@ -23,7 +23,7 @@ This Component will use more 'extreme' measures to radically rework the way that
 
 **All Classes** 
 
-Generally speaking, all classes get something of a 'boost' at first level, but find that their power level does not increase as rapidly as before.  Spellcasters get more spells in the early levels, but cannot cast spells of higher levels as often or as early.  All classes begin play with more hit points than before, but find their hit point progression slowed dramatically as they level up.  
+Generally speaking, all classes get something of a 'boost' at first level, but find that their power level does not increase as rapidly as before.  Spellcasters get more spells in the early levels, but cannot cast spells of higher levels as often or as early.    
 
 ## Bard Alterations
 
