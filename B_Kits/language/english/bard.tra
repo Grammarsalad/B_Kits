@@ -15,13 +15,18 @@ Class Features:
 – May use their Bard Song ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies, or perform a Countersong.  At 8th level, <PRO_HESHE> can fascinate <PRO_HISHER> enemies.  These songs become more powerful as <PRO_HESH> gains levels as described below.
 All effects last for as long as the bard plays the tune, and for 2 rounds, + 1 round per 5 levels, afterward.  After performing, a bard song, the bard loses the abiltiy to perform again for 8 hours.  This time is reduced to 4 hours at level 7 and is reduced again to 2 hours at 14th level. Finally, at 18th level, the cooldown period is reduced to 1 round.
 
-RALLY: When the bard uses rally, <PRO_HESH> grants all of <PRO_HISHER> allies a +1 bonus to attack rolls, damage rolls, and armor class. At 6th level, all allies also gain +1 to luck, +10 to lore, and a +10% bonus to all of their thieving skills.  Finally, at 11th level, all allies additinally +10% resistance to slashing, piercing, crushing, and missile damage, and the ability to regenerate 2 Hit Points per round.~
+RALLY: When the bard uses rally, <PRO_HESH> grants all of <PRO_HISHER> allies a +1 bonus to attack rolls, damage rolls, and armor class. At 6th level, all allies also gain +1 to luck, +10 to lore, and a +10% bonus to all of their thieving skills.  Finally, at 11th level, all allies additinally +10% resistance to slashing, piercing, crushing, and missile damage, and the ability to regenerate 2 Hit Points per round.
 
 COUNTERSONG: When the bard uses this ability, all of <PRO_HISHER> allies are protected from magic, and gain a +3 save against spells, and a +1 to all other saves. At 3rd level, all allies within 30 ft. gain immunity to fear effects for as long as the song lasts, and any fear effects currently on them are removed.  At 9th level, all allies within 30 ft. have a 50% chance to shrug off the effects of spells such as Silence, Shout, Great Shout, Command, Greater Command, or any other sound-based attack.
 
 FASCINATE: When the bard uses this ability, all enemies within 30 ft. must save vs. Spell or become enthralled, unable to take action until 1 round passes or they take damage. Enemies suffer a -1 penalty to this save for every 3 levels the bard posesses.  The duration of this ability is extended by 1 round for every 4 levels the bard posesses beyond 8th level.~
 
 @500002 = ~Bard~
+
+@500003 = ~BARD: The Bard is like a Thief, but requires allies to truly excel. Their specialty is boosting the morale and skill of others through song, while at the same time inhibiting foes.~
+
+@500004 = ~Rally Bonuses~
+@500005 = ~Bardsong disabled: 8 hours~
 
 //Blade (rad) @500100 to @500199
 @500100 = ~blade~
@@ -35,8 +40,8 @@ Advantages:
 
 Disadvantages:
 – Only gains 5 lore per level.
-– Cannot use the Pick Pockets skill.
 – Does not get access to any other performances.
+- Cannot make use of magical items as the true bard.
 
 DEFENSIVE SPIN: Defensive spin is a specialied form of parrying that lasts for 4 round, + 1 round per 4 levels <PRO_HESHE> posesses.  While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  Further, any opponent that gets in melee range (4') has a 50% chance to suffer 1d6 points of damage.  This damage increases by 1d6 every 5 levels.  The Blade cannot attack or cast spells while using Defensive Spin.
 
@@ -44,3 +49,7 @@ OFFENSIVE SPIN: Defensive spin is a much more aggressive display of prowess that
 
 WEAPON DISPLAY: When performing a weapon display, the Blade performs an impressive and intimidating display with <PRO_HISHER> weapon.  All intelligent enemies within 30' of the Blade must make a save vs. wands +4 or be overcome by fear for the duration of the display.  Enemies make their save at -1 per 3 levels of the Blade.
 Additionally, the display inspires allies, granting them a +1 bonus to attack and damage rolls.  This bonus increases by +1 per 5 levels.~
+
+@500103 = ~BLADE: The Bard is like a Thief, but requires allies to truly excel. Their specialty is boosting the morale and skill of others through song, while at the same time inhibiting foes.
+The Blade excells at melee and ranged combat, though they are less adept at inspiring their allies~
+

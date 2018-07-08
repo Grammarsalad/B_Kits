@@ -79,12 +79,24 @@ SAY @500001   //desc
 ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ THEN BEGIN
 	LAF fl#add_kit_ee
 		INT_VAR
-			briefdesc = 37238
+                        briefdesc = RESOLVE_STR_REF (@500003)
 		STR_VAR
 			kit_name = B_ARD
+			hpclass = ~HPPRS~
+			clsrcreq = ~1 0 1 0 0 0 0~
 	END
 END
 //____________________________________________________________________________________
 
 //ABILITY FILES_______________________________________________________________
 //
+ACTION_IF !FILE_EXISTS_IN_GAME ~#BARD-1.spl~ BEGIN
+ COPY	~%mod_folder%/kits/%version%/bard/#BARD-1.spl~ ~override~
+END
+
+COPY	~%mod_folder%/kits/%version%/bard/SPCL120.spl~ ~override~  //new rally
+            SAY NAME1  @500004 //rally bonuses
+
+COPY	~%mod_folder%/kits/%version%/bard/B_SHH1.spl~ ~override~  //8 hour song disable
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500005) END  //Notification: song disabled for 8 hrs
+
