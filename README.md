@@ -48,3 +48,5 @@ Alteration Overview:
 
 - Bards will have their own unique spell list.
 
+- All races will be able to select the Bard class, though not all will be able to take every kit.  
+
