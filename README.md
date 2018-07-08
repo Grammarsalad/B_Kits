@@ -34,6 +34,10 @@ Generally speaking, all classes get something of a 'boost' at first level, but f
 
 **All Bards**
 
+Known Issues:
+
+- You MUST explicitly select a kit when propted during character creation.  If you do not do so, you will end up with the old bard and no unique spell list!
+
 Alteration Overview:
 
 - All bards can specialize in any fighting style, and gain mastery in two weapon fighting.  
