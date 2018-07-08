@@ -25,11 +25,6 @@ This Component will use more 'extreme' measures to radically rework the way that
 
 Generally speaking, all classes get something of a 'boost' at first level, but find that their power level does not increase as rapidly as before.  Spellcasters get more spells in the early levels, but cannot cast spells of higher levels as often or as early.  All classes begin play with more hit points than before, but find their hit point progression slowed dramatically as they level up.  
 
--  All classes start wtih triple (3x) their normal hit points at first level.  However, they only recieve a small number of hit points after that:
-1. warriors: 3 hit points per level (4 per level for the barbarian)
-2. priests and rogues: 2 hit points per level
-3. mages and sorcerers: 1 hit point per level
-
 ## Bard Alterations
 
 **All Bards**
