@@ -35,6 +35,8 @@ Known Issues:
 
 Alteration Overview:
 
+- The two aspects of the bard class that I consider to be 'radical' are the custom spell list, and the alteration to how the bard song works (i.e. increases in potency over time, and is disabled for a period.) 
+
 - All bards can specialize in any fighting style, and gain mastery in two weapon fighting.  
 
 - Bards can be of any alighment
