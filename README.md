@@ -34,11 +34,17 @@ Generally speaking, all classes get something of a 'boost' at first level, but f
 
 **All Bards**
 
+Alteration Overview:
+
 - All bards can specialize in any fighting style, and gain mastery in two weapon fighting.  
 
 - Bards can be of any alighment
 
 - Bards *can* cast spells while wearing up to and including chainmail without penalty.
 
-- Bard Songs will be more useful in that they will last a number of rounds
+- Bard Songs will be more useful in that they will last a number of rounds after the bard has stopped singing.  However, the bard will not be able to use the song at will.  Rather, they will have a 'cool down' period, where they cannot use their song at all.  At first level, this period will last for 8 hours.  
+
+- Bards will be able to cast spells starting at first level.
+
+- Bards will have their own unique spell list.
 
