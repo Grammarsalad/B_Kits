@@ -92,6 +92,7 @@ Advantages:
 - At 3rd level, the Blade can specialize (++) in any single bladed weapon. At 3rd level or anytime thereafter, <PRO_HESHE> can select any single bladed weapon with which <PRO_HESHE> is proficient and become specialization with that weapon.  At 9th level, or anytime thereafter, <PRO_HESHE> can specialize (++) in a second bladed weapon <PRO_HESHE> is proficient with.
 
 Disadvantages:
+
 – Only gains 5 lore per level.
 – Does not get access to any other performances.
 - Cannot make use of magical items as the true bard.
