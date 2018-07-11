@@ -108,8 +108,8 @@ Advantages:
 
 Disadvantages:
 
-– Only gains 5 lore per level.
-– Does not get access to any other performances.
+- Only gains 5 lore per level.
+- Does not get access to any other performances.
 - Cannot make use of magical items as the true bard.
 - Receives -1 spell per spell level, and so cannot begin casting spells until 2nd level.
 
