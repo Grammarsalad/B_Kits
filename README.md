@@ -17,7 +17,7 @@ GIVE AN OVERVIEW OF EACH COMPONENT HERE.  Describe them more fully below
 
 **Component 001: INSTALL ALL REVISED AND NEW KITS (RADICAL VERSION)**
 
-This Component will use more 'extreme' measures to radically rework the way that kits and classes work in the game.  While kit and class selection will appear more or less the same while playing the game, this component will make a number of changes 'under the hood' to allow for things like unique bard spell lists, removed opposition schools, and so on.  See the Details Below
+This Component will use more 'extreme' measures to radically rework the way that kits and classes work in the game.  While kit and class selection will appear more or less the same while playing the game, this component will make a number of changes 'under the hood' to allow for things like removed opposition schools, and so on.  See the Details Below
 
 ## Component 001
 
@@ -29,13 +29,10 @@ Generally speaking, all classes get something of a 'boost' at first level but fi
 
 **All Bards**
 
-Known Issues:
-
-- You MUST explicitly select a kit when prompted during character creation.  If you do not do so, you will end up with the old bard and no unique spell list!
 
 **Alteration Overview**:
 
-- The three aspects of the bard class that I consider to be 'radical' are the custom spell list, the custom spell progression, and the alteration to how the bard song works (i.e. increases in potency over time, lasts for a number of rounds after the bard has stopped performing, is disabled for a period, and is generally limited in some other respect.) 
+- The two aspects of the bard class that I consider to be 'radical' are the custom spell progression, and the alteration to how the bard song works (i.e. increases in potency over time, lasts for a number of rounds after the bard has stopped performing, is disabled for a period, and is generally limited in some other respect.) 
 
 - All bards can specialize (++) in any fighting style, and gain mastery (+++) in two weapon fighting.  
 
@@ -122,5 +119,6 @@ OFFENSIVE SPIN: Offensive spin is a much more aggressive display of prowess that
 
 WEAPON DISPLAY: When performing a weapon display, the Blade performs an impressive and intimidating display with <PRO_HISHER> weapon.  All intelligent enemies within 30' of the Blade must make a save vs. wands +4 or be overcome by fear for the duration of the display.  Enemies make their save at -1 per 3 levels of the Blade.
 Additionally, the display inspires allies, granting them a +1 bonus to attack and damage rolls.  This bonus increases by +1 per 5 levels.
+
 Finally, enemies that come within melee range of the blade (about 4') have a 50% chance to take 1d6 slashing damage from the whirling blades. This damage increases by 1d6 for each 5 levels.
 The blade cannot move while performing the display. That is, moving ends the performance.
