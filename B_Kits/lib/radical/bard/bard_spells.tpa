@@ -6,6 +6,9 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
+//revised spell progression
+COPY	~%mod_folder%/kits/bard/%version%/mxsplbrd.2da~ ~override~  //Man, just easier
+
 //Make certain mage spells unusable by all bards (necromancy,
 //no spells for anyone!______________________________________________________________
 //

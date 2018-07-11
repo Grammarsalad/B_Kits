@@ -6,10 +6,10 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //First, add a 'replacement' bard classes:
-INCLUDE ~%mod_folder%/kits/%version%/bard/new_bard.tpa~
-INCLUDE ~%mod_folder%/kits/%version%/bard/new_blade.tpa~
-//INCLUDE ~%mod_folder%/kits/%version%/bard/new_jest.tpa~
-//INCLUDE ~%mod_folder%/kits/%version%/bard/new_skald.tpa~
+INCLUDE ~%mod_folder%/kits/bard/%version%/new_bard.tpa~
+INCLUDE ~%mod_folder%/kits/bard/%version%/new_blade.tpa~
+//INCLUDE ~%mod_folder%/kits/bard/%version%/new_jest.tpa~
+//INCLUDE ~%mod_folder%/kits/bard/%version%/new_skald.tpa~
 
 
 ACTION_FOR_EACH class IN ~B~ BEGIN

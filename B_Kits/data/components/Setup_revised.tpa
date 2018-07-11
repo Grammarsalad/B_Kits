@@ -11,7 +11,7 @@
 INCLUDE ~%mod_folder%/lib/%version%/bard/bard_revise.tpa~
 
 
-//Description Update--not really needed.
+//Description Update
 INCLUDE ~%mod_folder%/lib/%version%/bard/bard_desc.tpa~
 
 //Spells, and spell progression

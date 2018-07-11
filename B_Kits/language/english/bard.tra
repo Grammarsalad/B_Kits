@@ -1,5 +1,6 @@
 //Tra Ref @500000 To @501000
-//Bard (rad)  @500000 to @500099
+//Bard  @500000 to @500099
+//Bard (rad)
 @500000 = ~bard~
 @500001 = ~BARD: The Bard is a rogue, but <PRO_HESHE> is very different from the Thief. The Bard's strength is <PRO_HISHER> pleasant and charming personality. With it and <PRO_HISHER> wits, <PRO_HESHE> makes <PRO_HISHER> way through the world. A Bard is a talented musician and a walking storehouse of gossip, tall tales, and lore; <PRO_HESHE> learns a little bit about everything that crosses <PRO_HISHER> path and is a jack-of-all-trades but master of none. While many Bards are scoundrels, their stories and songs are welcome almost everywhere.
 
@@ -9,51 +10,54 @@ Class Features:
 - May not wear armor heavier than chain mail and may not equip shields larger than bucklers. (Spells *can* be cast while wearing armor.)
 - Can achieve proficiency (+) in any weapon proficiency.
 - Can achieve specialization (++) in an fighting style, except two-weapon fighting, where <PRO_HESHE> can achieve mastery (+++).
-â€“ Thieving abilities: Pick Pockets.
-â€“ May cast arcane spells starting with 1 level one spell at 1st level.
+– Thieving abilities: Pick Pockets.
+– May cast arcane spells starting with one first level spell at level one.
 - The Bard can figure out and use almost any magical item, including items typically restricted to other classes, such as priest scrolls.
-â€“ May use their Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies, or perform a Countersong.  At 8th level, <PRO_HESHE> can fascinate <PRO_HISHER> enemies.  These songs become more powerful as <PRO_HESH> gains levels as described below.
-All effects last for as long as the bard plays the tune, and for 2 rounds, + 1 round per 5 levels, afterward.  After performing, a bard song, the bard loses the abiltiy to perform again for 8 hours.  This time is reduced to 4 hours at level 7 and is reduced again to 2 hours at 14th level. Finally, at 18th level, the cooldown period is reduced to 1 round.
+– May use their Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies, or perform a Countersong.  At 8th level, <PRO_HESHE> can fascinate <PRO_HISHER> enemies.  These songs become more powerful as <PRO_HESH> gains levels as described below.
+All effects last for as long as the bard plays the tune, and for 2 rounds, + 1 round per 5 levels, afterward.  After performing, a bard song, the bard loses the ability to perform again for 2 hours.  This time is reduced to 1 hour at level 7 and is reduced again to 3 turns at 14th level. Finally, at 18th level, the cooldown period is reduced to 1 turn.
 While the bard is performing, <PRO_HESHE> moves at 1/2 speed.
 
-RALLY: When the bard uses rally, <PRO_HESHE> grants all of <PRO_HISHER> allies a +1 bonus to attack rolls, damage rolls, and armor class. At 6th level, all allies also gain +1 to luck, +10 to lore, and a +10% bonus to all of their thieving skills.  Finally, at 11th level, all allies additinally +10% resistance to slashing, piercing, crushing, and missile damage, and the ability to regenerate 2 Hit Points per round.
+RALLY: When the bard uses rally, <PRO_HESHE> grants all of <PRO_HISHER> allies a +1 bonus to attack rolls, damage rolls, and armor class. At 6th level, all allies also gain +1 to luck, +10 to lore, and a +10% bonus to all of their thieving skills.  Finally, at 11th level, all allies additionally +10% resistance to slashing, piercing, crushing, and missile damage, and the ability to regenerate 2 Hit Points per round.
 
 COUNTERSONG: When the bard uses this ability, all of <PRO_HISHER> allies are protected from magic, and gain a +3 save against spells, and a +1 to all other saves. At 3rd level, all allies within 30 ft. gain immunity to fear effects for as long as the song lasts, and any fear effects currently on them are removed.  At 9th level, all allies within 30 ft. have a 50% chance to shrug off the effects of spells such as Silence, Shout, Great Shout, Command, Greater Command, or any other sound-based attack.
 
-FASCINATE: When the bard uses this ability, all enemies within 30 ft. must save vs. Spell or become enthralled, unable to take action until 1 round passes or they take damage. Enemies suffer a -1 penalty to this save for every 3 levels the bard posesses.  The duration of this ability is extended by 1 round for every 4 levels the bard posesses beyond 8th level.~
+FASCINATE: When the bard uses this ability, all enemies within 30 ft. must save vs. Spell or become enthralled, unable to take action until 1 round passes or they take damage. Enemies suffer a -1 penalty to this save for every 3 levels the bard possesses beyond 8th level (maximum -4 at 20th level).  The duration of this ability is extended by 1 round for every 4 levels the bard possesses beyond 8th level (maximum 4 rounds at 20th level).~
 
 @500002 = ~Bard~
 
 @500003 = ~BARD: The Bard is like a Thief, but requires allies to truly excel. Their specialty is boosting the morale and skill of others through song, while at the same time inhibiting foes.~
 
 @500004 = ~Rally Bonuses~
-@500005 = ~Bardsong disabled: 8 hours~
+@500005 = ~Performance disabled: 2 hours~
 
-//Blade (rad) @500100 to @500199
+//Blade @500100 to @500199
+//Blade (rad)
 @500100 = ~blade~
 @500101 = ~Blade~
-@500102 = ~BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome. This Bard's fighting style is flashy and entertaining, but is also lethally dangerous.
+@500102 = ~BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome. This Bard's fighting style is flashy and entertaining but is also lethally dangerous.
 
 Advantages:
 - At 1st level, may use the Offensive Spin and Defensive Spin abilities once per day. Gains one use each every 4 levels thereafter.
 - Performs Weapon Display as <PRO_HISHER> bard song.
-- At 3rd level, the Blade can specialize (++) in any single bladed weapon. At 3rd level or anytime thereafter, <PRO_HESHE> can select any single bladed weapon with which <PRO_HESHE> is proficient. <PRO_HESHE> gains specialization with that weapon.
+- Gains Mastery (+++) in two-weapon fighting at first level.  
+- At 3rd level, the Blade can specialize (++) in any single bladed weapon. At 3rd level or anytime thereafter, <PRO_HESHE> can select any single bladed weapon with which <PRO_HESHE> is proficient and become specialization with that weapon.  At 9th level, or anytime thereafter, <PRO_HESHE> can specialize (++) in a second bladed weapon <PRO_HESHE> is proficient with.
 
 Disadvantages:
-â€“ Only gains 5 lore per level.
-â€“ Does not get access to any other performances.
+
+– Only gains 5 lore per level.
+– Does not get access to any other performances.
 - Cannot make use of magical items as the true bard.
 - Receives -1 spell per spell level, and so cannot begin casting spells until 2nd level.
 
-DEFENSIVE SPIN: Defensive spin is a specialied form of parrying that lasts for 4 round, + 1 round per 4 levels <PRO_HESHE> posesses.  While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  Further, any opponent that gets in melee range (4') have a 50% chance to suffer 1d6 points of slashing damage from the whirling blades.  This damage increases by 1d6 every 5 levels.  The Blade cannot attack or cast spells while using Defensive Spin.
+DEFENSIVE SPIN: Defensive spin is a specialized form of parrying that lasts for 4 round, + 1 round per 4 levels <PRO_HESHE> possesses.  While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  Further, any opponent that gets in melee range (4') have a 50% chance to suffer 1d6 points of slashing damage from the whirling blades.  This damage increases by 1d6 every 5 levels.  The Blade cannot attack or cast spells while using Defensive Spin.
 
-OFFENSIVE SPIN: Offensive spin is a much more aggressive display of prowess that lasts for 4 round, + 1 round per 4 levels <PRO_HESHE> posesses.  During this time, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to melee attack and damage rolls as well as an extra attack per round. Finally,<PRO_HESHE> deals an additional +1 to damage with all melee attacks for every 5 levels. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells. <PRO_HESHE> suffers a -2 penalty to AC while using offensive spin.
+OFFENSIVE SPIN: Offensive spin is a much more aggressive display of prowess that lasts for 4 round, + 1 round per 4 levels <PRO_HESHE> possesses.  During this time, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to melee attack and damage rolls as well as an extra attack per round. Finally,<PRO_HESHE> deals an additional +1 to damage with all melee attacks for every 5 levels. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells. <PRO_HESHE> suffers a -2 penalty to AC while using offensive spin.
 
 WEAPON DISPLAY: When performing a weapon display, the Blade performs an impressive and intimidating display with <PRO_HISHER> weapon.  All intelligent enemies within 30' of the Blade must make a save vs. wands +4 or be overcome by fear for the duration of the display.  Enemies make their save at -1 per 3 levels of the Blade.
 Additionally, the display inspires allies, granting them a +1 bonus to attack and damage rolls.  This bonus increases by +1 per 5 levels.
 Finally, enemies that come within melee range of the blade (about 4') have a 50% chance to take 1d6 slashing damage from the whirling blades. This damage increases by 1d6 for each 5 levels.
-The blade cannot move while performing the display. That is, moving ends the performance.
+The blade cannot move while performing the display. That is, moving ends the performance.~
 
 @500103 = ~BLADE: The Bard is like a Thief, but requires allies to truly excel. Their specialty is boosting the morale and skill of others through song, while at the same time inhibiting foes.
-The Blade excells at melee and ranged combat, though they are less adept at inspiring their allies~
+The Blade excels at melee and ranged combat, though they are less adept at inspiring their allies.~
 

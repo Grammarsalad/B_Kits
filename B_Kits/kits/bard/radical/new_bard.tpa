@@ -51,7 +51,7 @@ ADD_KIT ~B_ARD~
 ~B_ARD             0  0  0  0  0  0~
 
 //KIT ABILITIES 2DA FILE______________________________________________________________
-~%mod_folder%/kits/%version%/bard/B_ARD.2da~
+~%mod_folder%/kits/bard/%version%/B_ARD.2da~
 
 //RACIAL KIT AVAILABILITY_____________________________________________________________
 ~K_B_E K_B_H K_B_HE K_B_G K_B_D K_B_HL K_B_HO~
@@ -91,12 +91,17 @@ END
 //ABILITY FILES_______________________________________________________________
 //
 ACTION_IF !FILE_EXISTS_IN_GAME ~#BARD-1.spl~ BEGIN
- COPY	~%mod_folder%/kits/%version%/bard/#BARD-1.spl~ ~override~
+ COPY	~%mod_folder%/kits/bard/%version%/#BARD-1.spl~ ~override~
 END
 
-COPY	~%mod_folder%/kits/%version%/bard/SPCL120.spl~ ~override~  //new rally
-            SAY NAME1  @500004 //rally bonuses
+//Projectile
+ADD_PROJECTILE ~%mod_folder%/kits/bard/OHVRPO.pro~   //projectile same for all versions
 
-COPY	~%mod_folder%/kits/%version%/bard/B_SHH1.spl~ ~override~  //8 hour song disable
+
+COPY	~%mod_folder%/kits/bard/%version%/SPCL120.spl~ ~override~  //new rally
+            SAY NAME1  @500004 //rally bonuses
+            LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRPO% END
+
+COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song disable
             LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500005) END  //Notification: song disabled for 8 hrs
 
