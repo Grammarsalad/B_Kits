@@ -1,6 +1,6 @@
 # Log
 
-TO DO 01:
+TO DO 01: Do not eliminate original base class and kits, as it is not possible to get a wholly unique spell list for the bard without going farther than I'm willing to go.  :( 
 
 TO DO 02: Continue updating Bardsong descriptions
 
