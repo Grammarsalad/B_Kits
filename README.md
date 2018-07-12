@@ -32,9 +32,11 @@ Generally speaking, all classes get something of a 'boost' at first level but fi
 
 **Alteration Overview**:
 
-- The two aspects of the bard class that I consider to be 'radical' are the custom spell progression, the custom spell list, and the alteration to how the bard song works (i.e. increases in potency over time, lasts for a number of rounds after the bard has stopped performing, is disabled for a period, and is generally limited in some other respect.) 
+- The three aspects of the bard class that I consider to be 'radical' are the custom spell progression, the custom spell list, and the alteration to how the bard song works (i.e. increases in potency over time, lasts for a number of rounds after the bard has stopped performing, is disabled for a period, and is generally limited in some other respect.) 
 
 - All bards can specialize (++) in any fighting style, and gain mastery (+++) in two weapon fighting.  
+
+- Bards will be restricted in the kinds of magic they can initially learn.  In particular, they cannot learn many evocation or necromancy spells (some kits are exceptions to this).  But, they will have an opportunity to learn special spells via 'song books' that they can find or purchase in their trails.  
 
 - Bards can be of any alignment
 
@@ -69,6 +71,15 @@ Generally speaking, all classes get something of a 'boost' at first level but fi
 
 - Bards will have their own unique spell list.
 
+**Unique Bard Spells**
+
+**Soothing Melody**
+Eliminates and protects from many mental effects, and gives bonus hit points.
+
+**Tasha's Hideous Laughter**
+
+
+
 - All races will be able to select the Bard class, though not all will be able to take every kit.  
 
 ## Bard Kits and Base Class
@@ -84,7 +95,7 @@ Class Features:
 - Can achieve proficiency (+) in any weapon proficiency.
 - Can achieve specialization (++) in an fighting style, except two-weapon fighting, where <PRO_HESHE> can achieve mastery (+++).
 - Thieving abilities: Pick Pockets.
-- May cast arcane spells starting with one first level spell at level one.
+- May cast arcane spells starting with one first level spell at level one.  Bards are limited in the kinds of spells that they can cast.  They cannot cast evocation nor necromancy spells.  
 - Song Mage: The Bard can learn special spells from song books only decipherable by them.  
 - The Bard can figure out and use almost any magical item, including items typically restricted to other classes, such as priest scrolls.
 - May use their Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies, or perform a Countersong.  At 8th level, <PRO_HESHE> can fascinate <PRO_HISHER> enemies.  These songs become more powerful as <PRO_HESH> gains levels as described below.
