@@ -29,6 +29,9 @@ Generally speaking, all classes get something of a 'boost' at first level but fi
 
 **All Bards**
 
+## Known Issues
+
+- You MUST explicitly select a kit when prompted during character creation.  If you do not do so, you will end up with the old class and a likely very messed up spell list (among other things).
 
 **Alteration Overview**:
 
