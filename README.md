@@ -36,7 +36,7 @@ Generally speaking, all classes get something of a 'boost' at first level but fi
 
 - All bards can specialize (++) in any fighting style, and gain mastery (+++) in two weapon fighting.  
 
-- Bards will be restricted in the kinds of magic they can initially learn.  In particular, they cannot learn many evocation or necromancy spells (some kits are exceptions to this).  But, they will have an opportunity to learn special spells via 'song books' that they can find or purchase in their trails.  
+- Bards will be restricted in the kinds of magic they can initially learn.  In particular, they cannot learn evocation, conjuration or necromancy spells (some kits are exceptions to this).  But, they will have an opportunity to learn special spells via 'song books' that they can find or purchase in their trails.  
 
 - Bards can be of any alignment
 
