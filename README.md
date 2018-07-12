@@ -98,8 +98,8 @@ Class Features:
 - Can achieve proficiency (+) in any weapon proficiency.
 - Can achieve specialization (++) in an fighting style, except two-weapon fighting, where <PRO_HESHE> can achieve mastery (+++).
 - Thieving abilities: Pick Pockets.
-- May cast arcane spells starting with one first level spell at level one.  Bards are limited in the kinds of spells that they can cast.  They cannot cast evocation nor necromancy spells.  
-- Song Mage: The Bard can learn special spells from song books only decipherable by them.  
+- May cast arcane spells starting with one first level spell at level one.  Bards are limited in the kinds of spells that they can cast.  Specifically, they can only cast Universal, Illusion, Enchantment, or Abjuration mage spells.   
+- Song Mage: The Bard can learn unique spells not avaliable to regular mages.  
 - The Bard can figure out and use almost any magical item, including items typically restricted to other classes, such as priest scrolls.
 - May use their Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies, or perform a Countersong.  At 8th level, <PRO_HESHE> can fascinate <PRO_HISHER> enemies.  These songs become more powerful as <PRO_HESH> gains levels as described below.
 All effects last for as long as the bard plays the tune, and for 2 rounds, + 1 round per 5 levels, afterward.  After performing, a bard song, the bard loses the ability to perform again for 2 hours.  This time is reduced to 1 hour at level 7 and is reduced again to 3 turns at 14th level. Finally, at 18th level, the cooldown period is reduced to 1 turn.
