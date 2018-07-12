@@ -9,6 +9,8 @@ TO DO 02: Continue updating Bardsong descriptions
 TO DO 03: Update core and blade bardsongs as per the new instructions.  
    - Implement  cancel in move for blade.
    - Other? Compare
+   
+TO DO 04: Expand Bard Usability to match their 'use magic items' ability.
 
 Version 0.01.02
 
