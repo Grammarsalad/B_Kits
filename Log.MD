@@ -1,6 +1,6 @@
 # Log
 
-TO DO 01: Do not eliminate original base class and kits, as it is not possible to get a wholly unique spell list for the bard without going farther than I'm willing to go.  :( 
+TO DO 01: Unique spells will be implemented via the 'song mage' ability, which involves special 'song' books that can only be decipherable by bards. 
 
 TO DO 02: Continue updating Bardsong descriptions
 
