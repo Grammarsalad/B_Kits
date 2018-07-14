@@ -47,30 +47,30 @@ Generally speaking, all classes get something of a 'boost' at first level but fi
 
 - Bard Songs will be more useful in that they will last a number of rounds after the bard has stopped singing.  However, the bard will not be able to use the song at will.  Rather, they will have a 'cool down' period, where they cannot use their song at all.  At first level, this period will last for 8 hours.  
 
-- Bards will be able to cast spells starting at first level.  Revised spell progression:
+- Bards will be able to cast spells starting at first level.  The progression is the same as before, except the bard gains access to 1st and second level spells one level eariler, and overall they cast one more first or second level spell.  Revised spell progression:
 
 | Bard Level | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1st | 1 | - | - | - | - | - | - | - |
 | 2nd | 2 | - | - | - | - | - | - | - |
 | 3rd | 3 | 1 | - | - | - | - | - | - |
-| 4th | 3 | 1 | - | - | - | - | - | - |
+| 4th | 3 | 2 | - | - | - | - | - | - |
 | 5th | 4 | 2 | - | - | - | - | - | - |
-| 6th | 4 | 2 | 1 | - | - | - | - | - |
+| 6th | 4 | 3 | - | - | - | - | - | - |
 | 7th | 4 | 3 | 1 | - | - | - | - | - |
-| 8th | 5 | 3 | 1 | - | - | - | - | - |
-| 9th | 5 | 3 | 2 | 1 | - | - | - | - |
-| 10th | 5 | 4 | 2 | 1 | - | - | - | - |
-| 11th | 5 | 4 | 3 | 1 | - | - | - | - |
-| 12th | 5 | 4 | 3 | 2 | 1 | - | - | - |
-| 13th | 5 | 4 | 3 | 2 | 1 | - | - | - |
-| 14th | 5 | 4 | 3 | 3 | 1 | - | - | - |
-| 15th | 5 | 4 | 3 | 3 | 2 | 1 | - | - |
-| 16th | 6 | 4 | 3 | 3 | 2 | 1 | - | - |
-| 17th | 6 | 4 | 3 | 3 | 3 | 1 | - | - |
-| 18th | 6 | 5 | 4 | 3 | 3 | 2 | - | - |
-| 19th | 6 | 5 | 4 | 4 | 3 | 2 | - | - |
-| 20th | 6 | 5 | 4 | 4 | 4 | 3 | - | - |
+| 8th | 4 | 4 | 1 | - | - | - | - | - |
+| 9th | 4 | 4 | 2 | - | - | - | - | - |
+| 10th | 4 | 4 | 2 | 1 | - | - | - | - |
+| 11th | 4 | 4 | 3 | 1 | - | - | - | - |
+| 12th | 4 | 4 | 3 | 2 | - | - | - | - |
+| 13th | 4 | 4 | 3 | 2 | 1 | - | - | - |
+| 14th | 4 | 4 | 3 | 3 | 1 | - | - | - |
+| 15th | 4 | 4 | 3 | 3 | 2 | - | - | - |
+| 16th | 5 | 4 | 3 | 3 | 2 | 1 | - | - |
+| 17th | 5 | 5 | 3 | 3 | 3 | 1 | - | - |
+| 18th | 5 | 5 | 4 | 3 | 3 | 2 | - | - |
+| 19th | 5 | 5 | 4 | 4 | 3 | 2 | - | - |
+| 20th | 5 | 5 | 4 | 4 | 4 | 3 | - | - |
 
 - Bards will have their own unique spell list.
 
