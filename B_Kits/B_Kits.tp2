@@ -2,7 +2,7 @@ BACKUP ~B_Kits/backup~
 AUTHOR ~Grammarsalad~
 
 
-VERSION ~0.01.01~
+VERSION ~0.01.03~
 
 //README ~faiths_and_powers/readme-pnp.html~
 
@@ -21,6 +21,8 @@ ALWAYS
 	
 	INCLUDE ~B_Kits/lib/joinable_npcs.tpa~
 
+        INCLUDE ~B_Kits/lib/bg2fp_effect_batches_fnp.tpa~
+
 	INCLUDE ~B_Kits/lib/fnp_compat.tpa~
 	
 	INCLUDE ~B_Kits/lib/qd_multiclass.tpa~
@@ -32,6 +34,7 @@ END
 LANGUAGE ~English~ ~english~
          ~B_Kits/language/english/setup.tra~
          ~B_Kits/language/english/bard.tra~
+         ~B_Kits/language/english/IWD_spells.tra~
 //___________________________________________________________________________________
 
 
@@ -61,6 +64,9 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised.tpa~
 
 //INCLUDE ~%mod_folder%/data/components/Setup_new_kits.tpa~
 
+//Now, Immunities.  DO AT THE VERY END OF ALL SPELL INSTALLS
+INCLUDE ~%mod_folder%/lib/immunities.tpa~
+
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -79,6 +85,9 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised.tpa~
 
 INCLUDE ~%mod_folder%/data/components/Setup_new_kits.tpa~
 
+//Now, Immunities.  DO AT THE VERY END OF ALL SPELL INSTALLS
+INCLUDE ~%mod_folder%/lib/immunities.tpa~
+
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -95,6 +104,9 @@ SUBCOMPONENT @100
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised.tpa~
 
+//Now, Immunities.  DO AT THE VERY END OF ALL SPELL INSTALLS
+INCLUDE ~%mod_folder%/lib/immunities.tpa~
+
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -102,7 +114,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @13
+BEGIN @15
 DESIGNATED 004
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @21 //~EE games only!~  ...for now
 SUBCOMPONENT @100
@@ -110,6 +122,9 @@ SUBCOMPONENT @100
         OUTER_SPRINT ~version~ ~conservative~    //Folder Var
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised.tpa~
+
+//Now, Immunities.  DO AT THE VERY END OF ALL SPELL INSTALLS
+INCLUDE ~%mod_folder%/lib/immunities.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -126,6 +141,9 @@ SUBCOMPONENT @100
         OUTER_SPRINT ~version~ ~conservative~    //Folder Var
 
 INCLUDE ~%mod_folder%/data/components/Setup_new_kits.tpa~
+
+//Now, Immunities.  DO AT THE VERY END OF ALL SPELL INSTALLS
+INCLUDE ~%mod_folder%/lib/immunities.tpa~
 
 /*
 //__________________________________________________________________________________

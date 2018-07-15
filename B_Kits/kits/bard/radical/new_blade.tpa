@@ -60,7 +60,7 @@ ADD_KIT ~B_LADE~
 //CLASSES: Mage = 1, Fighter = 2, Cleric=3, Thief = 4, Bard = 5
 //         Paladin 6, Druid = 11, Ranger = 12, Sorcerer = 19
 //         Monk = 20
-~0x00000100 5~  //Should be diviner unusability
+~0x00200000 5~  // Blade useability as normal
 
 //HIGH LEVEL ABILITIES ABBREVIATION_________________________________________________
 ~Ba0~

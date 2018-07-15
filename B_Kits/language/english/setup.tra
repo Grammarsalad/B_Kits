@@ -2,8 +2,9 @@
 @10  = ~Install All Revised and New Kits and Classes (Radical Version)~
 @11  = ~Install All Revised and New Kits and Classes (Conservative Version)~
 @12  = ~Install Only Revised Kits and Classes (Radical Version)~
-@13  = ~Install Only Revised Kits and Classes (Conservative Version)~
+@13 = ~*Please be patient. This will take some time...*~
 @14  = ~Install Only New Kits (Conservative Version Only)~
+@15  = ~Install Only Revised Kits and Classes (Conservative Version)~
 
 @21  = ~EE games only!~
 
@@ -14,6 +15,9 @@
 @103  = ~choose components individually~
 @105  = ~no new kits - JUST install the sphere system~
 @110  = ~Change item usability for priests~
+
+
+@51203 = ~Racked with Agony~
 
 /*
 //

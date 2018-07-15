@@ -10,7 +10,29 @@ TO DO 03: Update core and blade bardsongs as per the new instructions.
    - Implement  cancel in move for blade.
    - Other? Compare
    
-TO DO 04: Expand Bard Usability to match their 'use magic items' ability.
+TO DO 04: Expand Bard Usability to match their 'use magic items' ability.  Allow them to cast in up to chain armor
+
+TO DO 05: Revise counterspell in light of changes to Rally
+
+Version 0.01.03
+
+2018-07-14
+
+- Further refined Rally.
+
+- Revised descriptions to mirror rally.
+
+- Added effect batches because of countersong, but need to actually modify effect batches (do in B_SPELLS).
+
+2018-07-12
+
+- Barred necromancy, conjuration, alteration, and evocation from Bardkit flags
+
+- Updated description of core bard
+
+- Replaced Blade with Bard (again).  Need to create most of the song spls and unique spells
+
+- Finished Rally
 
 Version 0.01.02
 

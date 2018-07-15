@@ -94,14 +94,3 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~#BARD-1.spl~ BEGIN
  COPY	~%mod_folder%/kits/bard/%version%/#BARD-1.spl~ ~override~
 END
 
-//Projectile
-ADD_PROJECTILE ~%mod_folder%/kits/bard/OHVRPO.pro~   //projectile same for all versions
-
-
-COPY	~%mod_folder%/kits/bard/%version%/SPCL120.spl~ ~override~  //new rally
-            SAY NAME1  @500004 //rally bonuses
-            LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRPO% END
-
-COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song disable
-            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500005) END  //Notification: song disabled for 8 hrs
-

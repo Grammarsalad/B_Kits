@@ -12,6 +12,21 @@ COPY	~%mod_folder%/kits/bard/%version%/mxsplbrd.2da~ ~override~  //Man, just eas
 //Make certain mage spells unusable by all bards (necromancy,
 //no spells for anyone!______________________________________________________________
 //
+COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
+  READ_SHORT 0x1c spell_type
+  PATCH_IF spell_type = 1 BEGIN
+    READ_BYTE 0x25 spell_school
+    PATCH_IF spell_school = 2 OR     //    conjuration
+            spell_school = 6 OR     //    invocation
+            spell_school = 7 OR     //    necromancy
+            spell_school = 8 OR     //    alteration
+            spell_school = 9 BEGIN    //    wild
+      READ_BYTE 0x1E bard_excludes
+      WRITE_BYTE 0x1E (%bard_excludes% BOR ~0b00000111~)  // unusable by bard kits (i.e. the new bard)
+    END
+  END
+BUT_ONLY
+
 /*
 
 COPY_EXISTING_REGEXP GLOB ~.*\.spl~ ~override~

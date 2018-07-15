@@ -5,13 +5,17 @@
 //							BARD REVISION: Radical
 //__________________________________________________________________________________
 //__________________________________________________________________________________
-//First, add a 'replacement' bard classes:
-INCLUDE ~%mod_folder%/kits/bard/%version%/new_bard.tpa~
+//First, add a 'replacement' blade classes:
+//INCLUDE ~%mod_folder%/kits/bard/%version%/new_bard.tpa~
 INCLUDE ~%mod_folder%/kits/bard/%version%/new_blade.tpa~
 //INCLUDE ~%mod_folder%/kits/bard/%version%/new_jest.tpa~
 //INCLUDE ~%mod_folder%/kits/bard/%version%/new_skald.tpa~
 
+//TO DO
 
+//NEED TO CREATE NEW KITS FOR SKALD AND JESTER
+
+//Get rid of all bard kits but blade, which will be converted to base bard
 ACTION_FOR_EACH class IN ~B~ BEGIN
   ACTION_FOR_EACH race IN ~D~ ~E~ ~G~ ~H~ ~HE~ ~HL~ ~HO~ BEGIN
 	ACTION_IF FILE_EXISTS_IN_GAME ~K_%class%_%race%.2da~ BEGIN
@@ -21,10 +25,10 @@ ACTION_FOR_EACH class IN ~B~ BEGIN
 		SET rows_removed = 0
 		FOR (row = 1; row < rows; ++row) BEGIN
 		  READ_2DA_ENTRY_FORMER rows row 1 kit
-		  PATCH_IF (%kit% = 0) OR //Base Class
-                           (%kit% = 13) OR  //Blade
-                           (%kit% = 14) OR  //Jester
-                           (%kit% = 15) BEGIN  //Skald
+		  PATCH_IF (%kit% = 0) OR  //Base Class
+                        //   (%kit% = 13) OR  //Blade
+                             (%kit% = 14) OR  //Jester
+                             (%kit% = 15) BEGIN  //Skald
 			REMOVE_2DA_ROW (row - rows_removed) cols
 			SET rows_removed += 1
 		  END
@@ -34,8 +38,355 @@ ACTION_FOR_EACH class IN ~B~ BEGIN
   END
 END
 
+//Replace existing blade with new base bard
+
+//BARD DESCRIPTION: RADICAL: Replacing the Blade
+
+//Class Text: Replace Blade Text with Bard Text
+ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
+  	COPY_EXISTING ~clastext.2da~ ~override~
+		COUNT_2DA_COLS cols // amount of columns
+		READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BLADE~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		//True Bard
+		SET_2DA_ENTRY %bl_row% 3 cols RESOLVE_STR_REF (@500000)    //bard
+		SET_2DA_ENTRY %bl_row% 4 cols RESOLVE_STR_REF (@500001)    //bard
+		SET_2DA_ENTRY %bl_row% 5 cols RESOLVE_STR_REF (@500002)    //bard
+		SET_2DA_ENTRY %bl_row% 8 cols RESOLVE_STR_REF (@500003)    //bard
+  	BUT_ONLY
+END
 
 
+ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
+  	COPY_EXISTING ~sodcltxt.2da~ ~override~
+		COUNT_2DA_COLS cols // amount of columns
+		READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BLADE~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 3 cols RESOLVE_STR_REF (@500000)
+		SET_2DA_ENTRY %bl_row% 4 cols RESOLVE_STR_REF (@500001)
+		SET_2DA_ENTRY %bl_row% 5 cols RESOLVE_STR_REF (@500002)
+		SET_2DA_ENTRY %bl_row% 8 cols RESOLVE_STR_REF (@500003)    //bard
+  	BUT_ONLY
+END
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
+  	COPY_EXISTING ~kitlist.2da~ ~override~
+		SET_2DA_ENTRY 14 2 5 RESOLVE_STR_REF (@500000)
+	 	SET_2DA_ENTRY 14 3 5 RESOLVE_STR_REF (@500002)
+		SET_2DA_ENTRY 14 4 5 RESOLVE_STR_REF (@500001)
+  	BUT_ONLY
+END
+
+//Increased Hit Points:
+ACTION_IF (FILE_EXISTS_IN_GAME ~HPCLASS.2da~) BEGIN
+ COPY_EXISTING ~HPCLASS.2da~ ~override~
+		COUNT_2DA_COLS cols // amount of columns
+		READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BLADE~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPPRS~   //new bard/blade
+  	BUT_ONLY
+END
+
+//CLab
+COPY ~%mod_folder%/kits/bard/%version%/B_ARD.2da~ ~override/CLABBA02.2da~
+
+//TO DO
+
+//Have to address 3rd party bards...
+//Doing what? Alignment, clabs?, 
+
+
+//Open up alignment for bards
+COPY_EXISTING ~ALIGNMNT.2da~ ~override~
+   SET_2DA_ENTRY 38 1 10 ~1~
+   SET_2DA_ENTRY 38 3 10 ~1~
+   SET_2DA_ENTRY 38 7 10 ~1~
+   SET_2DA_ENTRY 38 7 10 ~1~
+   SET_2DA_ENTRY 38 9 10 ~1~
+
+//BARD ABILITY FILES_______________________________________________________________
+//rally
+//Innate that applies rally (all of them)
+ COPY	~%mod_folder%/kits/bard/%version%/#BARD1.spl~ ~override~
+        SAY NAME1 @500006
+        SAY NAME2 @500006
+        SAY UNIDENTIFIED_DESC @500007
+	SAY DESC @500007
+
+// 1st level rally   spl that applies first level rally
+
+COPY ~%mod_folder%/kits/bard/%version%/#BARD-1.spl~ ~override~
+
+//1st level rally
+//Projectile for all
+ADD_PROJECTILE ~%mod_folder%/kits/bard/OHVRPO.pro~   //projectile same for all versions-Allies only
+
+COPY	~%mod_folder%/kits/bard/%version%/SPCL120.spl~ ~override~  //new rally
+            SAY NAME1  @500004 //rally bonuses
+            LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRPO% END
+
+COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song disable
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500005) END  //Notification: song disabled for 2 hrs
+
+//TO DO
+
+//Change ICON notification to from bot3h to rally, especially in non-IWDEE games, where the icon needs to be added
+
+
+//5th level rally
+//spl that applies rally in clab at 5th
+ COPY_EXISTING ~#BARD-1.spl~ ~override/#BARD-2.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 251 STR_VAR resource = ~B_RALY2~ END           //
+
+//rally song that is applied by clab ab and innate
+ COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY2.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY2~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 13 STR_VAR resource = ~B_RALY2~END           //deaf immune
+  LPF ALTER_EFFECT INT_VAR match_opcode = 278 duration = 12 END           //to hit
+  LPF ALTER_EFFECT INT_VAR match_opcode = 73 duration = 12 END           //dam
+  LPF ALTER_EFFECT INT_VAR match_opcode = 33 duration = 12 END           //Death Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 34 duration = 12 END           //wand Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 35 duration = 12 END           //petrification/polymorph Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 36 duration = 12 END           //breath Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 37 duration = 12 END           //spell Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 142 duration = 12 END           //icon
+
+//6th level rally
+//spl that applies rally in clab at 6th
+ COPY_EXISTING ~#BARD-1.spl~ ~override/#BARD-3.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 251 STR_VAR resource = ~B_RALY3~ END           //
+
+//rally song that is applied by clab ab and innate
+ COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY3.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY3~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 13 STR_VAR resource = ~B_RALY3~END           //deaf immune
+  LPF ALTER_EFFECT INT_VAR match_opcode = 278 duration = 12 END           //to hit
+  LPF ALTER_EFFECT INT_VAR match_opcode = 73 duration = 12 END           //dam
+  LPF ALTER_EFFECT INT_VAR match_opcode = 33 duration = 12 END           //Death Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 34 duration = 12 END           //wand Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 35 duration = 12 END           //petrification/polymorph Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 36 duration = 12 END           //breath Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 37 duration = 12 END           //spell Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 142 duration = 12 END           //icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI125~ END           //spook
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI205~ END           //horror
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR416~ END           //Cloak of Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR706~ END           //Symbol: Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 321 parameter1 = 0 parameter2 = 0 timing = 1 END           //remove these spells
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 101 parameter1 = 0 parameter2 = 24 END           //immunity to horror horror opcode
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 161 parameter1 = 0 parameter2 = 0 timing = 1 END           //Cure fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 296 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~CDHORROR~ END           //fear sec animation
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 240 parameter1 = 0 parameter2 = 36 timing = 1  END           //remove fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 169 parameter1 = 0 parameter2 = 36 END           //Prot fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 106 parameter1 = 1 parameter2 = 1 END           //moral break
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 23 parameter1 = 0 parameter2 = 0 END           //moral
+//TO DO
+//Need to protect vs. fear strings (just do in effects batch)
+
+//10th level rally
+//spl that applies rally in clab at 10th
+ COPY_EXISTING ~#BARD-1.spl~ ~override/#BARD-4.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 251 STR_VAR resource = ~B_RALY4~ END           //
+
+//rally song that is applied by clab ab and innate
+ COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY4.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY4~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 19 STR_VAR resource = ~B_RALY4~ END           //deaf immune
+  LPF ALTER_EFFECT INT_VAR match_opcode = 278 parameter1 = 2 duration = 18 END           //to hit
+  LPF ALTER_EFFECT INT_VAR match_opcode = 73 parameter1 = 2 duration = 18 END           //dam
+  LPF ALTER_EFFECT INT_VAR match_opcode = 33 duration = 18 END           //Death Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 34 duration = 18 END           //wand Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 35 duration = 18 END           //petrification/polymorph Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 36 duration = 18 END           //breath Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 37 duration = 18 END           //spell Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 142 duration = 18 END           //icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI125~ END           //spook
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI205~ END           //horror
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR416~ END           //Cloak of Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR706~ END           //Symbol: Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 321 parameter1 = 0 parameter2 = 0 timing = 1 END           //remove these spells
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 101 parameter1 = 0 parameter2 = 24 END           //immunity to horror horror opcode
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 161 parameter1 = 0 parameter2 = 0 timing = 1 END           //Cure fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 296 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~CDHORROR~ END           //fear sec animation
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 240 parameter1 = 0 parameter2 = 36 timing = 1  END           //remove fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 169 parameter1 = 0 parameter2 = 36 END           //Prot fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 106 parameter1 = 1 parameter2 = 1 END           //moral break
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 23 parameter1 = 0 parameter2 = 0 END           //moral
+
+//12th level rally
+//spl that applies rally in clab at 12th
+ COPY_EXISTING ~#BARD-1.spl~ ~override/#BARD-5.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 251 STR_VAR resource = ~B_RALY5~ END           //
+
+ COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY5.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY5~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 19 STR_VAR resource = ~B_RALY5~ END           //deaf immune
+  LPF ALTER_EFFECT INT_VAR match_opcode = 278 duration = 18 END           //to hit
+  LPF ALTER_EFFECT INT_VAR match_opcode = 73 duration = 18 END           //dam
+  LPF ALTER_EFFECT INT_VAR match_opcode = 33 duration = 18 END           //Death Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 34 duration = 18 END           //wand Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 35 duration = 18 END           //petrification/polymorph Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 36 duration = 18 END           //breath Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 37 duration = 18 END           //spell Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 142 duration = 18 END           //icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI125~ END           //spook
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI205~ END           //horror
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR416~ END           //Cloak of Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR706~ END           //Symbol: Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 321 parameter1 = 0 parameter2 = 0 timing = 1 END           //remove these spells
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 101 parameter1 = 0 parameter2 = 24 END           //immunity to horror horror opcode
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 161 parameter1 = 0 parameter2 = 0 timing = 1 END           //Cure fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 296 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~CDHORROR~ END           //fear sec animation
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 240 parameter1 = 0 parameter2 = 36 timing = 1  END           //remove fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 169 parameter1 = 0 parameter2 = 36 END           //Prot fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 106 parameter1 = 1 parameter2 = 1 END           //moral break
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 23 parameter1 = 1 parameter2 = 0 END           //luck
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 325 parameter1 = 1 parameter2 = 0 END           //luck saves
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 90 parameter1 = 10 parameter2 = 0 END           //luck picklocks
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 91 parameter1 = 10 parameter2 = 0 END           //luck traps
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 92 parameter1 = 10 parameter2 = 0 END           //luck ppockets
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 59 parameter1 = 10 parameter2 = 0 END           //luck stealth
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 275 parameter1 = 10 parameter2 = 0 END           //luck hide
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 276 parameter1 = 10 parameter2 = 0 END           //luck dillusion
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 277 parameter1 = 10 parameter2 = 0 END           //luck straps
+
+//15th level rally
+//spl that applies rally in clab at 15th
+ COPY_EXISTING ~#BARD-1.spl~ ~override/#BARD-6.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 251 STR_VAR resource = ~B_RALY6~ END           //
+
+//rally song that is applied by clab ab and innate
+ COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY6.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY6~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 25 STR_VAR resource = ~B_RALY6~END           //deaf immune
+  LPF ALTER_EFFECT INT_VAR match_opcode = 278 duration = 24 END           //to hit
+  LPF ALTER_EFFECT INT_VAR match_opcode = 73 duration = 24 END           //dam
+  LPF ALTER_EFFECT INT_VAR match_opcode = 33 duration = 24 END           //Death Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 34 duration = 24 END           //wand Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 35 duration = 24 END           //petrification/polymorph Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 36 duration = 24 END           //breath Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 37 duration = 24 END           //spell Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 142 duration = 24 END           //icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI125~ END           //spook
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI205~ END           //horror
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR416~ END           //Cloak of Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR706~ END           //Symbol: Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 321 parameter1 = 0 parameter2 = 0 timing = 1 END           //remove these spells
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 101 parameter1 = 0 parameter2 = 24 END           //immunity to horror horror opcode
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 161 parameter1 = 0 parameter2 = 0 timing = 1 END           //Cure fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 296 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~CDHORROR~ END           //fear sec animation
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 240 parameter1 = 0 parameter2 = 36 timing = 1  END           //remove fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 169 parameter1 = 0 parameter2 = 36 END           //Prot fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 106 parameter1 = 1 parameter2 = 1 END           //moral break
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 23 parameter1 = 1 parameter2 = 0 END           //luck
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 325 parameter1 = 1 parameter2 = 0 END           //luck saves
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 90 parameter1 = 10 parameter2 = 0 END           //luck picklocks
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 91 parameter1 = 10 parameter2 = 0 END           //luck traps
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 92 parameter1 = 10 parameter2 = 0 END           //luck ppockets
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 59 parameter1 = 10 parameter2 = 0 END           //luck stealth
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 275 parameter1 = 10 parameter2 = 0 END           //luck hide
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 276 parameter1 = 10 parameter2 = 0 END           //luck dillusion
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 277 parameter1 = 10 parameter2 = 0 END           //luck straps
+
+//17th level rally
+//spl that applies rally in clab at 17th
+ COPY_EXISTING ~#BARD-1.spl~ ~override/#BARD-7.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 251 STR_VAR resource = ~B_RALY7~ END           //
+
+//rally song that is applied by clab ab and innate
+ COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY7.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY7~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 25 STR_VAR resource = ~B_RALY7~END           //deaf immune
+  LPF ALTER_EFFECT INT_VAR match_opcode = 278 parameter1 = 2 duration = 24 END           //to hit
+  LPF ALTER_EFFECT INT_VAR match_opcode = 73 parameter1 = 2 duration = 24 END           //dam
+  LPF ALTER_EFFECT INT_VAR match_opcode = 33 parameter1 = 2 duration = 24 END           //Death Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 34 parameter1 = 2 duration = 24 END           //wand Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 35 parameter1 = 2 duration = 24 END           //petrification/polymorph Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 36 parameter1 = 2 duration = 24 END           //breath Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 37 parameter1 = 2 duration = 24 END           //spell Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 142 duration = 24 END           //icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI125~ END           //spook
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI205~ END           //horror
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR416~ END           //Cloak of Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR706~ END           //Symbol: Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 321 parameter1 = 0 parameter2 = 0 timing = 1 END           //remove these spells
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 101 parameter1 = 0 parameter2 = 24 END           //immunity to horror horror opcode
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 161 parameter1 = 0 parameter2 = 0 timing = 1 END           //Cure fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 296 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~CDHORROR~ END           //fear sec animation
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 240 parameter1 = 0 parameter2 = 36 timing = 1  END           //remove fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 169 parameter1 = 0 parameter2 = 36 END           //Prot fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 106 parameter1 = 1 parameter2 = 1 END           //moral break
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 23 parameter1 = 2 parameter2 = 0 END           //luck
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 325 parameter1 = 2 parameter2 = 0 END           //luck saves
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 90 parameter1 = 20 parameter2 = 0 END           //luck picklocks
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 91 parameter1 = 20 parameter2 = 0 END           //luck traps
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 92 parameter1 = 20 parameter2 = 0 END           //luck ppockets
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 59 parameter1 = 20 parameter2 = 0 END           //luck stealth
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 275 parameter1 = 20 parameter2 = 0 END           //luck hide
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 276 parameter1 = 20 parameter2 = 0 END           //luck dillusion
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 277 parameter1 = 20 parameter2 = 0 END           //luck straps
+
+//20th level rally
+//spl that applies rally in clab at 20th
+ COPY_EXISTING ~#BARD-1.spl~ ~override/#BARD-8.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 251 STR_VAR resource = ~B_RALY8~ END           //
+
+//rally song that is applied by clab ab and innate
+ COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY8.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY8~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 31 STR_VAR resource = ~B_RALY8~END           //deaf immune
+  LPF ALTER_EFFECT INT_VAR match_opcode = 278 parameter1 = 2 duration = 30 END           //to hit
+  LPF ALTER_EFFECT INT_VAR match_opcode = 73 parameter1 = 2 duration = 30 END           //dam
+  LPF ALTER_EFFECT INT_VAR match_opcode = 33 parameter1 = 2 duration = 30 END           //Death Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 34 parameter1 = 2 duration = 30 END           //wand Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 35 parameter1 = 2 duration = 30 END           //petrification/polymorph Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 36 parameter1 = 2 duration = 30 END           //breath Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 37 parameter1 = 2 duration = 30 END           //spell Boni
+  LPF ALTER_EFFECT INT_VAR match_opcode = 142 duration = 30 END           //icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI125~ END           //spook
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPWI205~ END           //horror
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR416~ END           //Cloak of Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~SPPR706~ END           //Symbol: Fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 321 parameter1 = 0 parameter2 = 0 timing = 1 END           //remove these spells
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 101 parameter1 = 0 parameter2 = 24 END           //immunity to horror horror opcode
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 161 parameter1 = 0 parameter2 = 0 timing = 1 END           //Cure fear
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 296 parameter1 = 0 parameter2 = 0 STR_VAR resource = ~CDHORROR~ END           //fear sec animation
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 240 parameter1 = 0 parameter2 = 36 timing = 1  END           //remove fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 169 parameter1 = 0 parameter2 = 36 END           //Prot fear port icon
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 106 parameter1 = 1 parameter2 = 1 END           //moral break
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 23 parameter1 = 2 parameter2 = 0 END           //luck
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 325 parameter1 = 2 parameter2 = 0 END           //luck saves
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 90 parameter1 = 20 parameter2 = 0 END           //luck picklocks
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 91 parameter1 = 20 parameter2 = 0 END           //luck traps
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 92 parameter1 = 20 parameter2 = 0 END           //luck ppockets
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 59 parameter1 = 20 parameter2 = 0 END           //luck stealth
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 275 parameter1 = 20 parameter2 = 0 END           //luck hide
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 276 parameter1 = 20 parameter2 = 0 END           //luck dillusion
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 277 parameter1 = 20 parameter2 = 0 END           //luck straps
+
+
+
+//CONTINUE
+//Countersong
+
+//Fascinate
+
+//
 /*
 
 //copy marker file___________________________________________________________________
