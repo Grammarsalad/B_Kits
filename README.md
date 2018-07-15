@@ -161,5 +161,7 @@ BATTLESONG: ?
  1st level: Grants allies a +2 bonus to hit and damage rolls, and a +2 bonus to AC.
  15th level: Grants allies a +4 bonus to hit and damage rolls, a +4 bonus to AC, and immunity to fear.
  20th level: Grants allies a +4 bonus to hit and damage rolls, a +4 bonus to AC, and immunity to fear, stun, and confusion. 
+ 
 INCITE RAGE: 
+
 SONG OF THE FALLEN:
