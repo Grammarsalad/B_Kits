@@ -97,7 +97,7 @@ Class Features:
 - May cast arcane spells starting with one first level spell at level one.  Bards are limited in the kinds of spells that they can cast.  Specifically, they can only cast Universal, Illusion, Enchantment, or Abjuration mage spells.   
 - Song Mage: The Bard can learn unique spells not avaliable to regular mages.
 - The Bard can figure out and use almost any magical item, including items typically restricted to other classes, such as priest scrolls.
-- May use their Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies.  At 4th level, <PRO_HESHE> can play a countersong.  At 8th level, <PRO_HESHE> can fascinate <PRO_HISHER> enemies.  These songs become more powerful as <PRO_HESH> gains levels as described below.
+- May use <PRO_HISHER>  Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies.  At 4th level, <PRO_HESHE> can play a countersong.  At 8th level, <PRO_HESHE> can fascinate <PRO_HISHER> enemies.  These songs become more powerful as <PRO_HESH> gains levels as described below.
 All effects generally last for as long as the bard plays the tune, + 1 round per 5 levels after finishing.  After performing, a bard song, the <PRO_HESHE> loses the ability to perform again for 2 hours.  This time is reduced to 1 hour at level 10 and is reduced to 3 turns at 15th level. Finally, at 20th level, the cooldown period is reduced to 1 turn.
 
 RALLY: When the bard uses rally, <PRO_HESHE> grants all of <PRO_HISHER> allies, including <PRO_HIMHER>self, a +1 bonus to attack rolls, damage rolls, and saving throws. At 6th level, all allies are also protected from fear.  They gain immunity to fear effects for as long as the song lasts, and any fear effects currently on them are removed.  At 12th level, all allies also gain +1 to luck, which grants an additional +1 to all saves, and a +10% bonus to all of their thieving skills.  In addition, the bonuses to attacks, damage and saves increase to +2 (for a total of +3 to saves).  Finally, at 17th level, the the bonuses to luck increases to +2, with it the additional save bonus increases to +2, and the skill bonuses increas to +20%, and the bonuses to hit, damage and saves increase to +3 (+5 to saves).
@@ -122,9 +122,10 @@ Advantages:
 Disadvantages:
 
 - Only gains 5 lore per level.
-- Does not get access to any other performances.
-- Cannot make use of magical items as the true bard.
+- The Blade cannot perform Rally, Countersong or Fascinate.
+- The Blade cannot make use of magical items as the true bard.
 - Receives -1 spell per spell level, and so cannot begin casting spells until 2nd level.
+  
 
 DEFENSIVE SPIN: Defensive spin is a specialized form of parrying that is quite impressive to watch.  While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  Further, any opponent that gets in melee range (4') with the blade has a 50% chance to suffer 1d6 points of slashing damage from the whirling blades.  This damage increases by 1d6 every 5 levels.  The Blade cannot attack nor cast spells while using Defensive Spin. If the Blade is struck in combat, <PRO_HESHE> exits Defensive Spin. 
 
@@ -136,3 +137,29 @@ Additionally, the display inspires allies, granting them a +1 bonus to attack an
 Finally, enemies that come within melee range of the blade (about 4') have a 50% chance to take 1d6 slashing damage from the whirling blades. This damage increases by 1d6 for each 5 levels.
 
 The blade cannot move while performing the display. That is, moving ends the performance.
+
+### Skald Kit
+
+SKALD: This nordic Bard is also a warrior of great strength, skill, and virtue; <PRO_HISHER> songs are inspiring sagas of battle and valor, and the Skald devotes <PRO_HISHER> life to those pursuits.
+
+Advantages:
+- Rolls d10 for hit points.
+- At 1st level, <PRO_HESHE> gains a +1 to melee attack rolls.  <PRO_HESHE> gains an additional +1 bonus to melee attack rolls every 4 levels (maximum +6 to attack at 20th level).
+- At 1st level, <PRO_HESHE> gains Inspiring Blow whenever <PRO_HESHE> uses <PRO_HISHER> Performance Ability.  That is, whenever <PRO_HESHE> lands a blow in melee combat, <PRO_HESHE> extends the effects of <PRO_HISHER> Performance for one additional round.  
+- May use <PRO_HISHER> Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can chant a battlesong to inspire <PRO_HISHER> allies.  At 6th level, <PRO_HESHE> can Incite Rage in <PRO_HISHER> allies.  Finally, at 12th level, <PRO_HESHE> can sing Song of the Fallen.  These songs become more powerful as <PRO_HESH> gains levels as described below.
+The Skald's songs last for as long as <PRO_HESHE> continues to perform, plus 1 round thereafter.  Each time <PRO_HESHE> lands a blow in melee combat, the effects of <PRO_HISHER> performance extend for one additional round (this ability can only extend a performance by 1 round in a given round.  That is, if <PRO_HESHE> hits an opponent more than one time in melee combat in a given round, <PRO_HESHE> can only extend the duration of <PRO_HISHER> performance by a single round.  
+- At 7th level, <PRO_HESHE> gains +1/2 attack per round.
+- At 14th level, <PRO_HESHE> this bonus increases to +1 attack per round. 
+
+Disadvantages:
+- The Skald casts -2 spells per spell level.  That is, <PRO_HESHE> begins casting spells at 3rd level.  
+- The Skald cannot perform Rally, Countersong or Fascinate.  
+- The Skald cannot make use of magical items as the true bard.
+
+
+BATTLESONG: ?  
+ 1st level: Grants allies a +2 bonus to hit and damage rolls, and a +2 bonus to AC.
+ 15th level: Grants allies a +4 bonus to hit and damage rolls, a +4 bonus to AC, and immunity to fear.
+ 20th level: Grants allies a +4 bonus to hit and damage rolls, a +4 bonus to AC, and immunity to fear, stun, and confusion. 
+INCITE RAGE: 
+SONG OF THE FALLEN:
