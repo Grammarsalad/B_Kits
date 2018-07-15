@@ -45,6 +45,8 @@ Generally speaking, all classes get something of a 'boost' at first level but fi
 
 - Bards *can* cast spells while wearing up to and including chainmail without penalty.
 
+- All races will be able to select the Bard class, though not all will be able to take every kit.  
+
 - Bard Songs will be more useful in that they will last a number of rounds after the bard has stopped singing.  However, the bard will not be able to use the song at will.  Rather, they will have a 'cool down' period, where they cannot use their song at all.  At first level, this period will last for 8 hours.  
 
 - Bards will be able to cast spells starting at first level.  The progression is the same as before, except the bard gains access to 1st and second level spells one level eariler, and overall they cast one more first or second level spell.  Revised spell progression:
@@ -72,18 +74,12 @@ Generally speaking, all classes get something of a 'boost' at first level but fi
 | 19th | 5 | 5 | 4 | 4 | 3 | 2 | - | - |
 | 20th | 5 | 5 | 4 | 4 | 4 | 3 | - | - |
 
-- Bards will have their own unique spell list.
+- Bards will have their own unique spell list in a manner of speaking.
 
 **Unique Bard Spells**
 
 **Soothing Melody**
 Eliminates and protects from many mental effects, and gives bonus hit points.
-
-**Tasha's Hideous Laughter**
-
-
-
-- All races will be able to select the Bard class, though not all will be able to take every kit.  
 
 ## Bard Kits and Base Class
 
@@ -118,7 +114,7 @@ While perfroming Fascinate, <PRO_HESHE> cannot move at all, and unlike a normal 
 BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome. This Bard's fighting style is flashy and entertaining but is also lethally dangerous.
 
 Advantages:
-- At 1st level, may use the Offensive Spin and Defensive Spin abilities once per day. Gains one use each every 4 levels thereafter.
+- At 1st level, may use the Offensive Spin and Defensive Spin abilities once per day. Gains one use at 3rd level, and every 4 levels thereafter.
 - Performs Weapon Display as <PRO_HISHER> bard song.
 - Gains Mastery (+++) in two-weapon fighting at first level.  
 - At 3rd level, the Blade can specialize (++) in any single bladed weapon. At 3rd level or anytime thereafter, <PRO_HESHE> can select any single bladed weapon with which <PRO_HESHE> is proficient and become specialization with that weapon.  At 9th level, or anytime thereafter, <PRO_HESHE> can specialize (++) in a second bladed weapon <PRO_HESHE> is proficient with.
@@ -134,7 +130,7 @@ DEFENSIVE SPIN: Defensive spin is a specialized form of parrying that lasts for 
 
 OFFENSIVE SPIN: Offensive spin is a much more aggressive display of prowess that lasts for 4 round, + 1 round per 4 levels <PRO_HESHE> possesses.  During this time, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to melee attack and damage rolls as well as an extra attack per round. Finally,<PRO_HESHE> deals an additional +1 to damage with all melee attacks for every 5 levels. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells. <PRO_HESHE> suffers a -2 penalty to AC while using offensive spin.
 
-WEAPON DISPLAY: When performing a weapon display, the Blade performs an impressive and intimidating display with <PRO_HISHER> weapon.  All intelligent enemies within 30' of the Blade must make a save vs. wands +4 or be overcome by fear for the duration of the display.  Enemies make their save at -1 per 3 levels of the Blade.
+WEAPON DISPLAY: When performing a weapon display, the Blade performs an impressive and intimidating display with <PRO_HISHER> weapon.  All intelligent enemies within 30' of the Blade must make a save vs. wands or be overcome by fear for the duration of the display.  Enemies make their save at -1 per 6 levels of the Blade.
 Additionally, the display inspires allies, granting them a +1 bonus to attack and damage rolls.  This bonus increases by +1 per 5 levels.
 
 Finally, enemies that come within melee range of the blade (about 4') have a 50% chance to take 1d6 slashing damage from the whirling blades. This damage increases by 1d6 for each 5 levels.
