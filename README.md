@@ -172,6 +172,8 @@ SONG OF THE FALLEN:
 
 ## New Bard Kits
 
-## Chorister Kit
+### Chorister Kit
 
 ### Dirge Kit
+
+### Loremaster Kit
