@@ -165,3 +165,9 @@ BATTLESONG: ?
 INCITE RAGE: 
 
 SONG OF THE FALLEN:
+
+### Jester Kit
+
+## New Bard Kits
+
+### Dirge Kit
