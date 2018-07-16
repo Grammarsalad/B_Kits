@@ -114,7 +114,7 @@ While perfroming Fascinate, <PRO_HESHE> cannot move at all, and unlike a normal 
 BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome. This Bard's fighting style is flashy and entertaining but is also lethally dangerous.
 
 Advantages:
-- At 1st level, may use the Offensive Spin and Defensive Spin stances. A character can only enter a single stance at a time, but they are not limited in terms of the number of times per day that they can enter a stance. The blade exits either offensive spin or defensive spin if <PRO_HESHE> is struck in combat.  
+- At 1st level, may use the Offensive Spin and Defensive Spin stances. A character can only enter a single stance at a time, but they are not limited in terms of the number of times per day that they can enter a stance. The blade exits either offensive spin or defensive spin if <PRO_HESHE> is struck in combat and <PRO_HESHE> cannot enter another stance for an additional 3 rounds after being struck.
 - Performs Weapon Display as <PRO_HISHER> bard song.
 - Gains Mastery (+++) in two-weapon fighting at first level.  
 - At 3rd level, the Blade can specialize (++) in any single weapon. At 3rd level or anytime thereafter, <PRO_HESHE> can select any single weapon with which <PRO_HESHE> is proficient and become specialization with that weapon.  At 9th level, or anytime thereafter, <PRO_HESHE> can specialize (++) in a second weapon <PRO_HESHE> is proficient with.
