@@ -138,6 +138,8 @@ Finally, enemies that come within melee range of the blade (about 4') have a 50%
 
 The blade cannot move while performing the display. That is, moving ends the performance.
 
+### Jester Kit
+
 ### Skald Kit
 
 SKALD: This nordic Bard is also a warrior of great strength, skill, and virtue; <PRO_HISHER> songs are inspiring sagas of battle and valor, and the Skald devotes <PRO_HISHER> life to those pursuits.
@@ -166,8 +168,10 @@ INCITE RAGE:
 
 SONG OF THE FALLEN:
 
-### Jester Kit
+
 
 ## New Bard Kits
+
+## Chorister Kit
 
 ### Dirge Kit
