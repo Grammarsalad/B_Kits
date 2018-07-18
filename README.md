@@ -143,22 +143,29 @@ The blade cannot move while performing the display. That is, moving ends the per
 JESTER: This Bard is well versed in the arts of ridicule and hilarity, and uses <PRO_HISHER> abilities to distract and confuse <PRO_HISHER> enemies, cavorting madly during combat. Do not mistake <PRO_HIMHER> for a true fool, however, as <PRO_HESHE> can also be quite deadly.
 
 Advantages:
-– When the Jester plays <PRO_HISHER> song, every opponent within 30 feet must save once per round to avoid falling under its effects:
-  1st level: Enemies must save vs. Spell with a +2 bonus or be confused.
-  15th level: Enemies must save vs. Spell with a +2 bonus or be confused, and must save vs. Spell or be slowed.
-  20th level: Enemies must save vs. Spell with a +2 bonus or be confused, must save vs. Spell at +2 or be knocked unconscious, and must save vs. Spell or be slowed.
+- Starting at 1st level, <PRO_HESHE> can use Taunt one time per day.  <PRO_HESHE> gains one additional use of Taunt every 4 levels.  
+- At 1st level, 
+- May use <PRO_HISHER> Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can use Bafoonery to cheer up <PRO_HISHER> allies.  At 6th level, <PRO_HESHE> can use cutting humor to Undermine Confidence in <PRO_HISHER> enemies.  These songs become more powerful as <PRO_HESH> gains levels as described below.
 
 Disadvantages:
 - The Jester cannot perform Rally, Countersong or Fascinate.
 
+BAFOONERY: 1st level, 
+(lev 1: immune to fear.  )
+
+UNERMINE CONFIDENCE:
+1st level: Enemies must save vs. Spell with a +2 bonus or be confused.
+  15th level: Enemies must save vs. Spell with a +2 bonus or be confused, and must save vs. Spell or be slowed.
+  20th level: Enemies must save vs. Spell with a +2 bonus or be confused, must save vs. Spell at +2 or be knocked unconscious, and must save vs. Spell or be slowed.
+  
 ### Skald Kit
 
 SKALD: This nordic Bard is also a warrior of great strength, skill, and virtue; <PRO_HISHER> songs are inspiring sagas of battle and valor, and the Skald devotes <PRO_HISHER> life to those pursuits.
 
 Advantages:
 - Rolls d10 for hit points.
-- At 1st level, <PRO_HESHE> gains a +1 to melee attack rolls.  <PRO_HESHE> gains an additional +1 bonus to melee attack rolls every 4 levels (maximum +6 to attack at 20th level).
-- At 1st level, <PRO_HESHE> gains Inspiring Blow whenever <PRO_HESHE> uses <PRO_HISHER> Performance Ability.  That is, whenever <PRO_HESHE> lands a blow in melee combat, <PRO_HESHE> extends the effects of <PRO_HISHER> Performance for one additional round.  
+- At 1st level, <PRO_HESHE> gains a +1 to melee attack rolls.  <PRO_HESHE> gains an additional +1 bonus to melee attack rolls every 4 levels (maximum +6 to attack at 20th level).  
+- At 1st level, <PRO_HESHE> gains Inspiring Blow whenever <PRO_HESHE> uses <PRO_HISHER> Performance Ability.  Whenever <PRO_HESHE> lands a blow in melee combat, <PRO_HESHE> extends the effects of <PRO_HISHER> Performance for one additional round.  
 - May use <PRO_HISHER> Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can chant a battlesong to inspire <PRO_HISHER> allies.  At 6th level, <PRO_HESHE> can Incite Rage in <PRO_HISHER> allies.  Finally, at 12th level, <PRO_HESHE> can sing Song of the Fallen.  These songs become more powerful as <PRO_HESH> gains levels as described below.
 The Skald's songs last for as long as <PRO_HESHE> continues to perform, plus 1 round thereafter.  Each time <PRO_HESHE> lands a blow in melee combat, the effects of <PRO_HISHER> performance extend for one additional round (this ability can only extend a performance by 1 round in a given round.  That is, if <PRO_HESHE> hits an opponent more than one time in melee combat in a given round, <PRO_HESHE> can only extend the duration of <PRO_HISHER> performance by a single round.  
 - At 7th level, <PRO_HESHE> gains +1/2 attack per round.
