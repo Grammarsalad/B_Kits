@@ -134,11 +134,11 @@ COPY ~%mod_folder%/kits/bard/%version%/#BARD-1.spl~ ~override~
 
 //1st level rally
 //Projectile for all
-ADD_PROJECTILE ~%mod_folder%/kits/bard/OHVRPO.pro~   //projectile same for all versions-Allies only
+ADD_PROJECTILE ~%mod_folder%/kits/bard/B_SONG1.pro~   //Pro visual range, allies and enemies
 
 COPY	~%mod_folder%/kits/bard/%version%/SPCL120.spl~ ~override~  //new rally
             SAY NAME1  @500004 //rally bonuses
-            LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRPO% END
+            LPF ALTER_SPELL_HEADER INT_VAR projectile = %B_SONG1% END
 
 COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song disable
             LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500005) END  //Notification: song disabled for 2 hrs
@@ -155,7 +155,8 @@ COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song dis
 
 //rally song that is applied by clab ab and innate
  COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY2.spl~
-  LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY2~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY2~ END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 318 STR_VAR resource = ~B_RALY2~ END           //enemies immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 13 STR_VAR resource = ~B_RALY2~END           //deaf immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 278 duration = 12 END           //to hit
   LPF ALTER_EFFECT INT_VAR match_opcode = 73 duration = 12 END           //dam
@@ -174,6 +175,7 @@ COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song dis
 //rally song that is applied by clab ab and innate
  COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY3.spl~
   LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY3~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 318 STR_VAR resource = ~B_RALY3~ END           //enemies immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 13 STR_VAR resource = ~B_RALY3~END           //deaf immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 278 duration = 12 END           //to hit
   LPF ALTER_EFFECT INT_VAR match_opcode = 73 duration = 12 END           //dam
@@ -206,6 +208,7 @@ COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song dis
 //rally song that is applied by clab ab and innate
  COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY4.spl~
   LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY4~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 318 STR_VAR resource = ~B_RALY4~ END           //enemies immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 19 STR_VAR resource = ~B_RALY4~ END           //deaf immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 278 parameter1 = 2 duration = 18 END           //to hit
   LPF ALTER_EFFECT INT_VAR match_opcode = 73 parameter1 = 2 duration = 18 END           //dam
@@ -235,6 +238,7 @@ COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song dis
 
  COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY5.spl~
   LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY5~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 318 STR_VAR resource = ~B_RALY5~ END           //enemies immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 19 STR_VAR resource = ~B_RALY5~ END           //deaf immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 278 duration = 18 END           //to hit
   LPF ALTER_EFFECT INT_VAR match_opcode = 73 duration = 18 END           //dam
@@ -273,6 +277,7 @@ COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song dis
 //rally song that is applied by clab ab and innate
  COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY6.spl~
   LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY6~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 318 STR_VAR resource = ~B_RALY6~ END           //enemies immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 25 STR_VAR resource = ~B_RALY6~END           //deaf immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 278 duration = 24 END           //to hit
   LPF ALTER_EFFECT INT_VAR match_opcode = 73 duration = 24 END           //dam
@@ -311,6 +316,7 @@ COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song dis
 //rally song that is applied by clab ab and innate
  COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY7.spl~
   LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY7~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 318 STR_VAR resource = ~B_RALY7~ END           //enemies immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 25 STR_VAR resource = ~B_RALY7~END           //deaf immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 278 parameter1 = 2 duration = 24 END           //to hit
   LPF ALTER_EFFECT INT_VAR match_opcode = 73 parameter1 = 2 duration = 24 END           //dam
@@ -349,6 +355,7 @@ COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song dis
 //rally song that is applied by clab ab and innate
  COPY_EXISTING ~SPCL120.spl~ ~override/B_RALY8.spl~
   LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY8~END           //remove earlier
+  LPF ALTER_EFFECT INT_VAR match_opcode = 318 STR_VAR resource = ~B_RALY8~ END           //enemies immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 31 STR_VAR resource = ~B_RALY8~END           //deaf immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 278 parameter1 = 2 duration = 30 END           //to hit
   LPF ALTER_EFFECT INT_VAR match_opcode = 73 parameter1 = 2 duration = 30 END           //dam
@@ -380,9 +387,82 @@ COPY	~%mod_folder%/kits/bard/%version%/B_SHH1.spl~ ~override~  //2 hour song dis
   LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 277 parameter1 = 20 parameter2 = 0 END           //luck straps
 
 
-
-//CONTINUE
 //Countersong
+//Innate that applies Countersong (all of them)
+ COPY	~%mod_folder%/kits/bard/%version%/#BARD4.spl~ ~override~
+        SAY NAME1 @500008
+        SAY NAME2 @500008
+        SAY UNIDENTIFIED_DESC @500009
+	SAY DESC @500009
+
+//1st level counterspell
+//Projectile
+COPY	~%mod_folder%/kits/bard/%version%/SPCL117.spl~ ~override~  //countersong
+            SAY NAME1  @500008 //Countersong
+            SAY UNIDENTIFIED_DESC @500009
+	    SAY DESC @500009
+            LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 321 parameter1 = 0 parameter2 = 0 END  //remove all spls that they protecting against
+            LPF ALTER_SPELL_HEADER INT_VAR projectile = %B_SONG1% END   //affects ALL persons, friend and enemy alike (so augment spells can work)
+            //206 uses string 4742, which translates "Spell Ineffective" in IWDEE.  Check if same in other games
+
+//level 5 (+1 round)
+COPY_EXISTING ~SPCL117.spl~ ~override/B_CRSP2.spl~
+            LPF ALTER_EFFECT INT_VAR match_opcode = 318 duration = 14 STR_VAR resource = ~B_CRSP2~ END  //prot
+            LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_CRSP2~ END  //prot
+            LPF ALTER_EFFECT INT_VAR match_opcode = 325 duration = 14 END  //save vs all
+            LPF ALTER_EFFECT INT_VAR match_opcode = 37 duration = 14 END  //save vs spell
+            LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 14 STR_VAR resource = ~B_CRSP2~ END  //prot
+            LPF ALTER_EFFECT INT_VAR match_opcode = 142 duration = 14 END  //
+            LPF ALTER_EFFECT INT_VAR match_opcode = 101 duration = 14 END  //
+            LPF ALTER_EFFECT INT_VAR match_opcode = 206 duration = 14 END  //
+//level 9 (vs paralysis, hold, etc.)
+COPY_EXISTING ~SPCL117.spl~ ~override/B_CRSP3.spl~
+            LPF ALTER_EFFECT INT_VAR match_opcode = 318 duration = 14 STR_VAR resource = ~B_CRSP3~ END  //prot
+            LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_CRSP3~ END  //prot
+            LPF ALTER_EFFECT INT_VAR match_opcode = 325 duration = 14 END  //save vs all
+            LPF ALTER_EFFECT INT_VAR match_opcode = 37 duration = 14 END  //save vs spell
+            LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 14 STR_VAR resource = ~B_CRSP3~ END  //prot
+            LPF ALTER_EFFECT INT_VAR match_opcode = 142 duration = 14 END  //
+            LPF ALTER_EFFECT INT_VAR match_opcode = 101 duration = 14 END  //
+            LPF ALTER_EFFECT INT_VAR match_opcode = 206 duration = 14 END  //
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 46 timing = 1 parameter1 = 0 parameter2 = 0 END  // cure stun
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 162 timing = 1 parameter1 = 0 parameter2 = 0 END  // cure hold
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 163 timing = 1 parameter1 = 0 parameter2 = 0 END  //restore movement
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 240 timing = 1 parameter1 = 13 parameter2 = 0 END  // remove icon
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 240 timing = 1 parameter1 = 55 parameter2 = 0 END  // remove icon
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 240 timing = 1 parameter1 = 129 parameter2 = 0 END  // remove icon
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 240 timing = 1 parameter1 = 144 parameter2 = 0 END  // remove icon
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 240 timing = 1 parameter1 = 145 parameter2 = 0 END  // remove icon
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter1 = 0 parameter2 = 45 END  // prot vs opcode
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter1 = 0 parameter2 = 109 END  // prot vs opcode
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter1 = 0 parameter2 = 175 END  // prot vs opcode
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter1 = 0 parameter2 = 185 END  // prot vs opcode
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter1 = 0 parameter2 = 210 END  // prot vs opcode
+
+//level 10 (+1 round)
+COPY_EXISTING ~SPCL117.spl~ ~override/B_CRSP4.spl~
+            LPF ALTER_EFFECT INT_VAR match_opcode = 318 duration = 21 STR_VAR resource = ~B_CRSP4~ END  //prot
+            LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_CRSP4~ END  //prot
+            LPF ALTER_EFFECT INT_VAR match_opcode = 325 duration = 21 END  //save vs all
+            LPF ALTER_EFFECT INT_VAR match_opcode = 37 duration = 21 END  //save vs spell
+            LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 21 STR_VAR resource = ~B_CRSP4~ END  //prot
+            LPF ALTER_EFFECT INT_VAR match_opcode = 142 duration = 21 END  //
+            LPF ALTER_EFFECT INT_VAR match_opcode = 101 duration = 21 END  //
+            LPF ALTER_EFFECT INT_VAR match_opcode = 206 duration = 21 END  //
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 46 timing = 1 parameter1 = 0 parameter2 = 0 END  // cure stun
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 162 timing = 1 parameter1 = 0 parameter2 = 0 END  // cure hold
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 163 timing = 1 parameter1 = 0 parameter2 = 0 END  //restore movement
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 240 timing = 1 parameter1 = 13 parameter2 = 0 END  // remove icon
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 240 timing = 1 parameter1 = 55 parameter2 = 0 END  // remove icon
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 240 timing = 1 parameter1 = 129 parameter2 = 0 END  // remove icon
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 240 timing = 1 parameter1 = 144 parameter2 = 0 END  // remove icon
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 240 timing = 1 parameter1 = 145 parameter2 = 0 END  // remove icon
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter1 = 0 parameter2 = 45 END  // prot vs opcode
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter1 = 0 parameter2 = 109 END  // prot vs opcode
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter1 = 0 parameter2 = 175 END  // prot vs opcode
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter1 = 0 parameter2 = 185 END  // prot vs opcode
+            LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter1 = 0 parameter2 = 210 END  // prot vs opcode
+//CONTINUE
 
 //Fascinate
 

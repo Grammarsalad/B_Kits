@@ -14,6 +14,28 @@ TO DO 04: Expand Bard Usability to match their 'use magic items' ability.  Allow
 
 TO DO 05: Revise counterspell in light of changes to Rally
 
+TO DO 06: SKALD'S SONGS (make virtually permenant, but remove them on a delayed cast spell--doable?  If land a blow, give 6 second immunity to remove spell, but cast it on a 7 second delay. 
+
+Version 0.01.04
+
+2018-10-08
+
+- Added gitignore
+
+2018-07-26
+
+-Upgraded Weidu to v246
+
+2018-07-17
+
+- 1st level countersong ability
+
+- Modified countersong, and changed #BARD4 accordingly
+
+2018-07-16
+
+- Started Countersong
+
 Version 0.01.03
 
 2018-07-14
