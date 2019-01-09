@@ -52,18 +52,12 @@ COPY_EXISTING ~ALIGNMNT.2da~ ~override~
    SET_2DA_ENTRY 40 7 10 ~1~
    SET_2DA_ENTRY 40 9 10 ~1~
 BUT_ONLY
-
-//TO DO
-/*
-//CLab
-COPY ~%mod_folder%/kits/bard/%version%/B_ARD.2da~ ~override/CLABBA02.2da~
-
-
 //Have to address 3rd party bards...
 //Doing what? Alignment, clabs?, 
+//TO DO
 
-
-
+//CLab
+COPY ~%mod_folder%/kits/bard/%bard_version%/B_ARD.2da~ ~override/CLABBA01.2da~
 //BARD ABILITY FILES_______________________________________________________________
 //rally
 //Innate that applies rally (all of them)
@@ -72,6 +66,12 @@ COPY ~%mod_folder%/kits/bard/%version%/B_ARD.2da~ ~override/CLABBA02.2da~
         SAY NAME2 @500006
         SAY UNIDENTIFIED_DESC @500007
 	SAY DESC @500007
+/*
+
+
+
+
+
 
 // 1st level rally   spl that applies first level rally
 
