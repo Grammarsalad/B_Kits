@@ -1,0 +1,12 @@
+//Bard.tra
+
+//Tra Ref @500000 To @501000
+//Bard  @500000 to @500099
+//Bard (conservative) @500100 to @500300
+
+@500010 = ~[MAINGUI BUTTON]Performance~
+@500011 = ~Performance~
+@500012 = ~Performing~
+@500013 = ~Stopped Performing~
+@500014 = ~buttonArray:OnRButtonPressed(5)~
+@500015 = ~buttonArray:OnRButtonPressed(5)~

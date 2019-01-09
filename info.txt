@@ -1,0 +1,13 @@
+1-17: CLASS.IDS - 1
+18: Monk
+19: Shaman
+20: Weapon Ability List ( Rclicking a weapon with multiple abilities or ammo(bow/xbow/sling))
+21: Spell List ( Lclicking 'Cast Spell' or Rclicking 'Quick Spell')
+22: Item Ability List ( Lclicking 'Use Item' or Rclicking 'Quick Item' with multiple abilities)
+23: Special Ability List (Normal and with Thieving button)
+26: Group Selected (regardless of formation buttons)
+28: Opcode 214 Spell List (regardless of list type/parameter2)
+29: All other CLASS.IDS values except WIZARD_EYE.
+30: Spell List with 'Jump to Priest/Wizard Spells' button (Cleric/Mage)
+
+Stealth should be an alt click (failed stealth role disables button)

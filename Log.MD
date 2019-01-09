@@ -16,6 +16,19 @@ TO DO 05: Revise counterspell in light of changes to Rally
 
 TO DO 06: SKALD'S SONGS (make virtually permenant, but remove them on a delayed cast spell--doable?  If land a blow, give 6 second immunity to remove spell, but cast it on a 7 second delay. 
 
+2019-01-08
+
+- More code for Bards iff EEEx is installed
+
+2019-01-07
+
+- Setup basic skeleton for tp2
+
+- Started all_bard.tpa (in lib folder)
+  --to change 'bard song' to 'performance' notification
+  --if EEEx installed, add button functionality, and skill progression for pick lock (yes, even for conservative)
+
+
 Version 0.01.04
 
 2018-10-08

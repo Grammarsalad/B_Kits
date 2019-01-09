@@ -1,4 +1,6 @@
 //Tra Ref @500000 To @501000
+
+
 //Bard  @500000 to @500099
 //Bard (rad)
 @500000 = ~bard~
@@ -40,6 +42,17 @@ In order to perform rally, the bard must remain in place.  If <PRO_HESHE> moves,
 @500008 = ~Countersong~
 @500009 = ~When the bard uses this ability, all of <PRO_HISHER> allies within 30', including <PRO_HIMHER>self are protected from magic, and gain a +3 bonus to save against spells, and a +1 to all other saves.  In addition, all allies are permitted to make a save vs. spell (with the bonus) each round, and if they succeed, they shrug off and are protected from the effects of spells such as Silence, Shout, Great Shout, Command, Greater Command, or any other sound-based attack.  At 9th level, allies can also shrug off paralysis, hold, stun, charm, or emotion-based effects, such as fear or berserk, if they make their saves.  At 11th level, enemy casters find countersong distracting, and suffer a 30% chance of spell failure while within 30' of the bard.  This chance increases to 50% at 16th level.  Finally, at 18th level, all allies gain a +4 to their saves vs. spell, and +2 to their other saves.
 While performing a countersong, <PRO_HESHE> can only move at half speed.~
+
+@500010 = ~[MAINGUI BUTTON]Performance~
+@500011 = ~Performance~
+@500012 = ~Performing~
+@500013 = ~Stopped Performing~
+@500014 = ~buttonArray:OnRButtonPressed(5)~
+@500015 = ~if(outerConfig == 4) then
+               setActionbarButton(0x5, ACTIONBAR_TYPE.STEALTH);buttonArray:OnLButtonPressed(5)
+           end~
+@500016 = ~and kit == 0x400D then~
+@500017 = ~then~
 
 //Blade @500100 to @500199
 //Blade (rad)

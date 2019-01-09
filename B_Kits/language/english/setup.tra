@@ -1,3 +1,4 @@
+//@0 to @1000
 //Tra Ref @0 to @1000
 @10  = ~Install All Revised and New Kits and Classes (Radical Version)~
 @11  = ~Install All Revised and New Kits and Classes (Conservative Version)~
@@ -8,6 +9,15 @@
 
 @21  = ~EE games only!~
 
+
+@117= ~Cleric Revisions~
+@118= ~Class Revisions~
+@119= ~Bard Revisions~
+@120= ~Bard Revisions: Conservative~
+@121= ~Bard Revisions: Radical~
+@122= ~Cleric Revisions: Conservative~
+
+
 //
 @100  = ~Select an installation package~
 @101  = ~ALL the new kits, the kit selection dialogue, and the sphere system ('radical version')~
@@ -16,10 +26,10 @@
 @105  = ~no new kits - JUST install the sphere system~
 @110  = ~Change item usability for priests~
 
+/*
 
 @51203 = ~Racked with Agony~
 
-/*
 //
 @200  = ~new and revised cleric kits~
 //

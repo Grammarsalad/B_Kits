@@ -49,6 +49,73 @@ LANGUAGE ~English~ ~english~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
+//			101: Bard: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @120  //  Bard Revisions: Conservative
+SUBCOMPONENT @119 //Bard class revisions
+DESIGNATED 101
+GROUP @119 //Bard Revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+        OUTER_SPRINT ~bard_version~ ~conservative~    //Folder Var
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_bard.tpa~
+
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised.tpa~
+
+//Note, check UI.MENU REPLACE_TEXTUALLY--Will need to be revised, so putting it out here
+//Give them all search/stealth if EEEx is installed
+ACTION_IF FILE_EXISTS_IN_GAME ~EEex_Brd.lua~ BEGIN  //if EEEx is installed
+ COPY ~%mod_folder%/lib/M_B_BRD.lua~ ~override~
+ COPY_EXISTING ~UI.MENU~ ~override~
+  SPRINT old @500014//
+  SPRINT new @500015//
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~        //replacing old with new (stealth as a alt to search in slot 5)
+END//End EEEx installed
+
+//conservative bards
+INCLUDE ~%mod_folder%/data/components/Setup_Bard_Conservative.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			102: Bard: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @121  // Bard Revisions: Radical
+SUBCOMPONENT @119 //Bard class revisions
+DESIGNATED 102
+GROUP @119 //Bard Revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+//all bards
+INCLUDE ~%mod_folder%/lib/all_bards.tpa~
+//Radical bards
+INCLUDE ~%mod_folder%/data/components/Setup_Bard_Radical.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			201: Cleric: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @122  //Cleric Revisions: Conservative
+SUBCOMPONENT @117 //Cleric class revisions
+DESIGNATED 201
+GROUP @117    //Cleric revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_Cleric_Conservative.tpa~
+
+/*
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
 //			001: INSTALL ALL REVISED AND NEW KITS (RADICAL VERSION)		
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -145,6 +212,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_new_kits.tpa~
 //Now, Immunities.  DO AT THE VERY END OF ALL SPELL INSTALLS
 INCLUDE ~%mod_folder%/lib/immunities.tpa~
 
+*/
 /*
 //__________________________________________________________________________________
 //__________________________________________________________________________________
