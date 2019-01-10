@@ -124,7 +124,7 @@ The Skald's songs last for as long as <PRO_HESHE> continues to perform, plus 1 r
 Disadvantages:
 - The Skald casts -2 spells per spell level.  That is, <PRO_HESHE> begins casting spells at 3rd level.  
 - The Skald cannot perform Rally, Countersong or Fascinate.  
-- The Skald cannot make use of magical items as the true bard.
+- The Skald does not make use of any thief skills.  
 
 
 BATTLESONG: ?  
