@@ -46,36 +46,34 @@ Class Features:
 - Can achieve proficiency (+) in any weapon proficiency.
 - Can achieve specialization (++) in any fighting style, except two-weapon fighting, where <PRO_HESHE> can achieve mastery (+++).
 - Thieving abilities: Pick Pockets and Pick Locks (if EEEx is installed). 
-- May use <PRO_HISHER>  Performance ability to play any perform ability from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies.  At 4th level, <PRO_HESHE> can play a countersong.  At 8th level, <PRO_HESHE> can fascinate <PRO_HISHER> enemies.  These songs become more powerful as <PRO_HESH> gains levels as described below.  
-All effects generally last for as long as the bard plays the tune, + 1 round per 5 levels after finishing.  After performing, a bard song, the <PRO_HESHE> loses the ability to perform again for 2 hours.  This time is reduced to 1 hour at level 10 and is reduced to 3 turns at 15th level. Finally, at 20th level, the cooldown period is reduced to 1 turn.
+- May use <PRO_HISHER>  Performance ability to play any perform ability from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies.  At 4th level, <PRO_HESHE> can play a countersong.  These songs become more powerful as <PRO_HESH> gains levels as described below.  
+All effects generally last for as long as the bard performs, + 1 round per 5 levels after finishing.  
+
+Performances are taxing, incresing the fatigue level of the bard by 1 for every round <PRO_HESHE> plays.  <PRO_HESHE> recovers this fatigue after 1 hour.  <PRO_HESHE> cannot perform if <PRO_HESHE> becomes exhausted.
 
 RALLY: When the bard uses rally, <PRO_HESHE> grants all of <PRO_HISHER> allies, including <PRO_HIMHER>self, a +1 bonus to attack rolls, damage rolls, and saving throws. At 6th level, all allies are also protected from fear.  They gain immunity to fear effects for as long as the song lasts, and any fear effects currently on them are removed.  At 12th level, all allies also gain +1 to luck, which grants an additional +1 to all saves, and a +10% bonus to all of their thieving skills.  In addition, the bonuses to attacks, damage and saves increase to +2 (for a total of +3 to saves).  Finally, at 17th level, the the bonuses to luck increases to +2, with it the additional save bonus increases to +2, and the skill bonuses increas to +20%, and the bonuses to hit, damage and saves increase to +3 (+5 to saves).  
-In order to perform rally, the bard must remain in place.  If <PRO_HESHE> moves, rally ends (though, the effects continue based on <PRO_HISHER> level; that is, 1 round per 5 levels.)
+In order to perform rally, the bard must remain in place.  If <PRO_HESHE> moves, rally ends (though, the effects continue based on <PRO_HISHER> level.)
 
-COUNTERSONG: When the bard uses this ability, all of <PRO_HISHER> allies within 30', including <PRO_HIMHER>self are protected from magic, and gain a +3 bonus to save against spells, and a +1 to all other saves.  In addition, all allies are permitted to make a save vs. spell (with the bonus), and if they succeed, they shrug off the effects of spells such as Silence, Shout, Great Shout, Command, Greater Command, or any other sound-based attack.  At 9th level, allies can also shrug off paralysis, hold, stun, charm, or emotion-based effects, such as fear or berserk, if they make their saves.  At 11th level, enemy casters find countersong distracting, and suffer a 30% chance of spell failure while within 30' of the bard.  This chance increases to 50% at 16th level.  Finally, at 18th level, all allies gain a +4 to their saves vs. spell, and +2 to their other saves.
-
-While performing a countersong, <PRO_HESHE> can only move at half speed.
-
-FASCINATE: When the bard uses this ability, all enemies within 30 ft. must save vs. Spell or become enthralled, unable to take action until 1 round passes or they take damage. Enemies suffer a -1 penalty to this save for every 3 levels the bard possesses beyond 8th level (maximum -4 at 20th level).  The duration of this ability is extended by 1 round for every 4 levels the bard possesses beyond 8th level (maximum 4 rounds at 20th level).
-
-While perfroming Fascinate, <PRO_HESHE> cannot move at all, and unlike a normal performance, the effect ends as soon as the bard moves, regardless of <PRO_HISHER> level.
+COUNTERSONG: When the bard uses this ability, all of <PRO_HISHER> allies within 30', including <PRO_HIMHER>self are protected from magic, and gain a +3 bonus to save against spells, and a +1 to all other saves.  In addition, all allies are permitted to make a save vs. spell (with the bonus), and if they succeed, they shrug off the effects of spells such as Silence, Shout, Great Shout, Command, Greater Command, or any other sound-based attack.  At 9th level, allies can also shrug off paralysis, hold, stun, charm, or emotion-based effects, such as fear or berserk, if they make their saves.  At 11th level, enemy casters find countersong distracting, and suffer a 15% chance of spell failure while within 30' of the bard.  This chance increases to 30% at 16th level.  Finally, at 18th level, all allies gain a +5 to their saves vs. spell, and +2 to their other saves.
+The bard's movement is reduced by half while performing countersong.~
 
 ### Blade Kit
 
-BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome than <PRO_HESHE> is. This Bard's fighting style is flashy and entertaining but can also be dangerous.
+BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome. This Bard's fighting style is flashy and entertaining but is also lethally dangerous.
 
 Advantages:
-- At 1st level, <PRO_HESHE> may use the Offensive Spin and Defensive Spin stances. A character can only enter a single stance at a time, but they are not limited in terms of the number of times per day that they can enter a stance. The Blade's stances are disrupted when <PRO_HESHE> is struck in combat.  <PRO_HESHE> exits either offensive spin or defensive spin if <PRO_HESHE> is struck in combat and <PRO_HESHE> cannot enter another stance for an additional 3 rounds after being struck.
+- At 1st level, may use the Offensive Spin and Defensive Spin stances. A character can only enter a single stance at a time, but they are not limited in terms of the number of times per day that they can enter a stance. The blade exits either offensive spin or defensive spin if <PRO_HESHE> is struck in combat and <PRO_HESHE> cannot enter another stance for an additional 3 rounds after being struck.
 - Performs Weapon Display as <PRO_HISHER> bard song.
 - Gains Mastery (+++) in two-weapon fighting at first level.  
-- At 3rd level, the Blade can specialize (++) in any single weapon. At 3rd level or anytime thereafter, <PRO_HESHE> can select any single weapon with which <PRO_HESHE> is proficient and gain specialization with that weapon.  At 9th level, or anytime thereafter, <PRO_HESHE> can specialize (++) in a second weapon <PRO_HESHE> is proficient with.
+- At 3rd level, the Blade can specialize (++) in any single weapon. At 3rd level or anytime thereafter, <PRO_HESHE> can select any single weapon with which <PRO_HESHE> is proficient and become specialization with that weapon.  At 9th level, or anytime thereafter, <PRO_HESHE> can specialize (++) in a second weapon <PRO_HESHE> is proficient with.
 
 Disadvantages:
 
 - Only gains 5 lore per level.
-- The Blade cannot perform Rally, Countersong or Fascinate.
+- The Blade cannot perform Rally or Countersong.
 - Receives -1 spell per spell level, and so cannot begin casting spells until 3rd level.
   
+
 DEFENSIVE SPIN: Defensive spin is a specialized form of parrying that is quite impressive to watch.  While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  Further, any opponent that gets in melee range (4') with the blade has a 50% chance to suffer 1d6 points of slashing damage from the whirling blades.  This damage increases by 1d6 every 5 levels.  The Blade cannot attack nor cast spells while using Defensive Spin. If the Blade is struck in combat, <PRO_HESHE> exits Defensive Spin. 
 
 OFFENSIVE SPIN: Offensive spin is a much more aggressive display of prowess compared to defensive spin, though it is a bit more reckless.  While in this stance, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to melee attack and damage rolls as well as an extra attack per round. Finally,<PRO_HESHE> deals an additional +1 to damage with all melee attacks for every 5 levels. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells. The blade suffers a -2 penalty to AC while using offensive spin.  If the Blade is struck in combat, <PRO_HESHE> exits Offensive Spin. 
@@ -85,7 +83,7 @@ Additionally, the display inspires allies, granting them a +1 bonus to attack an
 
 Finally, enemies that come within melee range of the blade (about 4') have a 50% chance to take 1d6 slashing damage from the whirling blades. This damage increases by 1d6 for each 5 levels.
 
-The blade cannot move while performing the display. That is, moving ends the performance.
+The blade cannot move while performing the display. That is, moving ends the performance (though the effects linger, as normal.)
 
 ### Jester Kit
 
@@ -93,27 +91,28 @@ JESTER: This Bard is well versed in the arts of ridicule and hilarity, and uses 
 
 Advantages:
 - Starting at 1st level, <PRO_HESHE> can use Taunt one time per day.  <PRO_HESHE> gains one additional use of Taunt every 4 levels.  
-- At 1st level, 
-- May use <PRO_HISHER> Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can use Bafoonery to cheer up <PRO_HISHER> allies.  At 6th level, <PRO_HESHE> can use cutting humor to Undermine Confidence in <PRO_HISHER> enemies.  These songs become more powerful as <PRO_HESH> gains levels as described below.
+- At 1st level, <PRO_HISHER> may use <PRO_HISHER> Performance ability to both cheer up <PRO_HISHER> allies and distract and enrage <PRO_HISHER> foes with Bafoonery/Taunting.  This performance becomes more powerful as <PRO_HESH> gains levels as described below.
+- Wily: The Jester gains a +2 bonus to AC and saves vs. enchantments.  Additionally, the jester is immune to confusion and chaos spells.
 
 Disadvantages:
 - The Jester cannot perform Rally, Countersong or Fascinate.
 - The Jester only gains d6 hit points per level.
 
-BAFOONERY: 1st level, 
-(lev 1: immune to fear,  )
+TAUNT: The jester can use taunt against any creature within 30' that can hear <PRO_HIMHER> and that has greater than animal intelligence.  If the creature fails a save vs. wands, they become enraged and try to attack the jester in melee, albeit with a +2 bonus to attack and damage.  Enemies successfully targeted with this ability ignore all tactics and try to get to the jester to strike <PRO_HIMHER> in melee.  
 
-UNERMINE CONFIDENCE:
-1st level: Enemies must save vs. Spell with a +2 bonus or be confused.
-15th level: Enemies must save vs. Spell with a +2 bonus or be confused, and must save vs. Spell or be slowed.
-20th level: Enemies must save vs. Spell with a +2 bonus or be confused, must save vs. Spell at +2 or be knocked unconscious, and must save vs. Spell or be slowed.
-  
+This effect lasts for 1 round, +1 round per 3 levels of the jester.  Further, the target suffers a penalty to their save for every three levels of the jester.
+
+BAFOONERY/JESTING: The jester is a master at using humor and bafoonery to lighten the mood, buffering <PRO_HISHER> allies against harmful magics and effects, often at the expense of <PRO_HISHER> enemies.
+While using this performance, the Jester takes advantage of distracted enemies effectively gaining a +2 bonus to AC.  This bonus increases by +1 per 5 levels the jester has attained.
+At 1st level, allies gain a +1 bonus to saves, while enemies must save each round vs. wands with a +2 bonus or become enraged (as taunt above) for 1 round.  Every 5 levels the jester has attained, the save bonus increases by +1 and enemies suffer a -1 penalty to this save.  
+At 10th level, allies are immune to fear and charm effects while the jester is performing, and <PRO_HISHER> enemies must make a save vs. paralysis each round (in addition to the save vs. enrage) or become confused for 1 round.  Enemies gain a -1 penalty to this save at levels 15 and every 5 levels thereafter.
+
 ### Skald Kit
 
 SKALD: This nordic Bard is also a warrior of great strength, skill, and virtue; <PRO_HISHER> songs are inspiring sagas of battle and valor, and the Skald devotes <PRO_HISHER> life to those pursuits.
 
 Advantages:
-- Rolls d10 for hit points.  
+- Rolls d10 for hit points.
 - At 1st level, <PRO_HESHE> gains a +1 to melee attack rolls.  <PRO_HESHE> gains an additional +1 bonus to melee attack rolls every 4 levels (maximum +6 to attack at 20th level).  
 - At 1st level, <PRO_HESHE> gains Inspiring Blow whenever <PRO_HESHE> uses <PRO_HISHER> Performance Ability.  Whenever <PRO_HESHE> lands a blow in melee combat, <PRO_HESHE> extends the effects of <PRO_HISHER> Performance for one additional round.  
 - May use <PRO_HISHER> Performance ability to play any song from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can chant a battlesong to inspire <PRO_HISHER> allies.  At 6th level, <PRO_HESHE> can Incite Rage in <PRO_HISHER> allies.  Finally, at 12th level, <PRO_HESHE> can sing Song of the Fallen.  These songs become more powerful as <PRO_HESH> gains levels as described below.
