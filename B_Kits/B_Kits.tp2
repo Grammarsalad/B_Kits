@@ -64,21 +64,6 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_bard.tpa~
 
 
-INCLUDE ~%mod_folder%/data/components/Setup_revised.tpa~
-
-//Note, check UI.MENU REPLACE_TEXTUALLY--Will need to be revised, so putting it out here
-//Give them all search/stealth if EEEx is installed
-ACTION_IF FILE_EXISTS_IN_GAME ~EEex_Brd.lua~ BEGIN  //if EEEx is installed
- COPY ~%mod_folder%/lib/M_B_BRD.lua~ ~override~
- COPY_EXISTING ~UI.MENU~ ~override~
-  SPRINT old @500014//
-  SPRINT new @500015//
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~        //replacing old with new (stealth as a alt to search in slot 5)
-END//End EEEx installed
-
-//conservative bards
-INCLUDE ~%mod_folder%/data/components/Setup_Bard_Conservative.tpa~
-
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -92,10 +77,11 @@ DESIGNATED 102
 GROUP @119 //Bard Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
-//all bards
-INCLUDE ~%mod_folder%/lib/all_bards.tpa~
-//Radical bards
-INCLUDE ~%mod_folder%/data/components/Setup_Bard_Radical.tpa~
+        OUTER_SPRINT ~bard_version~ ~radical~    //Folder Var
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_bard.tpa~
+
+//INCLUDE ~%mod_folder%/data/components/Setup_Bard_Radical.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
