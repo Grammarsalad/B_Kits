@@ -46,16 +46,19 @@ Class Features:
 - Can achieve proficiency (+) in any weapon proficiency.
 - Can achieve specialization (++) in any fighting style, except two-weapon fighting, where <PRO_HESHE> can achieve mastery (+++).
 - Thieving abilities: Pick Pockets and Pick Locks (if EEEx is installed). 
-- May use <PRO_HISHER>  Performance ability to play any perform ability from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies.  At 4th level, <PRO_HESHE> can play a countersong.  These songs become more powerful as <PRO_HESH> gains levels as described below.  
+- May use <PRO_HISHER>  Performance ability to play any perform ability from <PRO_HISHER> repertoire.  At 1st level, <PRO_HESHE> can rally <PRO_HISHER> allies.  At 4th level, <PRO_HESHE> can play a countersong.  At 8th level, <PRO_HESHE> can fascinate opponents.  These songs become more powerful as <PRO_HESH> gains levels as described below.
 All effects generally last for as long as the bard performs, + 1 round per 5 levels after finishing.  
 
 Performances are taxing, incresing the fatigue level of the bard by 1 for every round <PRO_HESHE> plays.  <PRO_HESHE> recovers this fatigue after 1 hour.  <PRO_HESHE> cannot perform if <PRO_HESHE> becomes exhausted.
 
 RALLY: When the bard uses rally, <PRO_HESHE> grants all of <PRO_HISHER> allies, including <PRO_HIMHER>self, a +1 bonus to attack rolls, damage rolls, and saving throws. At 6th level, all allies are also protected from fear.  They gain immunity to fear effects for as long as the song lasts, and any fear effects currently on them are removed.  At 12th level, all allies also gain +1 to luck, which grants an additional +1 to all saves, and a +10% bonus to all of their thieving skills.  In addition, the bonuses to attacks, damage and saves increase to +2 (for a total of +3 to saves).  Finally, at 17th level, the the bonuses to luck increases to +2, with it the additional save bonus increases to +2, and the skill bonuses increas to +20%, and the bonuses to hit, damage and saves increase to +3 (+5 to saves).  
-In order to perform rally, the bard must remain in place.  If <PRO_HESHE> moves, rally ends (though, the effects continue based on <PRO_HISHER> level.)
+In order to perform rally, the bard must remain in place.  If <PRO_HESHE> moves, rally ends (though, the effects continue based on <PRO_HISHER> level; that is, 1 round per 5 levels.)
 
 COUNTERSONG: When the bard uses this ability, all of <PRO_HISHER> allies within 30', including <PRO_HIMHER>self are protected from magic, and gain a +3 bonus to save against spells, and a +1 to all other saves.  In addition, all allies are permitted to make a save vs. spell (with the bonus), and if they succeed, they shrug off the effects of spells such as Silence, Shout, Great Shout, Command, Greater Command, or any other sound-based attack.  At 9th level, allies can also shrug off paralysis, hold, stun, charm, or emotion-based effects, such as fear or berserk, if they make their saves.  At 11th level, enemy casters find countersong distracting, and suffer a 15% chance of spell failure while within 30' of the bard.  This chance increases to 30% at 16th level.  Finally, at 18th level, all allies gain a +5 to their saves vs. spell, and +2 to their other saves.
-The bard's movement is reduced by half while performing countersong.~
+The bard's movement is reduced by half while performing countersong.
+
+FASCINATE: When the bard uses this ability, all enemies within 30 ft. must save vs. Spell (with a +2 bonus) or become enthralled, unable to take action until 1 round passes or they take damage. Enemies suffer a -1 penalty to this save for every 3 levels the bard possesses beyond 8th level (maximum -4 at 20th level).  
+The bard must remain still while performing fascinate. If <PRO_HESHE> moves, the effect ends.
 
 ### Blade Kit
 
