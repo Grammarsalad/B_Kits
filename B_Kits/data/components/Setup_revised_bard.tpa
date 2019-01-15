@@ -188,7 +188,7 @@ BUT_ONLY
 ///////////////////////////////////////////////////////////
 //Clab
 ///////////////////////////////////////////////////////////
-COPY ~%mod_folder%/kits/bard/%bard_version%/B_ARD.2da~ ~override/CLABBA01.2da~
+COPY ~%mod_folder%/class/bard/%bard_version%/B_ARD.2da~ ~override/CLABBA01.2da~
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -250,7 +250,18 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 		  	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
 		END
 		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BLADE~) BEGIN
-		  	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		  	SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2 //AXE
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2 //CLUB
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2 //FLAIL
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE
+                        SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
 		  	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
 		  	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
 		  	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
@@ -298,34 +309,34 @@ BUT_ONLY
 //////////////      Bams -- Bardsongs (in case not installed in IWDEE)
 ///////////////////////////////////////////////////////////////////////
 
- COPY	~%mod_folder%/kits/bard/bard1.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard1b.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard2.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard2B.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard3.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard3B.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard4.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard4B.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard5.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard5B.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard6.bam~ ~override~
- COPY	~%mod_folder%/kits/bard/bard6B.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard1.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard1b.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard2.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard2B.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard3.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard3B.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard4.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard4B.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard5.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard5B.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard6.bam~ ~override~
+ COPY	~%mod_folder%/class/bard/bard6B.bam~ ~override~
 
 //BARD ABILITY FILES_______________________________________________________________
 //rally
 //Innate that applies rally (all of them)
- COPY ~%mod_folder%/kits/bard/#BARD1.spl~ ~override~
+ COPY ~%mod_folder%/class/bard/#BARD1.spl~ ~override~
         SAY NAME1 @500006
         SAY NAME2 @500006
         SAY UNIDENTIFIED_DESC @500007
 	SAY DESC @500007
 
 //CLab
-COPY ~%mod_folder%/kits/bard/%bard_version%/B_ARD.2da~ ~override/CLABBA01.2da~
+COPY ~%mod_folder%/class/bard/%bard_version%/B_ARD.2da~ ~override/CLABBA01.2da~
 //BARD ABILITY FILES_______________________________________________________________
 //rally
 //Innate that applies rally (all of them)
- COPY ~%mod_folder%/kits/bard/#BARD1.spl~ ~override~
+ COPY ~%mod_folder%/class/bard/#BARD1.spl~ ~override~
         SAY NAME1 @500006
         SAY NAME2 @500006
         SAY UNIDENTIFIED_DESC @500007
@@ -333,7 +344,7 @@ COPY ~%mod_folder%/kits/bard/%bard_version%/B_ARD.2da~ ~override/CLABBA01.2da~
 
 // 1st level rally   spl that applies first level rally
 
-COPY ~%mod_folder%/kits/bard/#BARD-1.spl~ ~override~
+COPY ~%mod_folder%/class/bard/#BARD-1.spl~ ~override~
 
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -343,13 +354,13 @@ COPY ~%mod_folder%/kits/bard/#BARD-1.spl~ ~override~
 
 //1st level rally
 //Projectile for all
-ADD_PROJECTILE ~%mod_folder%/kits/bard/B_SONG1.pro~   //Pro visual range, allies and enemies
+ADD_PROJECTILE ~%mod_folder%/class/bard/B_SONG1.pro~   //Pro visual range, allies and enemies
 
-COPY	~%mod_folder%/kits/bard/SPCL120.spl~ ~override~  //new rally
+COPY	~%mod_folder%/class/bard/SPCL120.spl~ ~override~  //new rally
             SAY NAME1  @500004 //rally bonuses
             LPF ALTER_SPELL_HEADER INT_VAR projectile = %B_SONG1% END
 
-COPY	~%mod_folder%/kits/bard/B_SHH1.spl~ ~override~  //2 hour song disable
+COPY	~%mod_folder%/class/bard/B_SHH1.spl~ ~override~  //2 hour song disable
             LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500005) END  //Notification: song disabled for 2 hrs
 
 
@@ -416,8 +427,8 @@ COPY	~%mod_folder%/kits/bard/B_SHH1.spl~ ~override~  //2 hour song disable
   LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_RALY4~END           //remove earlier
   LPF ALTER_EFFECT INT_VAR match_opcode = 318 STR_VAR resource = ~B_RALY4~ END           //enemies immune
   LPF ALTER_EFFECT INT_VAR match_opcode = 324 duration = 19 STR_VAR resource = ~B_RALY4~ END           //deaf immune
-  LPF ALTER_EFFECT INT_VAR match_opcode = 278 parameter1 = 2 duration = 18 END           //to hit
-  LPF ALTER_EFFECT INT_VAR match_opcode = 73 parameter1 = 2 duration = 18 END           //dam
+  LPF ALTER_EFFECT INT_VAR match_opcode = 278 duration = 18 END           //to hit
+  LPF ALTER_EFFECT INT_VAR match_opcode = 73 duration = 18 END           //dam
   LPF ALTER_EFFECT INT_VAR match_opcode = 33 duration = 18 END           //Death Boni
   LPF ALTER_EFFECT INT_VAR match_opcode = 34 duration = 18 END           //wand Boni
   LPF ALTER_EFFECT INT_VAR match_opcode = 35 duration = 18 END           //petrification/polymorph Boni
@@ -545,15 +556,15 @@ COPY	~%mod_folder%/kits/bard/B_SHH1.spl~ ~override~  //2 hour song disable
   LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 240 parameter1 = 0 parameter2 = 36 timing = 1  END           //remove fear port icon
   LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 169 parameter1 = 0 parameter2 = 36 END           //Prot fear port icon
   LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 106 parameter1 = 1 parameter2 = 1 END           //moral break
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 23 parameter1 = 2 parameter2 = 0 END           //luck
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 325 parameter1 = 2 parameter2 = 0 END           //luck saves
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 90 parameter1 = 20 parameter2 = 0 END           //luck picklocks
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 91 parameter1 = 20 parameter2 = 0 END           //luck traps
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 92 parameter1 = 20 parameter2 = 0 END           //luck ppockets
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 59 parameter1 = 20 parameter2 = 0 END           //luck stealth
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 275 parameter1 = 20 parameter2 = 0 END           //luck hide
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 276 parameter1 = 20 parameter2 = 0 END           //luck dillusion
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 277 parameter1 = 20 parameter2 = 0 END           //luck straps
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 23 parameter1 = 1 parameter2 = 0 END           //luck
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 325 parameter1 = 1 parameter2 = 0 END           //luck saves
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 90 parameter1 = 10 parameter2 = 0 END           //luck picklocks
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 91 parameter1 = 10 parameter2 = 0 END           //luck traps
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 92 parameter1 = 10 parameter2 = 0 END           //luck ppockets
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 59 parameter1 = 10 parameter2 = 0 END           //luck stealth
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 275 parameter1 = 10 parameter2 = 0 END           //luck hide
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 276 parameter1 = 10 parameter2 = 0 END           //luck dillusion
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 277 parameter1 = 10 parameter2 = 0 END           //luck straps
 
 //20th level rally
 //spl that applies rally in clab at 20th
@@ -585,15 +596,15 @@ COPY	~%mod_folder%/kits/bard/B_SHH1.spl~ ~override~  //2 hour song disable
   LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 240 parameter1 = 0 parameter2 = 36 timing = 1  END           //remove fear port icon
   LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 169 parameter1 = 0 parameter2 = 36 END           //Prot fear port icon
   LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 106 parameter1 = 1 parameter2 = 1 END           //moral break
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 23 parameter1 = 2 parameter2 = 0 END           //luck
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 325 parameter1 = 2 parameter2 = 0 END           //luck saves
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 90 parameter1 = 20 parameter2 = 0 END           //luck picklocks
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 91 parameter1 = 20 parameter2 = 0 END           //luck traps
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 92 parameter1 = 20 parameter2 = 0 END           //luck ppockets
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 59 parameter1 = 20 parameter2 = 0 END           //luck stealth
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 275 parameter1 = 20 parameter2 = 0 END           //luck hide
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 276 parameter1 = 20 parameter2 = 0 END           //luck dillusion
-  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 277 parameter1 = 20 parameter2 = 0 END           //luck straps
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 23 parameter1 = 1 parameter2 = 0 END           //luck
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 325 parameter1 = 1 parameter2 = 0 END           //luck saves
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 90 parameter1 = 10 parameter2 = 0 END           //luck picklocks
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 91 parameter1 = 10 parameter2 = 0 END           //luck traps
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 92 parameter1 = 10 parameter2 = 0 END           //luck ppockets
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 59 parameter1 = 10 parameter2 = 0 END           //luck stealth
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 275 parameter1 = 10 parameter2 = 0 END           //luck hide
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 276 parameter1 = 10 parameter2 = 0 END           //luck dillusion
+  LPF CLONE_EFFECT INT_VAR match_opcode = 33 opcode = 277 parameter1 = 10 parameter2 = 0 END           //luck straps
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -603,7 +614,7 @@ COPY	~%mod_folder%/kits/bard/B_SHH1.spl~ ~override~  //2 hour song disable
 ///////////////////////////////////////////////////////////////////////////////////////
 //
 //Innate that applies Countersong (all of them)
- COPY	~%mod_folder%/kits/bard/#BARD4.spl~ ~override~
+ COPY	~%mod_folder%/class/bard/#BARD4.spl~ ~override~
         SAY NAME1 @500008
         SAY NAME2 @500008
         SAY UNIDENTIFIED_DESC @500009
@@ -611,21 +622,21 @@ COPY	~%mod_folder%/kits/bard/B_SHH1.spl~ ~override~  //2 hour song disable
 
 //1st level counterspell
 //Projectile
-COPY	~%mod_folder%/kits/bard/SPCL117.spl~ ~override~  //countersong
+COPY	~%mod_folder%/class/bard/SPCL117.spl~ ~override~  //countersong
             SAY NAME1  @500008 //Countersong
             SAY UNIDENTIFIED_DESC @500009
 	    SAY DESC @500009
             LPF ALTER_SPELL_HEADER INT_VAR projectile = %B_SONG1% END   //affects ALL persons, friend and enemy alike (so augment spells can work)
             //206 uses string 4742, which translates "Spell Ineffective" in IWDEE.  Check if same in other games
 //1/2 move
-COPY	~%mod_folder%/kits/bard/B_MOVE1.spl~ ~override~
-COPY	~%mod_folder%/kits/bard/B_MOVE1.spl~ ~override/B_MOVE2.spl~
+COPY	~%mod_folder%/class/bard/B_MOVE1.spl~ ~override~
+COPY	~%mod_folder%/class/bard/B_MOVE1.spl~ ~override/B_MOVE2.spl~
             LPF ALTER_EFFECT INT_VAR duration = 14 STR_VAR END
-COPY	~%mod_folder%/kits/bard/B_MOVE1.spl~ ~override/B_MOVE3.spl~
+COPY	~%mod_folder%/class/bard/B_MOVE1.spl~ ~override/B_MOVE3.spl~
             LPF ALTER_EFFECT INT_VAR duration = 21 STR_VAR END
-COPY	~%mod_folder%/kits/bard/B_MOVE1.spl~ ~override/B_MOVE4.spl~
+COPY	~%mod_folder%/class/bard/B_MOVE1.spl~ ~override/B_MOVE4.spl~
             LPF ALTER_EFFECT INT_VAR duration = 28 STR_VAR END
-COPY	~%mod_folder%/kits/bard/B_MOVE1.spl~ ~override/B_MOVE5.spl~
+COPY	~%mod_folder%/class/bard/B_MOVE1.spl~ ~override/B_MOVE5.spl~
             LPF ALTER_EFFECT INT_VAR duration = 35 STR_VAR END
 
 //level 5 (+1 round)
@@ -701,7 +712,7 @@ COPY_EXISTING ~SPCL117.spl~ ~override/B_CRSP5.spl~
             LPF CLONE_EFFECT INT_VAR match_opcode = 321 opcode = 240 timing = 1 parameter1 = 145 parameter2 = 0 STR_VAR match_resource = ~SPPR211~ resource = ~~ END  // remove icon
 
 //distract spell
-COPY	~%mod_folder%/kits/bard/B_DIST1.spl~ ~override~  //countersong distraction
+COPY	~%mod_folder%/class/bard/B_DIST1.spl~ ~override~  //countersong distraction
         SAY NAME1 @500018
         SAY NAME2 @500018
 
@@ -727,7 +738,7 @@ COPY_EXISTING ~SPCL117.spl~ ~override/B_CRSP6.spl~
             LPF CLONE_EFFECT INT_VAR match_opcode = 321 opcode = 240 timing = 1 parameter1 = 145 parameter2 = 0 STR_VAR match_resource = ~SPPR211~ resource = ~~ END  // remove icon
 
 //distract spell
-COPY	~%mod_folder%/kits/bard/B_DIST1.spl~ ~override/B_DIST2.spl~  //countersong distraction
+COPY	~%mod_folder%/class/bard/B_DIST1.spl~ ~override/B_DIST2.spl~  //countersong distraction
         SAY NAME1 @500018
         SAY NAME2 @500018
             LPF ALTER_EFFECT INT_VAR duration = 28  STR_VAR END  //prot
@@ -755,7 +766,7 @@ COPY_EXISTING ~SPCL117.spl~ ~override/B_CRSP7.spl~
             LPF CLONE_EFFECT INT_VAR match_opcode = 321 opcode = 240 timing = 1 parameter1 = 145 parameter2 = 0 STR_VAR match_resource = ~SPPR211~ resource = ~~ END  // remove icon
 
 //distract spell
-COPY	~%mod_folder%/kits/bard/B_DIST1.spl~ ~override/B_DIST3.spl~  //countersong distraction
+COPY	~%mod_folder%/class/bard/B_DIST1.spl~ ~override/B_DIST3.spl~  //countersong distraction
         SAY NAME1 @500018
         SAY NAME2 @500018
             LPF ALTER_EFFECT INT_VAR duration = 28 STR_VAR END  //prot
@@ -807,7 +818,7 @@ COPY_EXISTING ~SPCL117.spl~ ~override/B_CRSP9.spl~
             LPF CLONE_EFFECT INT_VAR match_opcode = 321 opcode = 240 timing = 1 parameter1 = 145 parameter2 = 0 STR_VAR match_resource = ~SPPR211~ resource = ~~ END  // remove icon
 
 //distract spell
-COPY	~%mod_folder%/kits/bard/B_DIST1.spl~ ~override/B_DIST4.spl~  //countersong distraction
+COPY	~%mod_folder%/class/bard/B_DIST1.spl~ ~override/B_DIST4.spl~  //countersong distraction
         SAY NAME1 @500018
         SAY NAME2 @500018
             LPF ALTER_EFFECT INT_VAR duration = 35 STR_VAR END  //prot
@@ -821,20 +832,20 @@ COPY	~%mod_folder%/kits/bard/B_DIST1.spl~ ~override/B_DIST4.spl~  //countersong 
 ///////////////////////////////////////////////////////////////////////////////////////
 //
 //Innate that applies Countersong (all of them)
- COPY	~%mod_folder%/kits/bard/#BARD5.spl~ ~override~
+ COPY	~%mod_folder%/class/bard/#BARD5.spl~ ~override~
         SAY NAME1 @500020
         SAY NAME2 @500020
         SAY UNIDENTIFIED_DESC @500021
 	SAY DESC @500021
 
-COPY	~%mod_folder%/kits/bard/SPCL118.spl~ ~override~  //countersong
+COPY	~%mod_folder%/class/bard/SPCL118.spl~ ~override~  //countersong
             SAY NAME1  @500020 //Fascinate
             SAY UNIDENTIFIED_DESC @500020
 	    SAY DESC @500021
             LPF ALTER_SPELL_HEADER INT_VAR projectile = %B_SONG1% END   //affects ALL persons, friend and enemy alike (so augment spells can work)
-            INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500023) 
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500023) STR_VAR  END
 
-COPY	~%mod_folder%/kits/bard/SPCL118.spl~ ~override/B_BDF02.spl~  //countersong
+COPY	~%mod_folder%/class/bard/SPCL118.spl~ ~override/B_BDF02.spl~  //countersong
             SAY NAME1  @500020 //Fascinate
             SAY UNIDENTIFIED_DESC @500020
 	    SAY DESC @500021
@@ -843,9 +854,9 @@ COPY	~%mod_folder%/kits/bard/SPCL118.spl~ ~override/B_BDF02.spl~  //countersong
               LPF ALTER_EFFECT INT_VAR match_opcode = 232 STR_VAR resource = ~B_BDF02A~ END  //
               LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_BDF02~ END  //
               LPF ALTER_EFFECT INT_VAR match_opcode = 324 STR_VAR resource = ~B_BDF02~ END  //
-            INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500023)
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500023) STR_VAR  END
 
-COPY	~%mod_folder%/kits/bard/SPCL118.spl~ ~override/B_BDF03.spl~  //countersong
+COPY	~%mod_folder%/class/bard/SPCL118.spl~ ~override/B_BDF03.spl~  //countersong
             SAY NAME1  @500020 //Fascinate
             SAY UNIDENTIFIED_DESC @500020
 	    SAY DESC @500021
@@ -854,9 +865,9 @@ COPY	~%mod_folder%/kits/bard/SPCL118.spl~ ~override/B_BDF03.spl~  //countersong
               LPF ALTER_EFFECT INT_VAR match_opcode = 232 STR_VAR resource = ~B_BDF03A~ END  //
               LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_BDF03~ END  //
               LPF ALTER_EFFECT INT_VAR match_opcode = 324 STR_VAR resource = ~B_BDF03~ END  //
-            INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500023)
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500023) STR_VAR  END
 
-COPY	~%mod_folder%/kits/bard/SPCL118.spl~ ~override/B_BDF04.spl~  //countersong
+COPY	~%mod_folder%/class/bard/SPCL118.spl~ ~override/B_BDF04.spl~  //countersong
             SAY NAME1  @500020 //Fascinate
             SAY UNIDENTIFIED_DESC @500020
 	    SAY DESC @500021
@@ -865,9 +876,9 @@ COPY	~%mod_folder%/kits/bard/SPCL118.spl~ ~override/B_BDF04.spl~  //countersong
               LPF ALTER_EFFECT INT_VAR match_opcode = 232 STR_VAR resource = ~B_BDF04A~ END  //
               LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_BDF04~ END  //
               LPF ALTER_EFFECT INT_VAR match_opcode = 324 STR_VAR resource = ~B_BDF04~ END  //
-            INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500023)
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500023) STR_VAR  END
 
-COPY	~%mod_folder%/kits/bard/SPCL118.spl~ ~override/B_BDF05.spl~  //countersong
+COPY	~%mod_folder%/class/bard/SPCL118.spl~ ~override/B_BDF05.spl~  //countersong
             SAY NAME1  @500020 //Fascinate
             SAY UNIDENTIFIED_DESC @500020
 	    SAY DESC @500021
@@ -876,34 +887,75 @@ COPY	~%mod_folder%/kits/bard/SPCL118.spl~ ~override/B_BDF05.spl~  //countersong
               LPF ALTER_EFFECT INT_VAR match_opcode = 232 STR_VAR resource = ~B_BDF05A~ END  //
               LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_BDF05~ END  //
               LPF ALTER_EFFECT INT_VAR match_opcode = 324 STR_VAR resource = ~B_BDF05~ END  //
-            INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500023)
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500023) STR_VAR  END
 
 //cancelling the effect
 
-COPY	~%mod_folder%/kits/bard/B_BDF01A.spl~ ~override~  //cancelling
+COPY	~%mod_folder%/class/bard/B_BDF01A.spl~ ~override~  //cancelling
         SAY NAME1 @500022
         SAY NAME2 @500022
 
-COPY	~%mod_folder%/kits/bard/B_BDF01A.spl~ ~override/B_BDF02A.spl~  //cancelling
+COPY	~%mod_folder%/class/bard/B_BDF01A.spl~ ~override/B_BDF02A.spl~  //cancelling
         SAY NAME1 @500022
         SAY NAME2 @500022
               LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_BDF02~ END  //
 
-COPY	~%mod_folder%/kits/bard/B_BDF01A.spl~ ~override/B_BDF03A.spl~  //cancelling
+COPY	~%mod_folder%/class/bard/B_BDF01A.spl~ ~override/B_BDF03A.spl~  //cancelling
         SAY NAME1 @500022
         SAY NAME2 @500022
               LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_BDF03~ END  //
 
-COPY	~%mod_folder%/kits/bard/B_BDF01A.spl~ ~override/B_BDF04A.spl~  //cancelling
+COPY	~%mod_folder%/class/bard/B_BDF01A.spl~ ~override/B_BDF04A.spl~  //cancelling
         SAY NAME1 @500022
         SAY NAME2 @500022
               LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_BDF04~ END  //
 
-COPY	~%mod_folder%/kits/bard/B_BDF01A.spl~ ~override/B_BDF05A.spl~  //cancelling
+COPY	~%mod_folder%/class/bard/B_BDF01A.spl~ ~override/B_BDF05A.spl~  //cancelling
         SAY NAME1 @500022
         SAY NAME2 @500022
               LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR resource = ~B_BDF05~ END  //
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                  BLADE                  //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//CLab
+COPY ~%mod_folder%/class/bard/Blade/B_LADE.2da~ ~override/CLABBA02.2da~
+//spl that applies weapon display
+COPY ~%mod_folder%/class/bard/Blade/FJBLADE.spl~ ~override~
+        SAY NAME1 @500104
+        SAY NAME2 @500104
+COPY ~%mod_folder%/class/bard/Blade/FJBLADEB.spl~ ~override~
+        SAY NAME1 @500104
+        SAY NAME2 @500104
+            LPF ALTER_SPELL_HEADER INT_VAR projectile = %B_SONG1% END   //affects ALL persons, friend and enemy alike (so augment spells can work)
+            LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@500105) STR_VAR  END   //demoralized notification
+
+//Slashing Damage
+COPY ~%mod_folder%/class/bard/Blade/B_LADE0.spl~ ~override~  //
+        SAY NAME1 @500104
+        SAY NAME2 @500104
+
+//inspiration
+COPY ~%mod_folder%/class/bard/Blade/B_BLSG1.spl~ ~override~  //
+        SAY NAME1 @500106
+        SAY NAME2 @500106
+
+//defensive spin
+COPY ~%mod_folder%/class/bard/Blade/SPCL522.spl~ ~override~  //
+        SAY NAME1 @500107
+        SAY NAME2 @500107
+	SAY DESC @500108
+
+//defensive spin
+COPY ~%mod_folder%/class/bard/Blade/SPCL521.spl~ ~override~  //
+        SAY NAME1 @500107
+        SAY NAME2 @500107
+	SAY DESC @500108
 
 /*
 //Spells, and spell progression

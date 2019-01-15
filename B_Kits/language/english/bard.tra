@@ -17,8 +17,7 @@ All effects generally last for as long as the bard performs, + 1 round per 5 lev
 
 Performances are taxing, incresing the fatigue level of the bard by 1 for every round <PRO_HESHE> plays.  <PRO_HESHE> recovers this fatigue after 1 hour.  <PRO_HESHE> cannot perform if <PRO_HESHE> becomes exhausted.
 
-RALLY: When the bard uses rally, <PRO_HESHE> grants all of <PRO_HISHER> allies, including <PRO_HIMHER>self, a +1 bonus to attack rolls, damage rolls, and saving throws. At 6th level, all allies are also protected from fear.  They gain immunity to fear effects for as long as the song lasts, and any fear effects currently on them are removed.  At 12th level, all allies also gain +1 to luck, which grants an additional +1 to all saves, and a +10% bonus to all of their thieving skills.  In addition, the bonuses to attacks, damage and saves increase to +2 (for a total of +3 to saves).  Finally, at 17th level, the the bonuses to luck increases to +2, with it the additional save bonus increases to +2, and the skill bonuses increas to +20%, and the bonuses to hit, damage and saves increase to +3 (+5 to saves).  
-In order to perform rally, the bard must remain in place.  If <PRO_HESHE> moves, rally ends (though, the effects continue based on <PRO_HISHER> level; that is, 1 round per 5 levels.)
+RALLY: When the bard uses rally, <PRO_HESHE> grants all of <PRO_HISHER> allies, including <PRO_HIMHER>self, a +1 bonus to attack rolls, damage rolls, and saving throws. At 6th level, all allies are also protected from fear.  They gain immunity to fear effects for as long as the song lasts, and any fear effects currently on them are removed.  At 12th level, all allies also gain +1 to luck, which grants an additional +1 to all saves, and a +10% bonus to all of thieving skills.  Finally, at 17th level, the bonuses to attacks, damage and saves increase to +2 (for a total of +3 to saves).
 
 COUNTERSONG: When the bard uses this ability, all of <PRO_HISHER> allies within 30', including <PRO_HIMHER>self are protected from magic, and gain a +3 bonus to save against spells, and a +1 to all other saves.  In addition, all allies are permitted to make a save vs. spell (with the bonus), and if they succeed, they shrug off the effects of spells such as Silence, Shout, Great Shout, Command, Greater Command, or any other sound-based attack.  At 9th level, allies can also shrug off paralysis, hold, stun, charm, or emotion-based effects, such as fear or berserk, if they make their saves.  At 11th level, enemy casters find countersong distracting, and suffer a 15% chance of spell failure while within 30' of the bard.  This chance increases to 30% at 16th level.  Finally, at 18th level, all allies gain a +5 to their saves vs. spell, and +2 to their other saves.
 The bard's movement is reduced by half while performing countersong.
@@ -38,9 +37,9 @@ The bard must remain still while performing fascinate. If <PRO_HESHE> moves, the
 
 At 6th level, all allies are also protected from fear.  Any fear effects currently on them are removed.  
 
-At 12th level, all allies also gain +1 bonus to luck, which grants an additional +1 to all saves, and a +10% bonus to all of their thieving skills.  In addition, the bonuses to attacks, damage and saves increase to +2 (for a total of +3 to saves).  
+At 12th level, all allies also gain +1 to luck, which grants an additional +1 to all saves, and a +10% bonus to all of thieving skills.  
 
-Finally, at 17th level, the the bonuses to luck increases to +2, with it the additional save bonus increases to +2, and the skill bonuses increas to +20%, and the bonuses to hit, damage and saves increase to +3 (+5 to saves).
+Finally, at 17th level, the bonuses to attacks, damage and saves increase to +2 (for a total of +3 to saves).
 
 In order to perform rally, the bard must remain in place.  If <PRO_HESHE> moves, rally ends (though, the effects continue based on <PRO_HISHER> level; that is, 1 round per 5 levels.)
 
@@ -76,7 +75,7 @@ The bard's movement is reduced by half while performing countersong.~
 
 Like all performances, Fascinate fatigues the bard by 1 level for every round <PRO_HESHE> plays, and <PRO_HESHE> cannot perform rally if <PRO_HESHE> is exhausted.  <PRO_HESHE> recovers from this fatigue drain after 1 hour.
 
-The bard must remain still while performing fascinate. If <PRO_HESHE> moves, the effect ends.~
+The bard must remain still while performing fascinate. If <PRO_HESHE> moves, the effect ends. Unlike other performances, the effects of facinate do not linger after the bard stops performing.~
 @500022 = ~No longer Fascinated~
 @500023 = ~Enthralled~
 
@@ -90,26 +89,38 @@ Advantages:
 - At 1st level, may use the Offensive Spin and Defensive Spin stances. A character can only enter a single stance at a time, but they are not limited in terms of the number of times per day that they can enter a stance. The blade exits either offensive spin or defensive spin if <PRO_HESHE> is struck in combat and <PRO_HESHE> cannot enter another stance for an additional 3 rounds after being struck.
 - Performs Weapon Display as <PRO_HISHER> bard song.
 - Gains Mastery (+++) in two-weapon fighting at first level.  
-- At 3rd level, the Blade can specialize (++) in any single weapon. At 3rd level or anytime thereafter, <PRO_HESHE> can select any single weapon with which <PRO_HESHE> is proficient and become specialization with that weapon.  At 9th level, or anytime thereafter, <PRO_HESHE> can specialize (++) in a second weapon <PRO_HESHE> is proficient with.
+- The Blade can specialize (++) in any one-handed melee weapon.
 
 Disadvantages:
 
 - Only gains 5 lore per level.
-- The Blade cannot perform Rally or Countersong.
-- Receives -1 spell per spell level, and so cannot begin casting spells until 3rd level.
-  
+- The Blade cannot perform Rally, Countersong, or Fascinate.
+- 1 fewer spell slot per spell level.  As a result, <PRO_HESHE> doesn't cast any spells until 3rd level.
 
-DEFENSIVE SPIN: Defensive spin is a specialized form of parrying that is quite impressive to watch.  While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  Further, any opponent that gets in melee range (4') with the blade has a 50% chance to suffer 1d6 points of slashing damage from the whirling blades.  This damage increases by 1d6 every 5 levels.  The Blade cannot attack nor cast spells while using Defensive Spin. If the Blade is struck in combat, <PRO_HESHE> exits Defensive Spin. 
+DEFENSIVE SPIN: Defensive spin is a specialized form of parrying that is quite impressive to watch.  While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  Further, any opponent that gets in melee range (4') with the blade must save vs. breath or suffer 1d6 points of slashing damage from the whirling blades.  This damage increases by 1d6 every 5 levels (max 5d6 at 20th level).  The Blade cannot attack nor cast spells while using Defensive Spin.
 
-OFFENSIVE SPIN: Offensive spin is a much more aggressive display of prowess compared to defensive spin, though it is a bit more reckless.  While in this stance, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to melee attack and damage rolls as well as an extra attack per round. Finally,<PRO_HESHE> deals an additional +1 to damage with all melee attacks for every 5 levels. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells. The blade suffers a -2 penalty to AC while using offensive spin.  If the Blade is struck in combat, <PRO_HESHE> exits Offensive Spin.
+OFFENSIVE SPIN: Offensive spin is a much more aggressive display of prowess compared to defensive spin, though it is a bit more reckless.  While in this stance, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to melee attack and damage rolls as well as an extra attack per round. Finally,<PRO_HESHE> deals an additional +1 to damage with all melee attacks for every 5 levels. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells. The blade suffers a -2 penalty to AC while using offensive spin.
 
-WEAPON DISPLAY: When performing a weapon display, the Blade performs an impressive and intimidating display with <PRO_HISHER> weapon.  All intelligent enemies within 30' of the Blade with fewer hit die than <PRO_HIMHER> must make a save vs. wands or be overcome by fear for the duration of the display.  Enemies that have equal or more hit die than the blade within 30' must save or be demoralized, suffering a -2 penalty to attack rolls.  Enemies make their save at -1 per 6 levels of the Blade (maximum -3 at 18th level).
-Additionally, the display inspires allies, granting them a +1 bonus to attack and damage rolls.  This bonus increases by +1 per 5 levels.
+WEAPON DISPLAY: When performing a weapon display, the Blade performs an impressive and intimidating display with <PRO_HISHER> weapon.  All intelligent enemies within 30' of the Blade must make a save vs. wands or be demoralized, suffering a -2 penalty to attack rolls, AC and moral.  This penalty increases by -1 for each five levels <PRO_HESHE> posesses (max -6 at 20th level). Enemies make their save at -1 per 6 levels of the Blade (maximum -3 at 18th level).
+Additionally, the display inspires allies, granting them a +1 bonus to attack and damage rolls.
 
-Finally, enemies that come within melee range of the blade (about 4') have a 50% chance to take 1d6 slashing damage from the whirling blades. This damage increases by 1d6 for each 5 levels.
+Enemies that come within melee range of the blade (about 4') must save vs. breath (with a -2 penalty) or take 1d6 slashing damage from the whirling blades. This damage increases by 1d6 for each 5 levels (max 5d6 at 20th level).
 
-The blade cannot move while performing the display. That is, moving ends the performance (though the effects linger, as normal.)~
+The blade can only move at half speed while performing Weapon Display.
 
-@500103 = ~BLADE: The Bard is like a Thief, but requires allies to truly excel. Their specialty is boosting the morale and skill of others through song, while at the same time inhibiting foes.
-The Blade excels at melee and ranged combat, though they are less adept at inspiring their allies, or countering enemy magic.~
+Finally, Weapon Display cannot be performed while the blade is in a Stance.~
+
+@500103 = ~BLADE: The Bard is like a Thief, but requires allies to truly excel. Their specialty is boosting the morale and skill of others through performance, while at the same time inhibiting foes.
+The Blade excels at melee combat and intimidating their enemies, though they are less adept at inspiring their allies, or countering enemy magic.~
+@500104 = ~Weapon Display~
+@500105 = ~Demoralized~
+@500106 = ~Inspired~
+@500107 = ~Defensive Spin~
+@500108 = ~Defensive spin is a specialized form of parrying that is quite impressive to watch.  
+
+While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  
+
+Further, any opponent that gets in melee range (4') with the blade must save vs. breath or suffer 1d6 points of slashing damage from the whirling blades.  This damage increases by 1d6 every 5 levels (max 5d6 at 20th level).  
+
+The Blade cannot attack nor cast spells while using Defensive Spin. ~
 
