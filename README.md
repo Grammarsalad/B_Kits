@@ -94,11 +94,11 @@ JESTER: This Bard is well versed in the arts of ridicule and hilarity, and uses 
 
 Advantages:
 - Starting at 1st level, <PRO_HESHE> can use Taunt one time per day.  <PRO_HESHE> gains one additional use of Taunt every 4 levels.  
-- At 1st level, <PRO_HISHER> may use <PRO_HISHER> Performance ability to both cheer up <PRO_HISHER> allies and distract and enrage <PRO_HISHER> foes with Bafoonery/Taunting.  This performance becomes more powerful as <PRO_HESH> gains levels as described below.
+- At 1st level, <PRO_HISHER> may use <PRO_HISHER> Performance ability to both cheer up <PRO_HISHER> allies and distract and enrage <PRO_HISHER> foes with Bafoonery/Taunting.  This performance becomes more powerful as <PRO_HESH> gains levels as described below.  At 8th level, <PRO_HESHE> gains 
 - Wily: The Jester gains a +2 bonus to AC and saves vs. enchantments.  Additionally, the jester is immune to confusion and chaos spells. The Jester also gets fascinate at 8th level
 
 Disadvantages:
-- The Jester cannot perform Rally, Countersong or Fascinate.
+- The Jester cannot perform Rally or Countersong.
 - The Jester only gains d6 hit points per level.
 
 TAUNT: The jester can use taunt against any creature within 30' that can hear <PRO_HIMHER> and that has greater than animal intelligence.  If the creature fails a save vs. spell, they become enraged and resort to melee, disregarding all tactics, possibly even mistakenly attacking their own allies.    
