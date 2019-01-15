@@ -241,29 +241,28 @@ While perfroming Fascinate, <PRO_HESHE> cannot move at all, and unlike a normal 
 BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome. This Bard's fighting style is flashy and entertaining but is also lethally dangerous.
 
 Advantages:
-- At 1st level, may use the Offensive Spin and Defensive Spin stances. A character can only enter a single stance at a time, but they are not limited in terms of the number of times per day that they can enter a stance. The blade exits either offensive spin or defensive spin if <PRO_HESHE> is struck in combat and <PRO_HESHE> cannot enter another stance for an additional 3 rounds after being struck.
-- Performs Weapon Display as <PRO_HISHER> bard song.
+- At 1st level, may use the Offensive Spin and Defensive Spin stances. A character can only enter a single stance at a time, but they are not limited in terms of the number of times per day that they can enter a stance. The blade exits either offensive spin or defensive spin if <PRO_HESHE> is struck in combat and <PRO_HESHE> cannot enter another stance for an additional 3 rounds after being struck.  
+- Performs Weapon Display as <PRO_HISHER> bard song.  
 - Gains Mastery (+++) in two-weapon fighting at first level.  
-- At 3rd level, the Blade can specialize (++) in any single weapon. At 3rd level or anytime thereafter, <PRO_HESHE> can select any single weapon with which <PRO_HESHE> is proficient and become specialization with that weapon.  At 9th level, or anytime thereafter, <PRO_HESHE> can specialize (++) in a second weapon <PRO_HESHE> is proficient with.
+- The Blade can specialize (++) in any one-handed melee weapon.
 
 Disadvantages:
+- Only gains 5 lore per level.  
+- The Blade cannot perform Rally, Countersong, or Fascinate.  
+- 1 fewer spell slot per spell level.  As a result, <PRO_HESHE> doesn't cast any spells until 3rd level.
 
-- Only gains 5 lore per level.
-- The Blade cannot perform Rally, Countersong or Fascinate.
-- The Blade cannot make use of magical items as the true bard.
-- Receives -1 spell per spell level, and so cannot begin casting spells until 2nd level.
-  
+DEFENSIVE SPIN: Defensive spin is a specialized form of parrying that is quite impressive to watch.  While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  Further, any opponent that gets in melee range (4') with the blade must save vs. breath or suffer 1d6 points of slashing damage from the whirling blades.  This damage increases by 1d6 every 5 levels (max 5d6 at 20th level).  The Blade cannot attack nor cast spells while using Defensive Spin.
 
-DEFENSIVE SPIN: Defensive spin is a specialized form of parrying that is quite impressive to watch.  While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  Further, any opponent that gets in melee range (4') with the blade has a 50% chance to suffer 1d6 points of slashing damage from the whirling blades.  This damage increases by 1d6 every 5 levels.  The Blade cannot attack nor cast spells while using Defensive Spin. If the Blade is struck in combat, <PRO_HESHE> exits Defensive Spin. 
+OFFENSIVE SPIN: Offensive spin is a much more aggressive display of prowess compared to defensive spin, though it is a bit more reckless.  While in this stance, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to melee attack and damage rolls as well as an extra attack per round. Finally,<PRO_HESHE> deals an additional +1 to damage with all melee attacks for every 5 levels. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells. The blade suffers a -2 penalty to AC while using offensive spin.
 
-OFFENSIVE SPIN: Offensive spin is a much more aggressive display of prowess compared to defensive spin, though it is a bit more reckless.  While in this stance, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to melee attack and damage rolls as well as an extra attack per round. Finally,<PRO_HESHE> deals an additional +1 to damage with all melee attacks for every 5 levels. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells. The blade suffers a -2 penalty to AC while using offensive spin.  If the Blade is struck in combat, <PRO_HESHE> exits Offensive Spin. 
+WEAPON DISPLAY: When performing a weapon display, the Blade performs an impressive and intimidating display with <PRO_HISHER> weapon.  All intelligent enemies within 30' of the Blade must make a save vs. wands or be demoralized, suffering a -2 penalty to attack rolls, AC and moral.  This penalty increases by -1 for each five levels <PRO_HESHE> posesses (max -6 at 20th level). Enemies make their save at -1 per 6 levels of the Blade (maximum -3 at 18th level).
+Additionally, the display inspires allies, granting them a +1 bonus to attack and damage rolls.
 
-WEAPON DISPLAY: When performing a weapon display, the Blade performs an impressive and intimidating display with <PRO_HISHER> weapon.  All intelligent enemies within 30' of the Blade with fewer hit die than <PRO_HIMHER> must make a save vs. wands or be overcome by fear for the duration of the display.  Enemies that have equal or more hit die than the blade within 30' must save or be demoralized, suffering a -2 penalty to attack rolls.  Enemies make their save at -1 per 6 levels of the Blade (maximum -3 at 18th level).
-Additionally, the display inspires allies, granting them a +1 bonus to attack and damage rolls.  This bonus increases by +1 per 5 levels.
+Enemies that come within melee range of the blade (about 4') must save vs. breath (with a -2 penalty) or take 1d6 slashing damage from the whirling blades. This damage increases by 1d6 for each 5 levels (max 5d6 at 20th level).
 
-Finally, enemies that come within melee range of the blade (about 4') have a 50% chance to take 1d6 slashing damage from the whirling blades. This damage increases by 1d6 for each 5 levels.
+The blade can only move at half speed while performing Weapon Display.
 
-The blade cannot move while performing the display. That is, moving ends the performance.
+Finally, Weapon Display cannot be performed while the blade is in a Stance.
 
 ### Jester Kit
 
