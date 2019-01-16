@@ -95,14 +95,14 @@ JESTER: This Bard is well versed in the arts of ridicule and hilarity, and uses 
 
 Advantages:
 - Starting at 1st level, <PRO_HESHE> can use Taunt one time per day.  <PRO_HESHE> gains one additional use of Taunt every 4 levels.  
-- At 1st level, <PRO_HISHER> may use <PRO_HISHER> Performance ability to both cheer up <PRO_HISHER> allies and distract and enrage <PRO_HISHER> foes with Bafoonery/Taunting.  This performance becomes more powerful as <PRO_HESH> gains levels as described below.  At 8th level, <PRO_HESHE> gains 
-- Wily: The Jester gains a +2 bonus to AC and saves vs. enchantments.  Additionally, the jester is immune to confusion and chaos spells. The Jester also gets fascinate at 8th level
+- At 1st level, <PRO_HISHER> may use <PRO_HISHER> Performance ability to both cheer up <PRO_HISHER> allies and distract and enrage <PRO_HISHER> foes with Bafoonery/Taunting.  This performance becomes more powerful as <PRO_HESH> gains levels as described below.  At 8th level, <PRO_HESHE> gains Fascinate.
+- Wily: The Jester gains a +2 bonus to AC and saves vs. enchantments.  Additionally, the jester is immune to confusion, chaos and any other similar spells. 
 
 Disadvantages:
 - The Jester cannot perform Rally or Countersong.
 - The Jester only gains d6 hit points per level.
 
-TAUNT: The jester can use taunt against any creature within 30' that can hear <PRO_HIMHER> and that has greater than animal intelligence.  If the creature fails a save vs. spell, they become enraged and resort to melee, disregarding all tactics, possibly even mistakenly attacking their own allies.    
+TAUNT: The jester can use taunt against any creature within 30' that can hear <PRO_HIMHER> and that has greater than animal intelligence.  If the creature fails a save vs. spell, they become enraged and resort to melee, disregarding all tactics, possibly even mistakenly attacking their own allies in a fit of rage.    
 
 This effect lasts for 1 round, +1 round per 3 levels of the jester.  Further, the target suffers a penalty to their save for every three levels of the jester.
 
@@ -110,8 +110,10 @@ The jester cannot taunt a creature more than once in a given encounter.  Whether
 
 BAFOONERY/JESTING: The jester is a master at using humor and bafoonery to lighten the mood, buffering <PRO_HISHER> allies against harmful magics and effects, often by telling timely jokes at the expense of <PRO_HISHER> enemies.
 
-While using this performance, the Jester takes advantage of distracted enemies effectively gaining a +2 bonus to AC.  This bonus increases by +1 per 5 levels the jester has attained (maximum +6 at 20th level).  
+While using this performance, the Jester takes advantage of distracted enemies effectively gaining a +2 bonus to AC.  This bonus increases by +1 per 5 levels the jester has attained (maximum +6 at 20th level). 
+
 At 1st level, allies gain a +1 bonus to saves, while enemies must save each round vs. wands with a +2 bonus or become enraged (as taunt above) for 1 round.  Every 5 levels the jester has attained, the save bonus increases by +1 and enemies suffer a -1 penalty to this save (max +5/-5 at 20th level).  
+
 At 10th level, allies recover from , and are immute to, fear and charm effects while the jester is performing.  <PRO_HISHER> enemies must make a save vs. paralysis each round (in addition to the save vs. enrage) or become confused for 1 round.  Enemies gain a -1 penalty to this save at levels 15 and 20.
 
 ### Skald Kit
