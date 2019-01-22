@@ -19,4 +19,4 @@ function B3ActionbarDebug(config)
         Infinity_DisplayString("DEBUG: [Engine] Actionbar Button["..i.."] => "..getActionbarButton(i))
     end
 end
-addActionbarListener(B3ActionbarDebug)
+EEex_AddActionbarListener(B3ActionbarDebug)

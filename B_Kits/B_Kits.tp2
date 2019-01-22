@@ -2,7 +2,7 @@ BACKUP ~B_Kits/backup~
 AUTHOR ~Grammarsalad~
 
 
-VERSION ~0.01.07~
+VERSION ~0.01.08~
 
 //README ~faiths_and_powers/readme-pnp.html~
 
@@ -27,6 +27,7 @@ ALWAYS
 	
 	INCLUDE ~B_Kits/lib/qd_multiclass.tpa~
 
+	INCLUDE ~B_Kits/lib/splprot_kits.tpa~
 END
 
 // ASK_EVERY_COMPONENT
@@ -34,6 +35,9 @@ END
 LANGUAGE ~English~ ~english~
          ~B_Kits/language/english/setup.tra~
          ~B_Kits/language/english/bard.tra~
+         ~B_Kits/language/english/ranger.tra~
+         ~B_Kits/language/english/thief.tra~
+         ~B_Kits/language/english/cleric.tra~
          ~B_Kits/language/english/IWD_spells.tra~
 //___________________________________________________________________________________
 
@@ -91,12 +95,59 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_bard.tpa~
 //__________________________________________________________________________________
 
 BEGIN @122  //Cleric Revisions: Conservative
-SUBCOMPONENT @117 //Cleric class revisions
+SUBCOMPONENT @117 //Cleric Revisions
 DESIGNATED 201
 GROUP @117    //Cleric revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
-INCLUDE ~%mod_folder%/data/components/Setup_Cleric_Conservative.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_revised_cleric.tpa~
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			202: Cleric: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @123  //Cleric Revisions: Radical
+SUBCOMPONENT @117 //Cleric Revisions
+DESIGNATED 202
+GROUP @117    //Cleric revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_cleric.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_Cleric_Radical.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			301: Ranger: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @124  //Ranger Revisions: Conservative
+SUBCOMPONENT @125 //Ranger revisions
+DESIGNATED 301
+GROUP @125    //Ranger revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_ranger.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			401: Thieves: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @128  //Thief Revisions: Conservative
+SUBCOMPONENT @127 //Thief revisions
+DESIGNATED 401
+GROUP @127    //Thief revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_thief.tpa~
 
 /*
 //__________________________________________________________________________________

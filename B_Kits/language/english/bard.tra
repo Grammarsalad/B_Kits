@@ -66,8 +66,12 @@ The bard's movement is reduced by half while performing countersong.~
 @500015 = ~if(outerConfig == 4) then
                setActionbarButton(0x5, ACTIONBAR_TYPE.STEALTH);buttonArray:OnLButtonPressed(5)
            end~
-@500016 = ~and kit == 0x400D then~
-@500017 = ~then~
+@500016 = ~return class~
+@500017 = ~if class == 5 then
+		return 4 -- I'm totally a thief
+	else
+		return class
+	end~
 @500018 = ~Distracted~
 @500019 = ~Enhansed Performance~
 @500020 = ~Fascinate~
@@ -118,9 +122,17 @@ The Blade excels at melee combat and intimidating their enemies, though they are
 @500107 = ~Defensive Spin~
 @500108 = ~Defensive spin is a specialized form of parrying that is quite impressive to watch.  
 
-While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.  
+While performing defensive spin, the Blade gains a +1 bonus to AC against all melee weapons for every two levels <PRO_HESHE> has (minimum +1) to a maximum of +10 at level 20.
 
 Further, any opponent that gets in melee range (4') with the blade must save vs. breath or suffer 1d6 points of slashing damage from the whirling blades.  This damage increases by 1d6 every 5 levels (max 5d6 at 20th level).  
 
 The Blade cannot attack nor cast spells while using Defensive Spin. ~
+@500109 = ~Offensive Spin~
+@500110 = ~Offensive spin is a much more aggressive display of prowess compared to defensive spin, though it is a bit more reckless.
+
+While in this stance, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to melee attack and damage rolls as well as an extra attack per round. Finally,<PRO_HESHE> deals an additional +1 to damage with all melee attacks for every 5 levels.
+
+Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells. The blade suffers a -2 penalty to AC while using offensive spin.~
+
+
 

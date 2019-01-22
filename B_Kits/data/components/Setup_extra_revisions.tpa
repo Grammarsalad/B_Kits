@@ -1,55 +1,115 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
-/////////////////////////////////////              ALL BARDS                  //////////////////////////////////////
+/////////////////////////////////////                   BASICS                //////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Spontaneous casting for clerics
+  // Spontaneous casting for clerics
+  // Alt spontaneous casting for clerics (all heal)
+  // Alt2 spontaneous casting for clerics (evil drain HP touch spells)
+  // Spontaneous casting for druids
+
+//Performance Modifications
+  // Performance fatigue (Bards)
+  // Performance fatigue (Shaman)
+
+// Magic Item Creation (p 5788 26 vol)
+  // Magic Item Creation (Clerics/druids)  (7th level Scribe scroll; 9th level brew potions; 11th level recharge wand; 13th level create wand)
+  // Magic Item Creation (Mages/bards)
+
+
+/*
+
+///////////////////////////////////////////////////////////
+//Hit Points
+///////////////////////////////////////////////////////////
+
+//Increased Hit Points: Thief/B.Hunter/Swash: d8; Assassin/Shadow: d6
+ACTION_IF (FILE_EXISTS_IN_GAME ~HPCLASS.2da~) BEGIN
+ COPY_EXISTING ~HPCLASS.2da~ ~override~
+		COUNT_2DA_COLS cols // amount of columns
+		READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~THIEF~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPPRS~   //
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BOUNTY_HUNTER~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPPRS~   //
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~SWASHBUCKLER~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPPRS~   //
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~FIGHTER_THIEF~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPFC~   //
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~FIGHTER_MAGE_THIEF~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPFM~   //
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~MAGE_THIEF~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPCM~   //
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~CLERIC_THIEF~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPPRS~   //
+  	BUT_ONLY
+END
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////                                  /////////////////////////////
-/////////////////////////////      Bard Song-->Performance     /////////////////////////////
+/////////////////////////////         Set Natural Snares       /////////////////////////////
 /////////////////////////////                                  /////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////
-///////////////////                    Notifications                    ///////////////////
+///////////////////                    Set Snares Skill                 ///////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-//Bard song needs to be called 'Performance' to incorporate different 'kinds' of performances approapriate for each bard
-//button  possible refs 4918   11798  24126
-ACTION_IF GAME_IS ~bgee~ BEGIN //BGEE ONLY STRINGS
- STRING_SET 4918 @500010
- STRING_SET 24126 @500011
-END
-ACTION_IF GAME_IS ~bgee~ BEGIN //Singing bard song to performing
- STRING_SET 24503 @500012
-END   //
-ACTION_IF GAME_IS ~bgee~ BEGIN //Stopped singing bard song to stopped performing
- STRING_SET 24504 @500013
-END   //
-//TO DO 4918  11798    --singing bard song-- 50705  --stopped singing bard song-- 50706  --Enhansed Bard songs-- 65599
-ACTION_IF GAME_IS ~bg2ee eet~ BEGIN //BGEE ONLY STRINGS
- STRING_SET 4918 @500011
- STRING_SET 11798 @500011
- STRING_SET 50705 @500012    //Singing bard song to performing
- STRING_SET 50706 @500013    //Stopped singing bard song to stopped performing
- STRING_SET 65599 @500019    //Enhansed Bard Song to Enhansed Performance
-END
-ACTION_IF GAME_IS ~iwdee~ BEGIN //IWDEE ONLY STRINGS
- STRING_SET 4918 @500011
- STRING_SET 11798 @500011
- STRING_SET 37637 @500011
- STRING_SET 34624 @500012    //Singing bard song to performing
- STRING_SET 34625 @500013    //Stopped singing bard song to stopped performing
- STRING_SET 36108 @500019    //Enhansed Bard Song to Enhansed Performance
-END
+COPY_EXISTING ~SPCL412.spl~ ~override/B_NTP01.spl~   //thief trap to set nat snares
+  LPF CLONE_EFFECT INT_VAR match_opcode = 252 opcode = 318 timing = 0 duration = 1 parameter1 = 8 parameter2 = %not_ar% STR_VAR resource = ~B_NTP01~ END  //Protection complete below
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 326 STR_VAR resource = ~B_NTP02~ END  //For notifications
+        SAY NAME1 @971
+        SAY NAME2 @971
+        SAY UNIDENTIFIED_DESC @972
+	SAY DESC @972
 
-
+ COPY ~%mod_folder%/class/ranger/B_NTP02.spl~ ~override~   //Set Natural Snares only works in natural environments
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@970) STR_VAR END
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,82 +120,89 @@ END
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////
-//Bard button functionality
-///////////////////////////////////////////////////////////
-
-//if EEEx is installed, let's give bards basic thievery
 ACTION_IF FILE_EXISTS_IN_GAME ~EEex_Brd.lua~ BEGIN  //if EEEx is installed
-// COPY ~%mod_folder%/lib/M_DEBUG.lua~ ~override~  //debug
- COPY_EXISTING ~EEex_Brd.lua~ ~override~
-  SPRINT old @500016//
-  SPRINT new @500017//
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~        //replacing old with new (Enable thievery for all bards)
+ 
+  //class button changes --Put search in 5th slot
+  COPY ~%mod_folder%/lib/M_B_RNG.lua~ ~override~
 
-//class button changes --Put search in 5th slot 
-COPY ~%mod_folder%/lib/M_B_BRD.lua~ ~override~
-
- COPY_EXISTING ~UI.MENU~ ~override~
-  SPRINT old @500014//
-  SPRINT new @500015//
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~        //replacing old with new (stealth as a alt to search in slot 5)
-
+END
 ///////////////////////////////////////////////////////////
-//2das  (req EEex)
+//2das
 ///////////////////////////////////////////////////////////
 
-APPEND ~THIEFSKL.2da~ ~BARD%TAB%25%TAB%10~ //giving them an actual progression (25 at 1st, 10 at level up)
-APPEND ~THIEFSKL.2da~ ~BLADE%TAB%15%TAB%5~ //giving them an actual progression (25 at 1st, 10 at level up)
-APPEND ~THIEFSKL.2da~ ~JESTER%TAB%25%TAB%10~ //giving them an actual progression (25 at 1st, 10 at level up)
-APPEND ~THIEFSKL.2da~ ~SKALD%TAB%10%TAB%5~ //giving them an actual progression (25 at 1st, 10 at level up)
+APPEND ~THIEFSKL.2da~ ~RANGER%TAB%30%TAB%15~ //giving them an actual progression (30 at 1st, 15 at level up)
+APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER%TAB%30%TAB%15~ //giving them an actual progression (30 at 1st, 15 at level up)
+APPEND ~THIEFSKL.2da~ ~FERALAN%TAB%30%TAB%15~ //giving them an actual progression (30 at 1st, 15 at level up)
+APPEND ~THIEFSKL.2da~ ~STALKER%TAB%30%TAB%15~ //giving them an actual progression (30 at 1st, 15 at level up)
+APPEND ~THIEFSKL.2da~ ~BEASTMASTER%TAB%30%TAB%15~ //giving them an actual progression (30 at 1st, 15 at level up)
 
 COPY_EXISTING ~THIEFSCL.2da~ ~override~   //to allow them to put points in pick
-  SET_2DA_ENTRY_LATER ~b_lock~ 4 5  100   // Standard Bard
-  SET_2DA_ENTRY_LATER ~b_lock~ 3 39  100   // Standard Blade
-  SET_2DA_ENTRY_LATER ~b_lock~ 4 39  100   // Standard Blade
-  SET_2DA_ENTRY_LATER ~b_lock~ 4 40  100   // Standard Jest
-  SET_2DA_ENTRY_LATER ~b_lock~ 4 41  100   // Standard Skald
-  SET_2DA_ENTRY_LATER ~b_lock~ 3 41  100   // Standard Skald
+  SET_2DA_ENTRY_LATER ~trap~ 9 8  100   // Ranger
+  SET_2DA_ENTRY_LATER ~trap~ 9 18  100   // Ranger/Cleric
+  SET_2DA_ENTRY_LATER ~trap~ 9 33  100   // Archer
+  SET_2DA_ENTRY_LATER ~trap~ 9 33  100   // Stalker
+  SET_2DA_ENTRY_LATER ~trap~ 9 33  100   // Beast Master
 //set
-  SET_2DA_ENTRIES_NOW ~b_lock~ 1
+  SET_2DA_ENTRIES_NOW ~trap~ 1
 BUT_ONLY
-COPY_EXISTING ~skillbrd.2da~ ~override~ //get rid of auto progression
-  SET_2DA_ENTRY_LATER ~b_pick~ 3 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 4 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 5 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 6 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 7 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 8 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 9 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 10 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 11 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 12 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 13 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 14 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 15 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 16 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 17 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 18 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 19 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 20 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 21 1  0   //
-  SET_2DA_ENTRY_LATER ~b_pick~ 22 1  0   //
+COPY_EXISTING ~SKILLRNG.2da~ ~override~ //get rid of auto progression
+  SET_2DA_ENTRY_LATER ~n_sneak~ 3 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 4 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 5 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 6 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 7 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 8 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 9 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 10 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 11 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 12 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 13 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 14 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 15 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 16 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 17 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 18 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 19 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 20 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 21 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 22 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 23 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 24 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 25 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 26 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 27 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 28 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 29 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 30 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 31 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 32 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 33 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 34 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 35 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 36 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 37 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 38 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 39 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 40 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 41 1  0   //
+  SET_2DA_ENTRY_LATER ~n_sneak~ 41 1  0   //
 //set
-  SET_2DA_ENTRIES_NOW ~b_pick~ 1
+  SET_2DA_ENTRIES_NOW ~n_sneak~ 1
 BUT_ONLY
 COPY_EXISTING ~clasiskl.2da~ ~override~ //get rid of 1st level boni
-  SET_2DA_ENTRY_LATER ~b_1pick~ 3 5  0   //
-  SET_2DA_ENTRY_LATER ~b_1pick~ 3 39  0   //
-  SET_2DA_ENTRY_LATER ~b_1pick~ 3 40 0   //
-  SET_2DA_ENTRY_LATER ~b_1pick~ 3 41 0   //
+  SET_2DA_ENTRY_LATER ~b_hide~ 6 8  0   //  ranger hide
+  SET_2DA_ENTRY_LATER ~b_hide~ 7 8  0   //  ranger sneak
+  SET_2DA_ENTRY_LATER ~b_hide~ 6 18  0   //  ranger/cleric hide
+  SET_2DA_ENTRY_LATER ~b_hide~ 7 18  0   //  ranger/cleric sneak
+  SET_2DA_ENTRY_LATER ~b_hide~ 6 33  0   //  Archer hide
+  SET_2DA_ENTRY_LATER ~b_hide~ 7 33  0   //  archer sneak
+  SET_2DA_ENTRY_LATER ~b_hide~ 6 34  0   //  Stalker hide
+  SET_2DA_ENTRY_LATER ~b_hide~ 7 34  0   //  Stalker sneak
+  SET_2DA_ENTRY_LATER ~b_hide~ 6 35  0   //  B.Master hide
+  SET_2DA_ENTRY_LATER ~b_hide~ 7 35  0   //  B.Master sneak
 //set
-  SET_2DA_ENTRIES_NOW ~b_1pick~ 1
+  SET_2DA_ENTRIES_NOW ~b_hide~ 1
 BUT_ONLY
-
-END   //end if EEEx is installed
-
 
 ///////////////////////////////////////////////////////////
 //Hit Points
@@ -148,27 +215,49 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~HPCLASS.2da~) BEGIN
 		READ_2DA_ENTRIES_NOW rows cols // read all file into memory
 		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
 		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
-		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BARD~ BEGIN
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~RANGER~ BEGIN
 		    SET bl_row = %row%
 		  END
 		END
 		SET_2DA_ENTRY %bl_row% 1 cols ~HPPRS~   //new bard/blade
 		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
 		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
-		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BLADE~ BEGIN
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~FERALAN~ BEGIN
 		    SET bl_row = %row%
 		  END
 		END
 		SET_2DA_ENTRY %bl_row% 1 cols ~HPPRS~   //new bard/blade
 		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
 		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
-		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~SKALD~ BEGIN
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~STALKER~ BEGIN
 		    SET bl_row = %row%
 		  END
 		END
-		SET_2DA_ENTRY %bl_row% 1 cols ~HPWAR~   //new bard/blade
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPPRS~   //new bard/blade
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BEAST_MASTER~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPPRS~   //new bard/blade
+		FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+		  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+		  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~CLERIC_RANGER~ BEGIN
+		    SET bl_row = %row%
+		  END
+		END
+		SET_2DA_ENTRY %bl_row% 1 cols ~HPPRS~   //new bard/blade
   	BUT_ONLY
 END
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////////////////////
 //Alignment
@@ -307,15 +396,6 @@ BUT_ONLY
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////                                  /////////////////////////////
-/////////////////////////////         Bard Performance         /////////////////////////////
-/////////////////////////////                                  /////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////
 //////////////      Bams -- Bardsongs (in case not installed in IWDEE)
@@ -968,7 +1048,7 @@ COPY ~%mod_folder%/class/bard/Blade/SPCL521.spl~ ~override~  //
         SAY NAME1 @500109
         SAY NAME2 @500109
 	SAY DESC @500110
-
+*/
 /*
 //Spells, and spell progression
 INCLUDE ~%mod_folder%/lib/bard/bard_spells.tpa~
