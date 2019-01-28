@@ -28,7 +28,17 @@ TO DO 12: Blade: see if slash damage can be changed based on weilded weapons.  I
 
 TO DO 13: Create 'add on' components (Performance fatigue for bard/shaman--seperate from reg songs; spontaneous casting for cleric/druid; ... )
 
-TO DO 14: Seperate Fatigue from conservative bard revisions
+TO DO 14: Figure out the ini stuff so users can dynamically choose which extra class feature they want to install
+
+Version 0.01.09
+
+2019-01-26
+
+- Seperated Fatigue from bard modification into bard extra
+
+2019-01-23
+
+- Set up skeleton for rest of classes and 'extras'
 
 Version 0.01.08
 

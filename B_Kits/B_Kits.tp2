@@ -2,7 +2,7 @@ BACKUP ~B_Kits/backup~
 AUTHOR ~Grammarsalad~
 
 
-VERSION ~0.01.08~
+VERSION ~0.01.09~
 
 //README ~faiths_and_powers/readme-pnp.html~
 
@@ -137,6 +137,21 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_ranger.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
+//			302: Ranger: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @126  //Ranger Revisions: Conservative
+SUBCOMPONENT @125 //Ranger revisions
+DESIGNATED 302
+GROUP @125    //Ranger revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_ranger.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
 //			401: Thieves: Conservative
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -148,6 +163,246 @@ GROUP @127    //Thief revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_thief.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			402: Thieves: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @129  //Thief Revisions: Radical
+SUBCOMPONENT @127 //Thief revisions
+DESIGNATED 402
+GROUP @127    //Thief revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_thief.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			501: Fighters: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @131  //Fighter Revisions: Conservative
+SUBCOMPONENT @130 //Fighter revisions
+DESIGNATED 501
+GROUP @130    //Fighter revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_fighter.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			502: Fighters: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @132  //Fighter Revisions: Radical
+SUBCOMPONENT @130 //Fighter revisions
+DESIGNATED 502
+GROUP @130    //Fighter revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_fighter.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			601: Paladins: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @134  //Paladin Revisions: Conservative
+SUBCOMPONENT @133 //Paladin revisions
+DESIGNATED 601
+GROUP @133    //Paladinrevisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_paladin.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			602: Paladins: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @135  //Paladin Revisions: Radical
+SUBCOMPONENT @133 //Paladin revisions
+DESIGNATED 602
+GROUP @133    //Paladinrevisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_paladin.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			701: Druid: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @137  //Druid Revisions: Conservative
+SUBCOMPONENT @136 //Druid revisions
+DESIGNATED 701
+GROUP @136    //Druid revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_druid.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			702: Druid: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @138  //Druid Revisions: Radical
+SUBCOMPONENT @136 //Druid revisions
+DESIGNATED 702
+GROUP @136    //Druid revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_druid.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			801: Mage: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @140  //Mage Revisions: Conservative
+SUBCOMPONENT @139 //Mage revisions
+DESIGNATED 801
+GROUP @139    //Mage revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_mage.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			802: Mage: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @141  //Mage Revisions: Conservative
+SUBCOMPONENT @139 //Mage revisions
+DESIGNATED 802
+GROUP @139    //Mage revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_mage.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			901: Sorcerer: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @143  //Sor Revisions: Conservative
+SUBCOMPONENT @142 //Sor revisions
+DESIGNATED 901
+GROUP @142    //Sor revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_sorcerer.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			902: Sorcerer: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @144  //Sor Revisions: Radical
+SUBCOMPONENT @142 //Sor revisions
+DESIGNATED 901
+GROUP @142    //Sor revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_sorcerer.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1001: Shaman: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @146  //Shaman Revisions: Conservative
+SUBCOMPONENT @145 //Shaman revisions
+DESIGNATED 1001
+GROUP @145    //Shaman revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_shaman.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1002: Shaman: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @147  //Shaman Revisions: Radical
+SUBCOMPONENT @145 //Shaman revisions
+DESIGNATED 1002
+GROUP @145    //Shaman revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_shaman.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1101: Monk: Conservative
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @149  //Monk Revisions: Conservative
+SUBCOMPONENT @148 //Monk revisions
+DESIGNATED 1101
+GROUP @148    //Monk revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_monk.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1102: Monk: Radical
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @150  //Monk Revisions: Radical
+SUBCOMPONENT @148 //Monk revisions
+DESIGNATED 1102
+GROUP @148    //Monk revisions
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_revised_monk.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1201: Class 'Extras': Spontaneous Casting: Standard
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @151  //Monk Revisions: Radical
+SUBCOMPONENT @151 //Class 'Extras'
+DESIGNATED 1201
+GROUP @151    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_revisions.tpa~
 
 /*
 //__________________________________________________________________________________

@@ -1,120 +1,12 @@
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//////////////                                                      \\\\\\\\\\\\\\
-//////////////      Spontaneous casting for clerics (by Pecca)      \\\\\\\\\\\\\\
-//////////////                                                      \\\\\\\\\\\\\\
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//
-  // Spontaneous casting for clerics
-  // Alt spontaneous casting for clerics (all heal)
-  // Alt2 spontaneous casting for clerics (evil drain HP touch spells-use in one round or lose spell)
-  // Spontaneous casting for druids
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                 ALL MAGES               //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-////////////////////////                                  \\\\\\\\\\\\\\\\\\\\\\\\
-////////////////////////    Performance fatigue (Bards)   \\\\\\\\\\\\\\\\\\\\\\\\
-////////////////////////                                  \\\\\\\\\\\\\\\\\\\\\\\\
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-COPY_EXISTING_REGEXP GLOB ~.*\.spl~ ~override~
-  PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
-	READ_SHORT   0x1c type
-	READ_ASCII  0x3a icon
- 	PATCH_IF ((%type% = 5) AND NOT(~%icon%~ STRING_EQUAL_CASE ~SPCL621C~ = 1)) BEGIN  //Bard song
-                 READ_LONG 	0x64	ab_off			// Abilities Offset
-	READ_SHORT	0x68	ab_num			// Number of Abilities
-	READ_SHORT	0x6a	fx_off			// Effects Offset
-	READ_SHORT	0x70	glob_fx			// Number of Global Effects
-	SET	glob_add = 0
-	INSERT_BYTES (fx_off) 0x30
-	  WRITE_SHORT (fx_off) 93			// Fatigue
-	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
-	  WRITE_BYTE (fx_off + 0x3) 1			// power
-	  WRITE_BYTE (fx_off + 0x4) 1			// 1 fatigue
-	  WRITE_LONG (fx_off + 0x8) 0			// Cumulative
-	  WRITE_LONG (fx_off + 0xc) 0			// Timing: Duration
-	  WRITE_LONG (fx_off + 0xe) 60			// Duration: 10 mins
-	  WRITE_BYTE (fx_off + 0x12) 100		// Probability 1
-	++glob_add
-
-//	INSERT_BYTES (fx_off) 0x30			//Second effect
-//	  WRITE_etc...
-//	++glob_add
-
-	glob_fx += glob_add
-	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
-	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
-	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
-	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
-	END
-     END
-  END
-BUT_ONLY
-
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-////////////////////////                                  \\\\\\\\\\\\\\\\\\\\\\\\
-////////////////////////   Performance fatigue (Shaman)   \\\\\\\\\\\\\\\\\\\\\\\\
-////////////////////////                                  \\\\\\\\\\\\\\\\\\\\\\\\
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-/////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-COPY_EXISTING_REGEXP GLOB ~.*\.spl~ ~override~
-  PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
-	READ_SHORT   0x1c type
-	READ_ASCII  0x3a icon
- 	PATCH_IF ((%type% = 5) AND (~%icon%~ STRING_EQUAL_CASE ~SPCL621C~ = 1)) BEGIN  //Bard song
-                 READ_LONG 	0x64	ab_off			// Abilities Offset
-	READ_SHORT	0x68	ab_num			// Number of Abilities
-	READ_SHORT	0x6a	fx_off			// Effects Offset
-	READ_SHORT	0x70	glob_fx			// Number of Global Effects
-	SET	glob_add = 0
-
-	INSERT_BYTES (fx_off) 0x30
-	  WRITE_SHORT (fx_off) 93			// Fatigue
-	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
-	  WRITE_BYTE (fx_off + 0x3) 1			// power
-	  WRITE_BYTE (fx_off + 0x4) 1			// 1 fatigue
-	  WRITE_LONG (fx_off + 0x8) 0			// Cumulative
-	  WRITE_LONG (fx_off + 0xc) 0			// Timing: Duration
-	  WRITE_LONG (fx_off + 0xe) 60			// Duration: 10 mins
-	  WRITE_BYTE (fx_off + 0x12) 100		// Probability 1
-	++glob_add
-
-//	INSERT_BYTES (fx_off) 0x30			//Second effect
-//	  WRITE_etc...
-//	++glob_add
-
-	glob_fx += glob_add
-	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
-	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
-	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
-	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
-	END
-     END
-  END
-BUT_ONLY
-
-// Magic Item Creation (p 5788 26 vol)  
-  // Magic Item Creation (Clerics/druids)  (7th Scribe; 9th potions; 11th recharge; 13th level create wand)
-  // Magic Item Creation (Mages/bards)
-
-// Trap Revisions  
-  // Set Natural Snare for Rangers; gives skill % progression (As set trap, but only works outdoors).  
-  // Alt Set Natural Snare for rangers: Set progression (equal to sneak)
-  // Set Traps, improved traps and trap variety for higher set traps %.  Never fails.
-
-// Buttons (Requires EET)  
-  // Defend/Talk (make defend alt click for talk button)
-  // Universal Search. Gives all classes ability to search for traps
-  // Bard Thieving (gives bards ability to pick locks and/or search/disarm traps).  Gives skill % progression
-  // Bard Thieving (just give bards pick locks and % progression)
-  // Bard thieving alt1 (set progression for search/disarm traps and pick locks)
-  // Bard thieving alt2 (set progression for pick locks, matching pick pockets)
-  
+// 
 
 
 /*
