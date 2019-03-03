@@ -15,7 +15,15 @@ TBD
 
 GIVE AN OVERVIEW OF EACH COMPONENT HERE.  Describe them more fully below
 
+
+
 ## Class Revisions
+
+### 101-###: The Bard
+
+**Description**
+
+Also see the Performance Fatigue component in the 'extra' class modifications.  That component was originally meant to be a part of all Bard revisions, but I decided to seperate it out as that might be too extreme of a change for some.  
 
 ### 101: Bard: Conservative
 
@@ -36,6 +44,8 @@ This component will install the 'conservative' bard revision.  The overall chang
 - All bards can specialize (++) in any fighting style, and gain mastery (+++) in two weapon fighting.  
 
 - Generally increased Hit Die.  See individual descriptions for details.
+
+
 
 ### Bard Base Class
 
@@ -154,10 +164,53 @@ SONG OF THE FALLEN:
  
 If this tweak is installed, either the Bard Song or the Shaman Dance or both cause 1 point of fatigue for each round the character performs. When the character reaches 7 points of fatigue, they gain the 'fatigued' condition as normal.  Fatigue caused by performing recovers after 1 turn.  
 
-# CONTINUE EXTRAS
+This component is meant to coinside with the revisions to the bard and shaman changes presented in this mod as a kind of balance, but I decided to seperate it out as that might be too extreme of a change for some. 
 
-#### 
- 
+#### 1201: Performance Fatigue: Bard Song Fatigue
+
+This component only adds performance fatigue to the Bard Song and _not_ to the Shaman Dance. 
+
+#### 1202: Shaman Dance Performance Fatigue
+
+This component only adds performance fatigue to the Shaman Dance and _not_ to the Bard Song. 
+
+#### 1203: Bard Song and Shaman Dance Performance Fatigue
+
+This component  adds performance fatigue to both the Shaman Dance and the Bard Song. 
+
+### 1301: Unique Arcane Spell Lists
+
+This component will allow unique spell lists for all arcane classes and kits.  
+
+# TBD
+
+### 1401-1403: Turn bonus by charisma
+
+**Turn Undead**: This group of components modifies the turn undead level of characters based on their charisma.  There are three subcomponents described below.  The turn level modification is as follows:
+
+| Charisma Value | Turn modification |
+| :---: | :---: | 
+| 18 to 19  |  +1 |
+| 20 to 22 | +2 |
+| 23+ | +3 |
+
+#### 1401: All Priests and Paladins: Turn bonus by charisma
+
+This component will modify priests' and paladins' turn undead level by their current charisma as per the table above.      
+
+#### 1402: Clerics: Turn Modification by charisma
+
+This component will modify only priests' turn undead level by their current charisma as per the table above.      
+
+#### 1403: Paladins: Turn Modification by charisma
+
+This component will modify only paladins' turn undead level by their current charisma as per the table above.
+
+### 1501: Spontaneous Casting (By Pecca) 
+
+# TBD
+
+# CONTINUE EXTRAS
 
 -------------------------------Revise Below this line ----------------------------------------------------
 
