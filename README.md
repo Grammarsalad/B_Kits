@@ -15,6 +15,8 @@ TBD
 
 GIVE AN OVERVIEW OF EACH COMPONENT HERE.  Describe them more fully below
 
+## Class Revisions
+
 ### 101: Bard: Conservative
 
 This component will install the 'conservative' bard revision.  The overall changes to the Bard class are as follows (see the revised descriptions below for more detail): 
@@ -144,7 +146,18 @@ INCITE RAGE:
 
 SONG OF THE FALLEN:
 
-  
+# CONTINUE CLASSES
+
+## Class 'Extras'
+ 
+### 1201-1203: Class 'Extras': Performance Fatigue
+ 
+If this tweak is installed, either the Bard Song or the Shaman Dance or both cause 1 point of fatigue for each round the character performs. When the character reaches 7 points of fatigue, they gain the 'fatigued' condition as normal.  Fatigue caused by performing recovers after 1 turn.  
+
+# CONTINUE EXTRAS
+
+#### 
+ 
 
 -------------------------------Revise Below this line ----------------------------------------------------
 
