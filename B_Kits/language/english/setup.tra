@@ -6,8 +6,12 @@
 @13 = ~*Please be patient. This will take some time...*~
 @14  = ~Install Only New Kits (Conservative Version Only)~
 @15  = ~Install Only Revised Kits and Classes (Conservative Version)~
+@17  = ~EE games only!~
 
 @21  = ~EE games only!~
+@22  = ~Skipping EE content~
+
+
 
 //
 @100  = ~Select an installation package~
@@ -64,9 +68,20 @@
 @149= ~Monk Revisions: Conservative~
 @150= ~Monk Revisions: Radical~
 
-@151= ~Class 'Extras'~
-@152= ~Monk Revisions: Conservative~
-@153= ~Monk Revisions: Radical~
+@151= ~Class 'Extras': Performance Fatigue~
+@152= ~Performance Fatigue: Bard Song Fatigue~
+@153= ~Performance Fatigue: Shaman Dance Fatigue~
+@154= ~Performance Fatigue: Bard Song and Shaman Dance Fatigue~
+
+@161= ~Class 'Extras': Unique Arcane Spell Selection~
+@162= ~Class 'Extras'~
+
+@170= ~All Priests and Paladins: Turn bonus by charisma~
+@171= ~Turn bonus by charisma~
+@172  = ~Clerics only: Turn bonus by charisma~
+@173  = ~Paladins only: Turn bonus by charisma~
+
+@180=~Add Spontaneous Casting for clerics and druids (by Pecca)~
 
 /*
 

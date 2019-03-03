@@ -2,20 +2,28 @@ BACKUP ~B_Kits/backup~
 AUTHOR ~Grammarsalad~
 
 
-VERSION ~0.01.09~
+VERSION ~0.01.10~
 
-//README ~faiths_and_powers/readme-pnp.html~
+README ~B_Kits/readme-pnp.html~
 
 
 ALWAYS
 
         OUTER_SPRINT ~mod_folder~ ~B_Kits~    //Folder Var
 
+        ACTION_IF ((!FILE_CONTAINS_EVALUATED(~spell.ids~ ~CLERIC_OBSCURING_MIST~)) AND (FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~)) BEGIN
+	   INCLUDE ~B_Kits/lib/add_ids.tpa~
+        END
+
 	INCLUDE ~B_Kits/lib/remove_lines.tpa~
+
+	INCLUDE ~B_Kits/lib/spon_cast_functions.tpa~
 
 	INCLUDE ~B_Kits/lib/spell_to_innate.tpa~
 
 	INCLUDE ~B_Kits/lib/fl#add_kit_ee.tpa~
+
+	INCLUDE ~B_Kits/lib/SEQUENCER_MENU.tpa~
 
 	INCLUDE ~B_Kits/lib/spell_clone_effects.tpa~
 	
@@ -39,6 +47,7 @@ LANGUAGE ~English~ ~english~
          ~B_Kits/language/english/thief.tra~
          ~B_Kits/language/english/cleric.tra~
          ~B_Kits/language/english/IWD_spells.tra~
+         ~B_Kits/language/english/extra.tra~
 //___________________________________________________________________________________
 
 
@@ -60,7 +69,7 @@ LANGUAGE ~English~ ~english~
 BEGIN @120  //  Bard Revisions: Conservative
 SUBCOMPONENT @119 //Bard class revisions
 DESIGNATED 101
-GROUP @119 //Bard Revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
 
         OUTER_SPRINT ~bard_version~ ~conservative~    //Folder Var
@@ -78,7 +87,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_bard.tpa~
 BEGIN @121  // Bard Revisions: Radical
 SUBCOMPONENT @119 //Bard class revisions
 DESIGNATED 102
-GROUP @119 //Bard Revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
         OUTER_SPRINT ~bard_version~ ~radical~    //Folder Var
@@ -97,7 +106,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_bard.tpa~
 BEGIN @122  //Cleric Revisions: Conservative
 SUBCOMPONENT @117 //Cleric Revisions
 DESIGNATED 201
-GROUP @117    //Cleric revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_cleric.tpa~
@@ -113,7 +122,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_cleric.tpa~
 BEGIN @123  //Cleric Revisions: Radical
 SUBCOMPONENT @117 //Cleric Revisions
 DESIGNATED 202
-GROUP @117    //Cleric revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_cleric.tpa~
@@ -129,7 +138,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_Cleric_Radical.tpa~
 BEGIN @124  //Ranger Revisions: Conservative
 SUBCOMPONENT @125 //Ranger revisions
 DESIGNATED 301
-GROUP @125    //Ranger revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_ranger.tpa~
@@ -144,7 +153,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_ranger.tpa~
 BEGIN @126  //Ranger Revisions: Conservative
 SUBCOMPONENT @125 //Ranger revisions
 DESIGNATED 302
-GROUP @125    //Ranger revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_ranger.tpa~
@@ -159,7 +168,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_ranger.tpa~
 BEGIN @128  //Thief Revisions: Conservative
 SUBCOMPONENT @127 //Thief revisions
 DESIGNATED 401
-GROUP @127    //Thief revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_thief.tpa~
@@ -174,7 +183,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_thief.tpa~
 BEGIN @129  //Thief Revisions: Radical
 SUBCOMPONENT @127 //Thief revisions
 DESIGNATED 402
-GROUP @127    //Thief revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_thief.tpa~
@@ -189,7 +198,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_thief.tpa~
 BEGIN @131  //Fighter Revisions: Conservative
 SUBCOMPONENT @130 //Fighter revisions
 DESIGNATED 501
-GROUP @130    //Fighter revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_fighter.tpa~
@@ -204,7 +213,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_fighter.tpa~
 BEGIN @132  //Fighter Revisions: Radical
 SUBCOMPONENT @130 //Fighter revisions
 DESIGNATED 502
-GROUP @130    //Fighter revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_fighter.tpa~
@@ -219,7 +228,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_fighter.tpa~
 BEGIN @134  //Paladin Revisions: Conservative
 SUBCOMPONENT @133 //Paladin revisions
 DESIGNATED 601
-GROUP @133    //Paladinrevisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_paladin.tpa~
@@ -234,7 +243,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_paladin.tpa~
 BEGIN @135  //Paladin Revisions: Radical
 SUBCOMPONENT @133 //Paladin revisions
 DESIGNATED 602
-GROUP @133    //Paladinrevisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_paladin.tpa~
@@ -249,7 +258,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_paladin.tpa~
 BEGIN @137  //Druid Revisions: Conservative
 SUBCOMPONENT @136 //Druid revisions
 DESIGNATED 701
-GROUP @136    //Druid revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_druid.tpa~
@@ -264,7 +273,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_druid.tpa~
 BEGIN @138  //Druid Revisions: Radical
 SUBCOMPONENT @136 //Druid revisions
 DESIGNATED 702
-GROUP @136    //Druid revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_druid.tpa~
@@ -279,7 +288,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_druid.tpa~
 BEGIN @140  //Mage Revisions: Conservative
 SUBCOMPONENT @139 //Mage revisions
 DESIGNATED 801
-GROUP @139    //Mage revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_mage.tpa~
@@ -294,7 +303,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_mage.tpa~
 BEGIN @141  //Mage Revisions: Conservative
 SUBCOMPONENT @139 //Mage revisions
 DESIGNATED 802
-GROUP @139    //Mage revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_mage.tpa~
@@ -309,7 +318,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_mage.tpa~
 BEGIN @143  //Sor Revisions: Conservative
 SUBCOMPONENT @142 //Sor revisions
 DESIGNATED 901
-GROUP @142    //Sor revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_sorcerer.tpa~
@@ -324,7 +333,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_sorcerer.tpa~
 BEGIN @144  //Sor Revisions: Radical
 SUBCOMPONENT @142 //Sor revisions
 DESIGNATED 901
-GROUP @142    //Sor revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_sorcerer.tpa~
@@ -339,7 +348,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_sorcerer.tpa~
 BEGIN @146  //Shaman Revisions: Conservative
 SUBCOMPONENT @145 //Shaman revisions
 DESIGNATED 1001
-GROUP @145    //Shaman revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_shaman.tpa~
@@ -354,7 +363,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_shaman.tpa~
 BEGIN @147  //Shaman Revisions: Radical
 SUBCOMPONENT @145 //Shaman revisions
 DESIGNATED 1002
-GROUP @145    //Shaman revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_shaman.tpa~
@@ -369,7 +378,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_shaman.tpa~
 BEGIN @149  //Monk Revisions: Conservative
 SUBCOMPONENT @148 //Monk revisions
 DESIGNATED 1101
-GROUP @148    //Monk revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_monk.tpa~
@@ -384,7 +393,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_monk.tpa~
 BEGIN @150  //Monk Revisions: Radical
 SUBCOMPONENT @148 //Monk revisions
 DESIGNATED 1102
-GROUP @148    //Monk revisions
+GROUP @118 //Class Revisions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_revised_monk.tpa~
@@ -392,17 +401,142 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_monk.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//			1201: Class 'Extras': Spontaneous Casting: Standard
+//			1201-1203: Class 'Extras': Performance Fatigue
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @151  //Monk Revisions: Radical
-SUBCOMPONENT @151 //Class 'Extras'
+//________________________
+//
+// 1201: Bard Song Performance Fatigue
+//________________________ 
+
+BEGIN @152  //Performance Fatigue: Bard Song Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
 DESIGNATED 1201
-GROUP @151    //Class 'Extras'
+GROUP @162    //Class 'Extras'
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
-INCLUDE ~%mod_folder%/data/components/Setup_extra_revisions.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
+
+//________________________
+//
+// 1202: Shaman Dance Performance Fatigue
+//________________________ 
+
+BEGIN @153  //Performance Fatigue: Shaman Dance Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1202
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+
+//________________________
+//
+// 1203: Bard Song and Shaman Dance Performance Fatigue
+//________________________ 
+
+BEGIN @154  //Bard Song and Shaman Dance Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1203
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1301: Unique Arcane Spell Lists
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @161  //Unique Arcane Spell Lists
+SUBCOMPONENT @161 //Unique Arcane Spell Lists
+DESIGNATED 1301
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_unique_arcane.tpa~
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1401-1403: Turn bonus by charisma
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+//________________________
+//
+// 1401: All Priests and Paladins: Turn bonus by charisma
+//________________________ 
+
+
+BEGIN @170  //  All Priests and Paladins: Turn bonus by charisma
+SUBCOMPONENT @171 //Turn bonus by charisma
+DESIGNATED 1401
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_turn_charisma.tpa~
+
+//________________________
+//
+// 1402: Clerics: Turn Modification by charisma
+//________________________ 
+
+BEGIN @172  //  Clerics only: Turn bonus by charisma
+SUBCOMPONENT @171 //Turn bonus by charisma
+DESIGNATED 1402
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_turn_cha_pr.tpa~
+
+//________________________
+//
+// 1403: Paladins: Turn Modification by charisma
+//________________________ 
+
+
+BEGIN @173  //  Paladins only: Turn bonus by charisma
+SUBCOMPONENT @171 //Turn bonus by charisma
+DESIGNATED 1403
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_turn_cha_pal.tpa~
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1501: Spontaneous Casting (By Pecca)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @180  //Spontaneous Casting for clerics and druids (by Pecca)
+SUBCOMPONENT @180 //Spontaneous Casting for clerics and druids (by Pecca)
+DESIGNATED 1501
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @22 //~Skipping EE content~
+
+//extra spells if nec
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~spell.ids~ ~CLERIC_CURSE~)) BEGIN  //if not IWDEE priest spells..from any source
+  INCLUDE ~%mod_folder%/data/components/Setup_missing_spells.tpa~
+END
+
+//New spells if nec
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~dvimhere.mrk~ BEGIN
+  INCLUDE ~%mod_folder%/lib/spon_cast_spells.tpa~
+END
+
+
+INCLUDE ~%mod_folder%/data/components/Setup_Spontaneous_Casting.tpa~
+
 
 /*
 //__________________________________________________________________________________

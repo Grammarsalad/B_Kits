@@ -20,7 +20,7 @@ TO DO 08: Add unique portrait icons for Bard Performances (rally, countersong, c
 
 TO DO 09: Disable bardsong (and cancel existing bardsongs?) if character becomes fatigued
 
-TO DO 10:
+TO DO 10: Finish Unique Spell Selection
 
 TO DO 11: Song Magic!  Innates that cast instead of arcane spells that the bard can use to change bardsong and create additional effects (Radical!)
 
@@ -29,6 +29,20 @@ TO DO 12: Blade: see if slash damage can be changed based on weilded weapons.  I
 TO DO 13: Create 'add on' components (Performance fatigue for bard/shaman--seperate from reg songs; spontaneous casting for cleric/druid; ... )
 
 TO DO 14: Figure out the ini stuff so users can dynamically choose which extra class feature they want to install
+
+Version 0.01.10
+
+2019-03-02
+
+- Started unique spells (damn, what a pita!) 
+
+- More effecient groupings (class revisions and 'extras') 
+
+- Incorporated Charisma Turn Bonus
+
+- Incorporated Pecca's Spontaneous Casting (hopefully) 
+
+- Added (the beginnings of) a Readme
 
 Version 0.01.09
 

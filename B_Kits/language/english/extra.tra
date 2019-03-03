@@ -1,0 +1,84 @@
+//Tra Ref @600000 To @601000
+
+
+@600000 = ~Select Spell Level 1~
+@600001 = ~Select Spell Level 1
+
+Description~
+//spon casting  @600100 - @600200
+
+@600100  = ~~
+@600101=~Spontaneous Healing~
+
+@600102=~Spontaneous Healing
+
+Duration: 6 hours 
+Casting Time: Instant
+
+When this ability is activated, all memorized priest spells are transformed into healing spells of respective spell level. It lasts for 6 hours, or until the first priest spell is cast.~
+
+@600103=~Spontaneous Harming~
+
+@600104=~Spontaneous Harming
+
+Duration: 6 hours 
+Casting Time: Instant
+
+When this ability is activated, all memorized priest spells are transformed into harming spells of respective spell level. It lasts for 6 hours, or until the first priest spell is cast.~
+
+@600113=~Spontaneous Summoning~
+
+@600114=~Spontaneous Summoning
+
+Duration: 6 hours
+Casting Time: Instant
+
+When this ability is activated, all memorized priest spells are transformed into summoning spells of respective spell level. It lasts for 6 hours, or until the first priest spell is cast.~
+
+
+@600115=~Lesser Animal Summoning I~
+
+@600116=~Lesser Animal Summoning I 
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: Animal, Summoning
+Range: 30 ft.
+Duration: 3 turns
+Casting Time: 4 
+Area of Effect: Special 
+Saving Throw: None 
+
+By means of this spell, the caster calls a war dog to fight along his side. It will remain under the caster's control until slain or the spell duration expires.~
+
+@600117=~Lesser Animal Summoning II~
+
+@600118=~Lesser Animal Summoning II 
+(Conjuration/Summoning)
+
+Level: 2
+Sphere: Animal, Summoning 
+Range: 30 ft.
+Duration: 3 turns
+Casting Time: 5 
+Area of Effect: Special 
+Saving Throw: None 
+
+By means of this spell, the caster calls a wolf to fight along his side. It will remain under the caster's control until slain or the spell duration expires.~
+
+@600119=~Lesser Animal Summoning III~
+
+@600120=~Lesser Animal Summoning III 
+(Conjuration/Summoning)
+
+Level: 3
+Sphere: Animal, Summoning 
+Range: 30 ft.
+Duration: 3 turns
+Casting Time: 6 
+Area of Effect: Special 
+Saving Throw: None 
+
+By means of this spell, the caster calls between 1 and 2 animals that have 4 Hit Dice or less. The animals appearing are randomly determined. They will remain under the caster's control until slain or the spell duration expires.~
+
+
