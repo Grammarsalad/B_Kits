@@ -162,9 +162,13 @@ SONG OF THE FALLEN:
  
 ### 1201-1203: Class 'Extras': Performance Fatigue
  
-If this tweak is installed, either the Bard Song or the Shaman Dance or both cause 1 point of fatigue for each round the character performs. When the character reaches 7 points of fatigue, they gain the 'fatigued' condition as normal.  Fatigue caused by performing recovers after 1 turn.  
+If this tweak is installed, either the Bard Song or the Shaman Dance or both cause 1 point of fatigue for each round the character performs. Fatigue caused by performing recovers after 1 turn.
 
-This component is meant to coinside with the revisions to the bard and shaman changes presented in this mod as a kind of balance, but I decided to seperate it out as that might be too extreme of a change for some. 
+If installed for other class abilities, fatigue will only accrue by 1 point per use.  Typically, this fatigue lasts until the character rests as normal.  
+
+When the character reaches 7 points of fatigue, they gain the 'fatigued' condition.    
+
+This component is meant to coinside with the revisions to the various classes presented in this mod as a kind of balance, but I decided to seperate it out as that might be too extreme of a change for some. 
 
 #### 1201: Performance Fatigue: Bard Song Fatigue
 
@@ -177,6 +181,14 @@ This component only adds performance fatigue to the Shaman Dance and _not_ to th
 #### 1203: Bard Song and Shaman Dance Performance Fatigue
 
 This component  adds performance fatigue to both the Shaman Dance and the Bard Song. 
+
+#### 1204: Berserker Enrage Fatigue
+
+This component imposes 1 point of fatigue whenever the Enrage Class feature is used.   
+
+#### 1205: Barbarian Rage Fatigue
+
+This component imposes 1 point of fatigue whenever the Rage Class feature is used.
 
 ### 1301: Unique Arcane Spell Lists
 
