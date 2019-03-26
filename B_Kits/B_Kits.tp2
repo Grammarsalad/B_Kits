@@ -2,7 +2,7 @@ BACKUP ~B_Kits/backup~
 AUTHOR ~Grammarsalad~
 
 
-VERSION ~0.01.10~
+VERSION ~0.01.11~
 
 README ~B_Kits/readme-pnp.html~
 
@@ -421,7 +421,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
 //________________________
 //
 // 1202: Shaman Dance Performance Fatigue
-//________________________ 
+//________________________
 
 BEGIN @153  //Performance Fatigue: Shaman Dance Fatigue
 SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
@@ -444,6 +444,32 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
 INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+
+//________________________
+//
+// 1204: Berserker Enage Fatigue
+//________________________
+
+BEGIN @181  //Berserker Enrage Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1204
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
+
+//________________________
+//
+// 1205: Barbarian Rage Fatigue
+//________________________
+
+BEGIN @182  //Barbarian Rage Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1205
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
 
 
 //__________________________________________________________________________________
@@ -536,6 +562,22 @@ END
 
 
 INCLUDE ~%mod_folder%/data/components/Setup_Spontaneous_Casting.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1601: Everybody can Search (requires EEX)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @170  //  All Priests and Paladins: Turn bonus by charisma
+SUBCOMPONENT @171 //Turn bonus by charisma
+DESIGNATED 1401
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+INCLUDE ~%mod_folder%/data/components/Setup_all_search.tpa~
 
 
 /*

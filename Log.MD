@@ -30,6 +30,20 @@ TO DO 13: Create 'add on' components (Performance fatigue for bard/shaman--seper
 
 TO DO 14: Figure out the ini stuff so users can dynamically choose which extra class feature they want to install
 
+TO DO 15: All classes can search (GIVE BUTTON TO ALL CLASSES THAT DON'T HAVE IT!!)
+
+Version 0.01.11
+
+2019-03-13
+
+- Added All can search component
+
+- Gave all classes/kits a base 5% Search
+
+2019-03-09
+
+- Added Rage and Enrage Fatigue
+
 Version 0.01.10
 
 2019-03-02
@@ -40,9 +54,11 @@ Version 0.01.10
 
 - Incorporated Charisma Turn Bonus
 
-- Incorporated Pecca's Spontaneous Casting (hopefully) 
+- Incorporated Pecca's Spontaneous Casting (hopefully)
 
 - Added (the beginnings of) a Readme
+
+- Added SR compatibility (esp for Spon casting)
 
 Version 0.01.09
 
