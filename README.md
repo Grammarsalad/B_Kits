@@ -180,7 +180,7 @@ This component only adds performance fatigue to the Shaman Dance and _not_ to th
 
 #### 1203: Bard Song and Shaman Dance Performance Fatigue
 
-This component  adds performance fatigue to both the Shaman Dance and the Bard Song. 
+This component adds performance fatigue to both the Shaman Dance and the Bard Song. 
 
 #### 1204: Berserker Enrage Fatigue
 
@@ -189,6 +189,16 @@ This component imposes 1 point of fatigue whenever the Enrage Class feature is u
 #### 1205: Barbarian Rage Fatigue
 
 This component imposes 1 point of fatigue whenever the Rage Class feature is used.
+
+#### 1206: Barbarian Rage and Berserker Enage Fatigue
+
+This component imposes 1 point of fatigue whenever the Rage or Enrage Class feature is used.
+
+#### 1207: Everybody gets Fatigued
+
+This component adds performance fatigue to both the Shaman Dance and the Bard Song. 
+
+Additionally, this component imposes 1 point of fatigue whenever the Rage or Enrage Class feature is used.
 
 ### 1301: Unique Arcane Spell Lists
 
