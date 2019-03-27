@@ -156,7 +156,7 @@ INCITE RAGE:
 
 SONG OF THE FALLEN:
 
-# CONTINUE CLASSES
+**CONTINUE CLASSES**
 
 ## Class 'Extras'
  
@@ -194,7 +194,7 @@ This component imposes 1 point of fatigue whenever the Rage Class feature is use
 
 This component will allow unique spell lists for all arcane classes and kits.  
 
-# TBD
+**TBD**
 
 ### 1401-1403: Turn bonus by charisma
 
@@ -220,7 +220,15 @@ This component will modify only paladins' turn undead level by their current cha
 
 ### 1501: Spontaneous Casting (By Pecca) 
 
-# TBD
+**TBD**
+
+**Good and Neutral Clerics**
+
+**Evil Clerics**
+
+### 1601: Everybody can Search (requires EEX)
+
+This component allows characters of any class to search for traps and secret doors.  The base chance for success is quite low: 5%.  However, other components will give options to increase this chance.  
 
 # CONTINUE EXTRAS
 
