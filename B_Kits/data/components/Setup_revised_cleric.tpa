@@ -7,7 +7,16 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // 2nd level (Create Holy Water)
-// +1 spell per level (not kits, or not most kits, depending)
+// Domain Spells (Select 1 sphere each day. Can cast specific spells of that sphere automatically)
+//select domain spell:
+
+COPY ~%mod_folder%/class/cleric/B_DOM00.spl~ ~override~   //Selects the domain
+        SAY NAME1 @502001
+        SAY NAME2 @502001
+        SAY UNIDENTIFIED_DESC @502002
+	SAY DESC @502002
+
+
 
 
 /*

@@ -1,13 +1,16 @@
-//@0 to @1000
+//@0 to @1000   EXCEPT @970 To @996
 //Tra Ref @0 to @1000
-@9 = ~Main Component~
+@6   = ~...~
+@8   = ~skipping component~
+@9   = ~Main Component~
 @10  = ~Install All Revised and New Kits and Classes (Radical Version)~
 @11  = ~Install All Revised and New Kits and Classes (Conservative Version)~
 @12  = ~Install Only Revised Kits and Classes (Radical Version)~
-@13 = ~*Please be patient. This will take some time...*~
+@13  = ~*Please be patient. This will take some time...*~
 @14  = ~Install Only New Kits (Conservative Version Only)~
 @15  = ~Install Only Revised Kits and Classes (Conservative Version)~
 @17  = ~EE games only!~
+@18  = ~Component has been depreciated~
 
 @21  = ~EE games only!~
 @22  = ~Skipping EE content~
@@ -86,143 +89,5 @@
 @180 = ~Add Spontaneous Casting for clerics and druids (by Pecca)~
 @181 = ~Berserker Enrage Fatigue~
 @182 = ~Barbarian Rage Fatigue~
-
-/*
-
-
-//
-@200  = ~new and revised cleric kits~
-//
-// ... Cleric kits = 201-299
-//
-@201  = ~Add Cleric of Lathander~
-@202  = ~Add Cleric of Torm~
-@205  = ~Add Cleric of Tymora~
-@208  = ~Add Cleric of Helm~
-@209  = ~Add Cleric of Kelemvor~
-@210  = ~Add Cleric of Tempus~
-@212  = ~Add Cleric of Leira~
-@213  = ~Add Cleric of Baravar Cloakshadow~
-@219  = ~Add Cleric of Loviatar~
-@224  = ~Add Cleric of Talos~
-@225  = ~Add Cleric of Cyric~
-@226  = ~Add Cleric of Umberlee~
-//
-// ... Acolyte kits = 301-399
-//
-@314  = ~Add Acolyte of Ilmater~
-@315  = ~Add Acolyte of Deneir~
-@316  = ~Add Acolyte of Sune~
-@322  = ~Add Acolyte of Tempus~
-@325  = ~Add Acolyte of Mystra~
-@329  = ~Add Acolyte of Mask~
-@330  = ~Add Acolyte of Shar~
-@331  = ~Add Acolyte of Moander~
-@332  = ~Add Acolyte of Beshaba~
-@342  = ~Add Acolyte of Baervan Wildwanderer~
-//
-// ... Incarnate kits = 401-450
-//
-@405  = ~Add Incarnate of Mystra~
-//
-//
-// ... multiclass kits = 451-499
-//
-@499  = ~install multiclass kits~
-//
-@700  = ~new and revised druid kits~
-//
-// ... Mystic kits = 701-730
-//
-@701  = ~Add Nature Mystic~
-@702  = ~Add Beast Mystic~
-@703  = ~Add Earth Mystic~
-@704  = ~Add Water Mystic~
-@705  = ~Add Air Mystic~
-@706  = ~Add Fire Mystic~
-@707  = ~Add Light Mystic~
-@708  = ~Add Shadow Mystic~
-@711  = ~Add Fate Mystic~
-//
-// ... Druid kits = 731-760
-//
-@731  = ~Add Forest Druid~
-@732  = ~Add Mountain Druid~
-@733  = ~Add Jungle Druid~
-@734  = ~Add Desert Druid~
-@735  = ~Add Arctic Druid~
-@736  = ~Add Cave Druid~
-//
-// ... Occultist kits = 761-780
-//
-@761  = ~Add Ur-Priest~
-@762  = ~Add Beast Lord~
-@763  = ~Add Elementalist~
-@765  = ~Add Chaos Priest~
-//
-@800  = ~new and revised paladin kits~
-//
-// ... Champion kits = 801-830
-//
-@801  = ~Add Champion of Tyr~
-@802  = ~Add Champion of Kelemvor~
-@803  = ~Add Champion of Tempus~
-@804  = ~Add Champion of Bane~
-@805  = ~Add Champion of Helm~
-@806  = ~Add Champion of Talos~
-@807  = ~Add Champion of Moradin~
-@808  = ~Add Champion of Azuth~
-@809  = ~Add Champion of the Red Knight~
-//
-// ... Inquisitor kits = 831-860
-//
-@831  = ~Add Inquisitor of ~
-//
-// ... Zealot kits = 861-880
-//
-@862  = ~Add Zealot of Gruumsh~
-@863  = ~Add Zealot of Talos~
-@864  = ~Add Zealot of Kossuth~
-@865  = ~Add Zealot of Ilmater~
-@866  = ~Add Zealot of Garagos~
-@867  = ~Add Zealot of Corellon Larethian~
-@868  = ~Add Zealot of Sune~
-@869  = ~Add Zealot of Mystra~
-@870  = ~Add Zealot of Eilistraee~
-//
-//
-@900  = ~new and revised ranger kits~
-//
-// ... ranger kits = 901-929
-//
-@901  = ~Add Forest Ranger~
-@902  = ~Add Mountain Ranger~
-@903  = ~Add Jungle Ranger~
-@904  = ~Add Desert Ranger~
-@905  = ~Add Arctic Ranger~
-//
-// ... dervish kits = 931-949
-//
-@932  = ~Add Beast Master~
-@933  = ~Add Earth Dervish~
-@934  = ~Add Water Dervish~
-@935  = ~Add Air Dervish~
-@936  = ~Add Fire Dervish~
-@937  = ~Add Light Dervish~
-@938  = ~Add Shadow Dervish~
-//
-// ... scout kits = 951-969
-//
-@953  = ~Add Mage Hunter~
-@954  = ~Add Barbarian Ranger~
-@955  = ~Add Elven Archer~
-@956  = ~Add Halfling Slinger~
-//
-// ... sphere stuff
-//
-@997  = ~Acid Arrow~
-@998  = ~Summon Slimes~
-@999  = ~Acid Sheath~
-@1000  = ~install Sphere System~
-
-*/
+@183 = ~Barbarian Rage and Berserker Enrage Fatigue~
+@184 = ~Everybody gets Fatigued~

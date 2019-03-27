@@ -32,6 +32,22 @@ TO DO 14: Figure out the ini stuff so users can dynamically choose which extra c
 
 TO DO 15: All classes can search (GIVE BUTTON TO ALL CLASSES THAT DON'T HAVE IT!!)
 
+TO DO 16: Add an option to replace domain spells with spontaneous casting. 
+
+TO DO 17: Add 'extra' component to limit clerics to chain mail
+
+TO DO 18: Add 'extra' component to 'expand' cleric weapon training to all 'simple' weapons
+
+Version 0.01.12
+
+2019-03-26
+
+- Added extra fatigue options (everybody gets fatigued and barb/berserk get fatigued)
+
+- Organized Tra refs
+
+- Added a more direct check for spon cast
+
 Version 0.01.11
 
 2019-03-13

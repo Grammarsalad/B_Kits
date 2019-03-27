@@ -2,7 +2,7 @@ BACKUP ~B_Kits/backup~
 AUTHOR ~Grammarsalad~
 
 
-VERSION ~0.01.11~
+VERSION ~0.01.12~
 
 README ~B_Kits/readme-pnp.html~
 
@@ -46,6 +46,13 @@ LANGUAGE ~English~ ~english~
          ~B_Kits/language/english/ranger.tra~
          ~B_Kits/language/english/thief.tra~
          ~B_Kits/language/english/cleric.tra~
+         ~B_Kits/language/english/fighter.tra~
+         ~B_Kits/language/english/paladin.tra~
+         ~B_Kits/language/english/druid.tra~
+         ~B_Kits/language/english/mage.tra~
+         ~B_Kits/language/english/sorcerer.tra~
+         ~B_Kits/language/english/shaman.tra~
+         ~B_Kits/language/english/monk.tra~
          ~B_Kits/language/english/IWD_spells.tra~
          ~B_Kits/language/english/extra.tra~
 //___________________________________________________________________________________
@@ -401,7 +408,7 @@ INCLUDE ~%mod_folder%/data/components/Setup_revised_monk.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//			1201-1203: Class 'Extras': Performance Fatigue
+//			1201-1207: Class 'Extras': Performance Fatigue
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -471,6 +478,35 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
 INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
 
+//________________________
+//
+// 1206: Barbarian Rage and Berserker Enage Fatigue
+//________________________
+
+BEGIN @183  //Barbarian Rage Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1206
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
+
+//________________________
+//
+// 1207: Everybody gets Fatigued
+//________________________
+
+BEGIN @184  //Everybody gets Fatigued
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1207
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -551,7 +587,7 @@ GROUP @162    //Class 'Extras'
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @22 //~Skipping EE content~
 
 //extra spells if nec
-ACTION_IF (!FILE_CONTAINS_EVALUATED(~spell.ids~ ~CLERIC_CURSE~)) BEGIN  //if not IWDEE priest spells..from any source
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~spell.ids~ ~CLERIC_CAUSE_LIGHT_WOUNDS~)) BEGIN  //if not IWDEE priest spells..from any source
   INCLUDE ~%mod_folder%/data/components/Setup_missing_spells.tpa~
 END
 
