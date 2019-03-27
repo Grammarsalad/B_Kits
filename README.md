@@ -15,17 +15,15 @@ TBD
 
 GIVE AN OVERVIEW OF EACH COMPONENT HERE.  Describe them more fully below
 
+# Class Revisions
 
-
-## Class Revisions
-
-### 101-???: The Bard
+## 101-???: The Bard
 
 **Description**
 
-Also see the Performance Fatigue component in the 'extra' class modifications.  That component was originally meant to be a part of all Bard revisions, but I decided to seperate it out as that might be too extreme of a change for some.  
+Also see the Performance Fatigue component in the 'extra' class modifications.  That component was originally meant to be a part of all Bard revisions, but I decided to separate it out as that might be too extreme of a change for some.  
 
-### 101: Bard: Conservative
+### 101: The Bard: Conservative Version
 
 This component will install the 'conservative' bard revision.  The overall changes to the Bard class are as follows (see the revised descriptions below for more detail): 
 
@@ -45,9 +43,7 @@ This component will install the 'conservative' bard revision.  The overall chang
 
 - Generally increased Hit Die.  See individual descriptions for details.
 
-
-
-### Bard Base Class
+### Bard Base Class (Revised Base Class)
 
 BARD: The Bard is a rogue, but <PRO_HESHE> is very different from the Thief. The Bard's strength is <PRO_HISHER> pleasant and charming personality. With it and <PRO_HISHER> wits, <PRO_HESHE> makes <PRO_HISHER> way through the world. A Bard is a talented musician and a walking storehouse of gossip, tall tales, and lore; <PRO_HESHE> learns a little bit about everything that crosses <PRO_HISHER> path and is a jack-of-all-trades but master of none. While many Bards are scoundrels, their stories and songs are welcome almost everywhere.
 
@@ -146,17 +142,86 @@ Disadvantages:
 - The Skald cannot perform Rally, Countersong or Fascinate.  
 - The Skald does not make use of any thief skills.  
 
-
 BATTLESONG: ?  
  1st level: Grants allies a +2 bonus to hit and damage rolls, and a +2 bonus to AC.
  15th level: Grants allies a +4 bonus to hit and damage rolls, a +4 bonus to AC, and immunity to fear.
  20th level: Grants allies a +4 bonus to hit and damage rolls, a +4 bonus to AC, and immunity to fear, stun, and confusion. 
+
+**CONTINUE** 
  
 INCITE RAGE: 
 
 SONG OF THE FALLEN:
 
-**CONTINUE CLASSES**
+## 201-???: The Cleric
+
+**Description**
+
+Also see the Turn Bonus by Charisma, Spontaneous Casting, Cleric Weapon Training and Cleric Armor Training components in the 'extra' class modifications.  Note that if users install spontaneous casting and any cleric revision, it is recommended that they select the option to Replace Domain spells with Spontaneous casting for balance reasons unless they also install Cleric Armor Training.  
+
+### 201: The Cleric: Conservative Version
+
+This component will install the 'conservative' cleric revision.  The overall changes to the Cleric class are minimal, as the cleric is a pretty good class as it is.  However, there are a number of optional 'extra' classes that the user is invited to check out (See below).  The Conservative changes are as follows (see the revised descriptions below for more detail): 
+
+- The introduction of Domain Spells (And/or spontaneous casting) to increase versatility of the cleric.  
+
+- All clerics can specialize (++) in any fighting style except two weapon fighting.  
+
+- New Spells.  The cleric, for the most part, is defined by their spells. As such, one way to improve the class is to give them better spells. 
+
+### The Cleric (Revised Base Class)
+
+CLERIC: The Cleric is an adventuring priest who does not exclusively worship a single deity, but venerates the pantheon as a whole, .  <PRO_HESHE> understands that no single deity can or should represent every important aspect of life.  Rather, each deity has their place, their portfolios contributing to a whole that is greater than any single part.  As such, these clerics are particularly versatile as they can petition different deities for spells on different occasions, though they lack the power that only a specialist can wield.  
+
+**CLASS FEATURES**:
+- May wear helmets.
+- May wear any armor.
+- Domain Spells^: Each day, a cleric can select one sphere from which <PRO_HESHE> can draw spells from.  The selected sphere need not be one that the cleric normally has access to.  Once selected, <PRO_HESHE> will be able to cast a single spell each level <PRO_HESHE> can cast of the relevant level from that domain per day.  In any given day, if <PRO_HESHE> casts a domain spell before selecting a domain, <PRO_HESHE> will have to wait for the next day select a new domain.
+– May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
+– May only become Proficient (one slot) in any weapon class.
+– May only become Proficient (one slot) in two weapon fighting.
+– May Specialize (two slots) in any fighting style except two weapon fighting.
+– May Turn Undead.
+– May cast priest spells.
+– Hit Die: d8
+
+Prime Requisites For Dual-Classing: Wisdom
+
+^Domain spells can be swapped out for Spontaneous Casting (See below).
+
+**Domain Spells**
+
+Here is a list of each spell that the cleric can cast once per day for each selected sphere.  Note that in some instances, a character will gain the ability to cast a single spell more than once.  Also note that in some instances, different spells will be available depending on cleric alignment.  
+
+**HEALING**
+
+| Spell Level | Spell |
+| :---: | :---: | 
+| 1st | Cure Light Wounds |
+| 2nd | Cure Moderate Wounds* |
+| 3rd | Cure Medium Wounds |
+| 4th | Cure Serious Wounds |
+| 5th | Mass Cure Light Wounds |
+| 6th | Heal |
+| 7th | Heal (x2) |
+
+//*spell added by this component
+
+**NECROMANTIC**
+
+| Spell Level | Spell (Good or Neutral) |
+| :---: | :---: | 
+| 1st | ? | 
+| 2nd | Hold Undead | 
+| 3rd | ?  | 
+| 4th | Death Ward?  | 
+| 5th |  Death Ward x2(?) | 
+| 6th |  | 
+| 7th | Death Ward x3(?) | 
+
+**CONTINUE** 
+
+# CONTINUE CLASSES
 
 ## Class 'Extras'
  
@@ -168,7 +233,7 @@ If installed for other class abilities, fatigue will only accrue by 1 point per 
 
 When the character reaches 7 points of fatigue, they gain the 'fatigued' condition.    
 
-This component is meant to coinside with the revisions to the various classes presented in this mod as a kind of balance, but I decided to seperate it out as that might be too extreme of a change for some. 
+This component is meant to coincide with the revisions to the various classes presented in this mod as a kind of balance, but I decided to separate it out as that might be too extreme of a change for some. 
 
 #### 1201: Performance Fatigue: Bard Song Fatigue
 
@@ -180,7 +245,7 @@ This component only adds performance fatigue to the Shaman Dance and _not_ to th
 
 #### 1203: Bard Song and Shaman Dance Performance Fatigue
 
-This component adds performance fatigue to both the Shaman Dance and the Bard Song. 
+This component  adds performance fatigue to both the Shaman Dance and the Bard Song. 
 
 #### 1204: Berserker Enrage Fatigue
 
@@ -190,21 +255,21 @@ This component imposes 1 point of fatigue whenever the Enrage Class feature is u
 
 This component imposes 1 point of fatigue whenever the Rage Class feature is used.
 
-#### 1206: Barbarian Rage and Berserker Enage Fatigue
+#### 1206: Barbarian Rage and Berserker Enrage Fatigue
 
 This component imposes 1 point of fatigue whenever the Rage or Enrage Class feature is used.
 
-#### 1207: Everybody gets Fatigued
+#### 1207: Everybody gets fatigued
 
-This component adds performance fatigue to both the Shaman Dance and the Bard Song. 
+This component imposes 1 point of fatigue whenever the Rage or Enrage Class feature is used.
 
-Additionally, this component imposes 1 point of fatigue whenever the Rage or Enrage Class feature is used.
+This component  adds performance fatigue to both the Shaman Dance and the Bard Song. 
 
 ### 1301: Unique Arcane Spell Lists
 
 This component will allow unique spell lists for all arcane classes and kits.  
 
-**TBD**
+# TBD
 
 ### 1401-1403: Turn bonus by charisma
 
@@ -230,15 +295,7 @@ This component will modify only paladins' turn undead level by their current cha
 
 ### 1501: Spontaneous Casting (By Pecca) 
 
-**TBD**
-
-**Good and Neutral Clerics**
-
-**Evil Clerics**
-
-### 1601: Everybody can Search (requires EEX)
-
-This component allows characters of any class to search for traps and secret doors.  The base chance for success is quite low: 5%.  However, other components will give options to increase this chance.  
+# TBD
 
 # CONTINUE EXTRAS
 
