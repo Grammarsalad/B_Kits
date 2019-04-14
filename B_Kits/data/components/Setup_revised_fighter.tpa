@@ -6,8 +6,22 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// 
+// Stances Base spell to select: B_STN10.spl (copy, add 2das, add stance spls)
+//Select Stance
+ COPY ~%mod_folder%/class/fighter/B_STN10.spl~ ~override~   //Base Fighter Stance Selection
+        SAY NAME1 @504001    //select stance
+        SAY NAME2 @504001
+        SAY UNIDENTIFIED_DESC @504002  //stance description
+	SAY DESC @504002
+//2da
+ COPY ~%mod_folder%/class/fighter/B_STN10.2da~ ~override~   //Base Fighter Stance Selection
 
+//Reckless Onslaught
+ COPY ~%mod_folder%/class/fighter/B_STN12.spl~ ~override~   //
+        SAY NAME1 @504001    //select stance
+        SAY NAME2 @504001
+        SAY UNIDENTIFIED_DESC @504002  //stance description
+	SAY DESC @504002
 
 /*
 

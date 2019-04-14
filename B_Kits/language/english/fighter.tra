@@ -1,4 +1,8 @@
 //Tra Ref @504001 To @505000
+@504001 = ~Select Stance~
+@504002 = ~Beginning at first level, the fighter can enter a stance to either improve <PRO_HISHER> combat capacity in various ways. Once <PRO_HESHE> enters a stance, <PRO_HESHE> gains the bonuses and penalties described by the stance until either <PRO_HESHE> exits the stance, or enters the other stance.~
+@504003 = ~Reckless Onslaught~
+@504004 = ~This fighting style is exactly what it sounds like: the fighter throws <PRO_HIMHER>self into the fray, aggressively attacking <PRO_HISHER> enemies with little regard for defense.  While in this stance, the fighter gains a +2 bonus to melee damage, +1 for every two levels <PRO_HESHE> has after first level to a maximum of +11 at level 19. However, while in this stance, <PRO_HESHE> suffers a -2 penalty to AC.~
 
 
 

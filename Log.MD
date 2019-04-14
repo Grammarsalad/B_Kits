@@ -38,6 +38,14 @@ TO DO 17: Add 'extra' component to limit clerics to chain mail
 
 TO DO 18: Add 'extra' component to 'expand' cleric weapon training to all 'simple' weapons
 
+Version 0.01.13
+
+2019-04-11
+
+- Started Fighter Stance Selection
+
+- First draft: Reckless Onslaught
+
 Version 0.01.12
 
 2019-03-26
