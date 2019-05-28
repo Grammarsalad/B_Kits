@@ -209,15 +209,15 @@ Here is a list of each spell that the cleric can cast once per day for each sele
 
 **NECROMANTIC**
 
-| Spell Level | Spell (Good or Neutral) |
-| :---: | :---: | 
-| 1st | ? | 
-| 2nd | Hold Undead | 
-| 3rd | ?  | 
-| 4th | Death Ward?  | 
-| 5th |  Death Ward x2(?) | 
-| 6th |  | 
-| 7th | Death Ward x3(?) | 
+| Spell Level | Spell (Good or Neutral) | Spell (Evil) |
+| :---: | :---: |  :---: | 
+| 1st | Disrupt Undead | Drain |
+| 2nd | Hold Undead | ? |
+| 3rd | ?  | Circle of Bones |
+| 4th | Death Ward(?)  | Animate Dead |
+| 5th |  Death Ward x2(?) | Slay Living |
+| 6th | Recall Spirit(?)  | Soul Eater |
+| 7th | Death Ward x3(?) | Finger of Death |
 
 **CONTINUE** 
 
