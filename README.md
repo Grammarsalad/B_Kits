@@ -174,7 +174,7 @@ This component will install the 'conservative' cleric revision.  The overall cha
 CLERIC: The Cleric is an adventuring priest who does not exclusively worship a single deity, but venerates the pantheon as a whole, .  <PRO_HESHE> understands that no single deity can or should represent every important aspect of life.  Rather, each deity has their place, their portfolios contributing to a whole that is greater than any single part.  As such, these clerics are particularly versatile as they can petition different deities for spells on different occasions, though they lack the power that only a specialist can wield.  
 
 **CLASS FEATURES**:
-- May wear helmets  
+- May wear helmets 
 - May wear any armor  
 - Domain Spells^: Each day, a cleric can select one sphere from which <PRO_HESHE> can draw spells from.  The selected sphere need not be one that the cleric normally has access to.  Once selected, <PRO_HESHE> will be able to cast a single spell each level <PRO_HESHE> can cast of the relevant level from that domain per day.  In any given day, if <PRO_HESHE> casts a domain spell before selecting a domain, <PRO_HESHE> will have to wait for the next day select a new domain.  
 – May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).  
@@ -184,6 +184,18 @@ CLERIC: The Cleric is an adventuring priest who does not exclusively worship a s
 – May Turn Undead.  
 – May cast priest spells.  
 – Hit Die: d8  
+
+- May wear helmets 
+- May wear any armor  
+- Domain Spells^: Each day, a cleric can select one sphere from which <PRO_HESHE> can draw spells from.  The selected sphere need not be one that the cleric normally has access to.  Once selected, <PRO_HESHE> will be able to cast a single spell each level <PRO_HESHE> can cast of the relevant level from that domain per day.  In any given day, if <PRO_HESHE> casts a domain spell before selecting a domain, <PRO_HESHE> will have to wait for the next day select a new domain.  
+– May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).  
+– May only become Proficient (one slot) in any weapon class.  
+– May only become Proficient (one slot) in two weapon fighting.  
+– May Specialize (two slots) in any fighting style except two weapon fighting.  
+– May Turn Undead.  
+– May cast priest spells.  
+– Hit Die: d8  
+
 
 ^Domain spells can be swapped out for Spontaneous Casting (See below).
 
