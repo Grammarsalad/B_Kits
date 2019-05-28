@@ -190,7 +190,7 @@ CLERIC: The Cleric is an adventuring priest who does not exclusively worship a s
 
 Prime Requisites For Dual-Classing: Wisdom
 
-**Domain Spells**
+##### **Domain Spells**
 
 Here is a list of each spell that the cleric can cast once per day for each selected sphere.  Note that in some instances, a character will gain the ability to cast a single spell more than once.  Also note that in some instances, different spells will be available depending on cleric alignment.  
 
