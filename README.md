@@ -176,18 +176,18 @@ CLERIC: The Cleric is an adventuring priest who does not exclusively worship a s
 **CLASS FEATURES**:
 - May wear helmets.
 - May wear any armor.
-- Domain Spells^: Each day, a cleric can select one sphere from which <PRO_HESHE> can draw spells from.  The selected sphere need not be one that the cleric normally has access to.  Once selected, <PRO_HESHE> will be able to cast a single spell each level <PRO_HESHE> can cast of the relevant level from that domain per day.  In any given day, if <PRO_HESHE> casts a domain spell before selecting a domain, <PRO_HESHE> will have to wait for the next day select a new domain.
-– May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
-– May only become Proficient (one slot) in any weapon class.
-– May only become Proficient (one slot) in two weapon fighting.
-– May Specialize (two slots) in any fighting style except two weapon fighting.
-– May Turn Undead.
-– May cast priest spells.
-– Hit Die: d8
-
-Prime Requisites For Dual-Classing: Wisdom
+- Domain Spells^: Each day, a cleric can select one sphere from which <PRO_HESHE> can draw spells from.  The selected sphere need not be one that the cleric normally has access to.  Once selected, <PRO_HESHE> will be able to cast a single spell each level <PRO_HESHE> can cast of the relevant level from that domain per day.  In any given day, if <PRO_HESHE> casts a domain spell before selecting a domain, <PRO_HESHE> will have to wait for the next day select a new domain.  
+– May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).  
+– May only become Proficient (one slot) in any weapon class.  
+– May only become Proficient (one slot) in two weapon fighting.  
+– May Specialize (two slots) in any fighting style except two weapon fighting.  
+– May Turn Undead.  
+– May cast priest spells.  
+– Hit Die: d8  
 
 ^Domain spells can be swapped out for Spontaneous Casting (See below).
+
+Prime Requisites For Dual-Classing: Wisdom
 
 **Domain Spells**
 
