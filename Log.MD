@@ -38,6 +38,48 @@ TO DO 17: Add 'extra' component to limit clerics to chain mail
 
 TO DO 18: Add 'extra' component to 'expand' cleric weapon training to all 'simple' weapons
 
+TO DO 19: COMPATIBILITY: IFF Performance skill installed, reduce fatigue cost for performance for bards/shamans in both fatigue code and performance code
+
+TO DO 20: Maybe give performance skill to shamans, too...
+
+TO DO 21: Complete Barter Skill
+
+TO DO 22: do Variant attribute boni for thief skills component
+
+TO DO 23: Finish Use Scroll skill
+
+TO DO 24: Spon Casting for Druids/Cleric: Detect if EEEx is installed and use their method instead if so
+
+Version 0.01.14
+
+2019-07-28
+
+- Added beginning of barter skill
+
+- Created bare bones variant attribute bonuses to skills component
+
+- Externalized backup folder
+
+- Changed extendskill.tpa to make it compatible with multiple added skills (hopefully!)
+
+2019-07-27
+
+- Moved Bardic Knowledge/Perform to Class Skills
+
+- Started bard skill component
+
+- Started thief skill component (and started use scroll skill)
+
+2019-07-25
+
+- Added ExtendedSkills.tpa
+
+- Added (first draft) set natural snares (EEex version) to rangers 
+
+- Reverted EEex set natural snares text display for rangers (not plausible as it must ALSO increment set traps which will also be available as a skill)
+
+- Added Bardic Knowledge (Full credit to OlvynChuru) --EEEx seems bugged.  Wait for official release to report (may get fixed)
+
 Version 0.01.13
 
 2019-04-11

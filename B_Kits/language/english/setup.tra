@@ -91,3 +91,10 @@
 @182 = ~Barbarian Rage Fatigue~
 @183 = ~Barbarian Rage and Berserker Enrage Fatigue~
 @184 = ~Everybody gets Fatigued~
+
+@190 = ~Class Skills~
+@191 = ~Everybody Can Search (requires EEex)~
+@192 = ~Only Bard Skills (requires EEX)~
+@193 = ~Only New Thief Skills (requires EEX)~
+@194 = ~Variant Attribute Bonuses for base skills.~
+

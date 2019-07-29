@@ -134,5 +134,8 @@ While in this stance, the Blade's movement rate doubles and <PRO_HESHE> gains a 
 
 Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells. The blade suffers a -2 penalty to AC while using offensive spin.~
 
-
+@500111 = ~Bardic Knowledge~
+@500112 = ~BARDIC KNOWLEDGE: In <PRO_HISHER> travels, the bard is a font of lore and information.  Points placed in this skill add to the bards Lore checks.~
+@500113 = ~Performance~
+@500114 = ~PERFORMANCE: This skill represents training in the arts, including music and theatre.~
 

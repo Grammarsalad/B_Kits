@@ -1,0 +1,157 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                BARD SKILLS              //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////              Buttons             /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////
+//Bard button functionality  (req EEex)
+///////////////////////////////////////////////////////////
+//pick locks
+//if EEEx is installed, let's give bards basic thievery
+ACTION_IF FILE_EXISTS_IN_GAME ~EEex_Brd.lua~ BEGIN  //if EEEx is installed
+// COPY ~%mod_folder%/lib/M_DEBUG.lua~ ~override~  //debug
+ COPY_EXISTING ~EEex_Brd.lua~ ~override~
+  SPRINT old @500016//
+  SPRINT new @500017//
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~        //replacing old with new (Enable thievery for all bards)
+
+/*
+//Probably for a different component (i.e. both the search and stealth)
+
+//class button changes --Put search in 5th slot 
+COPY ~%mod_folder%/lib/M_B_BRD.lua~ ~override~
+
+ COPY_EXISTING ~UI.MENU~ ~override~
+  SPRINT old @500014//
+  SPRINT new @500015//
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~        //replacing old with new (stealth as a alt to search in slot 5)
+*/
+
+///////////////////////////////////////////////////////////
+//2das  (req EEex)
+///////////////////////////////////////////////////////////
+
+APPEND ~THIEFSKL.2da~ ~BARD%TAB%25%TAB%15~ //giving them an actual progression (25 at 1st, 10 at level up)
+APPEND ~THIEFSKL.2da~ ~BLADE%TAB%15%TAB%10~ //giving them an actual progression (15 at 1st, 5 at level up)
+APPEND ~THIEFSKL.2da~ ~JESTER%TAB%25%TAB%15~ //giving them an actual progression (25 at 1st, 10 at level up)
+APPEND ~THIEFSKL.2da~ ~SKALD%TAB%10%TAB%5~ //giving them an actual progression (10 at 1st, 10 at level up)
+
+COPY_EXISTING ~THIEFSCL.2da~ ~override~   //to allow them to put points in pick
+  SET_2DA_ENTRY_LATER ~b_lock~ 4 5  100   // Standard Bard
+  SET_2DA_ENTRY_LATER ~b_lock~ 3 39  100   // Standard Blade
+  SET_2DA_ENTRY_LATER ~b_lock~ 4 39  100   // Standard Blade
+  SET_2DA_ENTRY_LATER ~b_lock~ 4 40  100   // Standard Jest
+  SET_2DA_ENTRY_LATER ~b_lock~ 4 41  100   // Standard Skald
+  SET_2DA_ENTRY_LATER ~b_lock~ 3 41  100   // Standard Skald
+//set
+  SET_2DA_ENTRIES_NOW ~b_lock~ 1
+BUT_ONLY
+COPY_EXISTING ~skillbrd.2da~ ~override~ //get rid of auto progression
+  SET_2DA_ENTRY_LATER ~b_pick~ 3 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 4 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 5 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 6 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 7 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 8 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 9 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 10 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 11 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 12 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 13 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 14 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 15 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 16 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 17 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 18 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 19 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 20 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 21 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 22 1  0   //
+//set
+  SET_2DA_ENTRIES_NOW ~b_pick~ 1
+BUT_ONLY
+COPY_EXISTING ~clasiskl.2da~ ~override~ //get rid of 1st level boni
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 5  0   //
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 39  0   //
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 40 0   //
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 41 0   //
+//set
+  SET_2DA_ENTRIES_NOW ~b_1pick~ 1
+BUT_ONLY
+
+//--------------------------------
+//    Bardic Knowledge
+//--------------------------------
+
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 25 //Lore
+	name = RESOLVE_STR_REF(@500111)
+	description = RESOLVE_STR_REF(@500112)
+	opcode = 21 //Modify Lore
+	visibility = 4 //Will not appear in character record screen (Lore's already there)
+STR_VAR
+	class_include = ~{5}~ //Bard Only
+	kit_include = ~{}~ //none
+	kit_exclude = ~{0x400D}~ //Blade excluded
+	stat_exclude = ~{}~ //No restrictions
+END
+
+//////////////////////////////////////////
+//  Add Bardic Knowledge checks to dialog
+//////////////////////////////////////////
+//TO DO
+
+//--------------------------------
+//    Performance
+//--------------------------------
+/*
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = ## //Add some specific ids to modifify and check for effects
+	name = RESOLVE_STR_REF(@500113)
+	description = RESOLVE_STR_REF(@500114)
+	opcode = 401 //New opcode: Extend stat
+	visibility = 1 //Display if a character can put points into it
+STR_VAR
+	class_include = ~{5}~ //Bard Only
+	kit_include = ~{}~ //none
+	kit_exclude = ~{}~ //
+	stat_exclude = ~{}~ //No restrictions
+END
+*/
+/////////////////////////////////////////
+//  ADD FUNCTIONALITY
+/////////////////////////////////////////
+//To do
+//Performance should reduce fatigue penalty for bard song (if installed)
+
+END   //end if EEEx is installed
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////        Class Description         /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+//TO Do
+
+
