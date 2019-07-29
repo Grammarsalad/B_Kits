@@ -174,22 +174,23 @@ This component will install the 'conservative' cleric revision.  The overall cha
 CLERIC: The Cleric is an adventuring priest who does not exclusively worship a single deity, but venerates the pantheon as a whole, .  <PRO_HESHE> understands that no single deity can or should represent every important aspect of life.  Rather, each deity has their place, their portfolios contributing to a whole that is greater than any single part.  As such, these clerics are particularly versatile as they can petition different deities for spells on different occasions, though they lack the power that only a specialist can wield.  
 
 **CLASS FEATURES**:
-- May wear helmets.
-- May wear any armor.
-- Domain Spells^: Each day, a cleric can select one sphere from which <PRO_HESHE> can draw spells from.  The selected sphere need not be one that the cleric normally has access to.  Once selected, <PRO_HESHE> will be able to cast a single spell each level <PRO_HESHE> can cast of the relevant level from that domain per day.  In any given day, if <PRO_HESHE> casts a domain spell before selecting a domain, <PRO_HESHE> will have to wait for the next day select a new domain.
-– May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
-– May only become Proficient (one slot) in any weapon class.
-– May only become Proficient (one slot) in two weapon fighting.
-– May Specialize (two slots) in any fighting style except two weapon fighting.
-– May Turn Undead.
-– May cast priest spells.
-– Hit Die: d8
-
-Prime Requisites For Dual-Classing: Wisdom
+- 
+- May wear helmets 
+- May wear any armor  
+- Domain Spells^: Each day, a cleric can select one sphere from which <PRO_HESHE> can draw spells from.  The selected sphere need not be one that the cleric normally has access to.  Once selected, <PRO_HESHE> will be able to cast a single spell each level <PRO_HESHE> can cast of the relevant level from that domain per day.  In any given day, if <PRO_HESHE> casts a domain spell before selecting a domain, <PRO_HESHE> will have to wait for the next day select a new domain.  
+- May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
+- May only become Proficient (one slot) in any weapon class.
+- May only become Proficient (one slot) in two weapon fighting.
+- May Specialize (two slots) in any fighting style except two weapon fighting.
+- May Turn Undead.
+- May cast priest spells.
+- Hit Die: d8
 
 ^Domain spells can be swapped out for Spontaneous Casting (See below).
 
-**Domain Spells**
+Prime Requisites For Dual-Classing: Wisdom
+
+##### **Domain Spells**
 
 Here is a list of each spell that the cleric can cast once per day for each selected sphere.  Note that in some instances, a character will gain the ability to cast a single spell more than once.  Also note that in some instances, different spells will be available depending on cleric alignment.  
 
@@ -209,15 +210,15 @@ Here is a list of each spell that the cleric can cast once per day for each sele
 
 **NECROMANTIC**
 
-| Spell Level | Spell (Good or Neutral) |
-| :---: | :---: | 
-| 1st | ? | 
-| 2nd | Hold Undead | 
-| 3rd | ?  | 
-| 4th | Death Ward?  | 
-| 5th |  Death Ward x2(?) | 
-| 6th |  | 
-| 7th | Death Ward x3(?) | 
+| Spell Level | Spell (Good or Neutral) | Spell (Evil) |
+| :---: | :---: |  :---: | 
+| 1st | Disrupt Undead | Drain |
+| 2nd | Hold Undead | ? |
+| 3rd | ?  | Circle of Bones |
+| 4th | Death Ward(?)  | Animate Dead |
+| 5th |  Death Ward x2(?) | Slay Living |
+| 6th | Recall Spirit(?)  | Soul Eater |
+| 7th | Death Ward x3(?) | Finger of Death |
 
 **CONTINUE** 
 
