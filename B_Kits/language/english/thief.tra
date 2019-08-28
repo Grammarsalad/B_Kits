@@ -4,11 +4,14 @@
 //Thief Base @501001 to @501099
 @501001 = ~~
 @501002 = ~Use Scrolls~
-@501003 = ~USE SCROLLS: At 10th level, if they have an int of 9 or greater, the thief gains the ability to use scrolls of all types (If they invest the skill).
+@501003 = ~USE SCROLLS: The character's use read scrolls skill determines <PRO_HISHER> ability to read scrolls.
+At 10th level, if <PRO_HESHE> has an int of 9 or greater, <PRO_HESHE> gains the ability to use scrolls of all types (*If* they invest the skill points to do so).
 Mage Scrolls: The thief can use 1st level scrolls if they have a minimum of 10 points in Use Scrolls.  Each additional level requires 10 points per level.  So, in order to use level 6 scrolls, the thief must have a minimum Use Scrolls skill of 60.
-Priest Scrolls: Priest scrolls are more difficult to use.  The thief must have a minimum Use Scrolls of 15 points per level to use use them.  The one exception is that they can use level 7 scrolls if they have a use scrolls value of 99.~
+Priest Scrolls: Priest scrolls are more difficult to use than mage scrolls.  The thief must have a minimum Use Scrolls of 15 points per level to use use them.  The one exception is that <PRO_HESHE> can use level 7 scrolls if <PRO_HESHE> has a use scrolls value of 99.~
 @501004 = ~Barter~
 @501005 = ~BARTER: The barter skill allows the thief to get better prices at stores. DESCRIBE THE SKILL BETTER!~
+@501006 = ~Use Poison~
+@501007 = ~USE POISON: The character's use poison skill determines <PRO_HISHER> ability to coat <PRO_HISHER> weapons with poisons.  The higher the skill, the more potent the poison.~
 
 
 

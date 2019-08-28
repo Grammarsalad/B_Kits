@@ -2,7 +2,7 @@ BACKUP ~Backup/B_Kits~
 AUTHOR ~Grammarsalad~
 
 
-VERSION ~0.01.14~
+VERSION ~0.01.15~
 
 README ~B_Kits/readme-pnp.html~
 
@@ -15,7 +15,7 @@ ALWAYS
 	   INCLUDE ~B_Kits/lib/add_ids.tpa~
         END
         
-	INCLUDE ~B_Kits/lib/ExtendedSkills.tpa~
+//	INCLUDE ~B_Kits/lib/ExtendedSkills.tpa~
 
 	INCLUDE ~B_Kits/lib/remove_lines.tpa~
 
@@ -604,24 +604,24 @@ INCLUDE ~%mod_folder%/data/components/Setup_Spontaneous_Casting.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//			1601-???: Class Skills
+//			1601-1603: New Class Skills
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 //________________________
 //
-// 1601: Everybody Can Search
+// 1600: All New Skills
 //________________________ 
 
 //CONTINUE
 
-BEGIN @191  //  Everybody Can Search (requires EEX)
+BEGIN @195 // All New Skills
 SUBCOMPONENT @190 //Class Skills
 DESIGNATED 1601
 GROUP @162    //Class 'Extras'
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~m__skill.lua~ ~EEex required!~  //~EE games only!~  ...for now
 
-INCLUDE ~%mod_folder%/data/components/Setup_all_search.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_all_skills.tpa~
 
 //________________________
 //
@@ -636,7 +636,7 @@ DESIGNATED 1602
 GROUP @162    //Class 'Extras'
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
-INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
 
 //________________________
 //
@@ -651,19 +651,50 @@ DESIGNATED 1603
 GROUP @162    //Class 'Extras'
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
-INCLUDE ~%mod_folder%/data/components/Setup_thief_skills.tpa~
+//INCLUDE ~%mod_folder%/data/components/Setup_thief_skills.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1701: Everybody Can Search (requires EEX)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
 
 //________________________
 //
-// 1604: Variant Attribute Bonuses for base skills
+// 1701: Everybody Can Search
+//________________________ 
+
+//CONTINUE
+
+BEGIN @191  //  Everybody Can Search (requires EEX)
+SUBCOMPONENT @191  //  Everybody Can Search (requires EEX)
+DESIGNATED 1701
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+INCLUDE ~%mod_folder%/data/components/Setup_all_search.tpa~
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1801-???: Variant Attribute Bonuses for Skills
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+//________________________
+//
+// 1801: Variant Attribute Bonuses for base skills
 //________________________ 
 
 //CONTINUE--Actually make the component!
 
 BEGIN @194  //  Variant Attribute Bonuses for base skills
-SUBCOMPONENT @190 //Class Skills
-DESIGNATED 1604
+SUBCOMPONENT @196 //Variant Attribute Bonuses
+DESIGNATED 1801
 GROUP @162    //Class 'Extras'
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
 //INCLUDE ~%mod_folder%/data/components/Setup_thief_skills.tpa~
+

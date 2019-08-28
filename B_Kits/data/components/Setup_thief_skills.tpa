@@ -1,10 +1,21 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
-/////////////////////////////////////                BARD SKILLS              //////////////////////////////////////
+/////////////////////////////////////               THIEF SKILLS              //////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////        Class Description         /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+//TO Do
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,50 +38,114 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-//USE SCROLL
-ACTION_IF FILE_EXISTS_IN_GAME ~m__skill.lua~ BEGIN  //if EEEx is installed
+//--------------------------------
+//    Use Poison
+//--------------------------------
 
-//////////////////////////////////////////////////////
-//       add Use Scroll: Require 10th level
-//////////////////////////////////////////////////////
+//CONTINUE w USE POISON
 
-/*
+APPEND ~STATS.ids~ ~2000%TAB%USE_POISON~  //USE_POISON
 
-//need to make functional
 LAF ADD_EXTENDED_SKILL
 INT_VAR
-	stat = ## //Add some specific ids to modifify and check for effects
-	name = RESOLVE_STR_REF(@501002) //Use Scroll Text
-	description = RESOLVE_STR_REF(@501003) //Use Scroll Description
-	opcode = 401 //New opcode: Extend stat
-	visibility = 3 //Show if skill != 0 and character can put points in skill
+	stat = 2000 //
+	name = RESOLVE_STR_REF(@501006)         //Use Poison
+	description = RESOLVE_STR_REF(@501006)  //Use Poison Desc
+	opcode = 401 //
+	visibility = 2 // if value not 0
 STR_VAR
-	class_include = ~{4, 5, 9, 10, 13, 15}~ //Usable by thief, fighter/thief, fighter/mage/thief, mage/thief, and cleric/thief and bards
-	kit_include = ~{}~ //Anyboy???
-	kit_exclude = ~{0x400D, 0x400F}~ //Blade and skald excluded
-	stat_exclude = ~{{38, 9, 2},{}}~ //Req Int 9 + NEED TO RESTRICT TO 10+Lev Set an added stat to a specific value for lev 10 thieves and bards (except blades)
+	class_include = ~{4, 9, 10, 13, 15}~ //Usable by thief, fighter/thief, fighter/mage/thief, mage/thief, and cleric/thief
+	kit_include = ~{}~ //Not usable by ANYBODY else
+	kit_exclude = ~{0x400C}~ //Not usable by swashbuckler
+	stat_exclude = ~{}~ //
 END
+
+
+//--------------------------------
+//    Use Scroll
+//--------------------------------
+
+//CONTINUE w USE Scroll
+
+///////////////////////////////////////
+///////////// APPEND Stats.ids
+////////////////////////////////////////////////////////////////////////////
+
+APPEND ~STATS.ids~ ~2001%TAB%READ_SCROLLS~  //Read Scrolls
+APPEND ~STATS.ids~ ~2002%TAB%THIEF_LEVEL~  //Thief level for the purposes of reading scrolls (i.e. cannot put points into read scrolls unless this value is at least 1)
+
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 2001 //
+	name = RESOLVE_STR_REF(@501002)         //USe Scroll
+	description = RESOLVE_STR_REF(@501003)  //US description
+	opcode = 401 //Modify stat
+	visibility = 2 // if value not 0
+STR_VAR
+	class_include = ~{4, 5, 9, 10, 13, 15}~ //Usable by thief, fighter/thief, fighter/mage/thief, mage/thief, and cleric/thief and bard
+	kit_include = ~{}~ //
+	kit_exclude = ~{0x400D, 0x400F}~ //Blade and skald excluded
+	stat_exclude = ~{{2002, 1, 2}, {38, 9, 2}}~ //stat 2002 at least 1, and int at least 9
+END
+
+
+///////////////////////////////////////
+///////////// STAT 2002 (allowing thief to Put skill points into Read Scroll
+////////////////////////////////////////////////////////////////////////////
+//spl that increments stat 2002 to (at least) 1 so that the thief can add skill to read scroll (applied in clab at level 9, takes effect at level 10 as it should)
+
+//copy over B_USS02.spl--again, the spl that sets stat 2002 to 1--to override
+ COPY ~%mod_folder%/class/thief/skills/read_scroll/B_USS02.spl~ ~override~   //
+
+//apply stat 2002 (via AP_B_USS02 in clabs of all thieves at level 9 so that a thief can put points into read scroll at level 10)
+//PROBLEM: WOn't work for char creation in TOB (as the 2002 value won't apply until after initial char creation...)
 
 ////////////////////////////////////////////////////
 // change scroll usability and incorporate the skill
 ////////////////////////////////////////////////////
 
+//TO DO
 //add scroll usability to thieves (and any others that can use scrolls)
-//add 4 stats.ids entries.
-//add one for use scroll ability
+//add 2 more stats.ids entries.
+//Add a 'mage_scroll_use' stat and a priest_scroll_use stat that both increment with Use Scroll (former +1/10 points; latter +1/15 points)--that stat determins useabiity of scrolls
 //1 for lev 10 thieves. Must be set to a value of 1 (say) in order to add to scroll use ability stat via skill
-//1 for mage scroll use (set by being a mage--value of 10--or having a relevant skill in scroll ability stat (+1 per 10 points).  Lev x10 required (so must have 90+% to use lev 9 scrolls) 
-//1 for cleric (same as mage, but 15% per level (lev 7 99%)
+//Add these stats to mages and priests respectively
 
 //WHAT ABOUT USE ANY ITEM HLA???  Maybe change it so that the thief can apply their use scroll to any other usable magic item?
 
-//TO DO
 
-*/
+///////////////////////////////////////
+///////////// Add all nec abilities to clab
+////////////////////////////////////////////////////////////////////////////
 
-//////////////////////////////////////////////////////
-//       add Barter: To get better prices
-//////////////////////////////////////////////////////
+//Base Thief
+APPEND ~CLABTH01.2da~ ~READ_MAGIC    ****    ****        ****        ****        ****        ****        ****        ****        AP_B_USS02    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+//base bard
+APPEND ~CLABBA01.2da~ ~READ_MAGIC    ****    ****        ****        ****        ****        ****        ****        ****        AP_B_USS02    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+
+//thansk subtle
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+//  COUNT_2DA_COLS cols
+  COUNT_2DA_ROWS 10 rows
+  FOR (row = 3 ; row < rows ; ++row) BEGIN
+	READ_2DA_ENTRY %row% 1 10 modname
+	READ_2DA_ENTRY %row% 5 10 modclab
+	READ_2DA_ENTRY %row% 8 10 modclass
+	PATCH_IF (%modclass% = 4)/* && NOT (%modname% STRING_MATCHES_REGEXP ~C0SA+~ = 0) */ OR
+                 (%modclass% = 4)/* && NOT (%modname% STRING_MATCHES_REGEXP ~C0SA+~ = 0) */ BEGIN   //thief kits
+	  INNER_ACTION BEGIN
+		APPEND ~%modclab%.2da~ ~READ_MAGIC    ****    ****        ****        ****        ****        ****        ****        ****        AP_B_USS02    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+	  END
+	END
+  END
+BUT_ONLY
+
+
+//--------------------------------
+//    Barter
+//--------------------------------
+//CONTINUE w Barter
 
 /*
 //need to make functional
@@ -93,19 +168,4 @@ END
 //TO DO
 */
 //
-
-END   //end if EEEx is installed
-
-
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////                                  /////////////////////////////
-/////////////////////////////        Class Description         /////////////////////////////
-/////////////////////////////                                  /////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-//TO Do
-
 

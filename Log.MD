@@ -50,6 +50,14 @@ TO DO 23: Finish Use Scroll skill
 
 TO DO 24: Spon Casting for Druids/Cleric: Detect if EEEx is installed and use their method instead if so
 
+Version 0.01.15
+
+2019-08-28
+
+- Added Use poison and Use scrolls skills (using updated code for adding new skills)
+
+- Changed around a few components (i.e. sep everybody can search and var skill bonuses from new skills)
+
 Version 0.01.14
 
 2019-07-28
