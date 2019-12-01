@@ -67,7 +67,11 @@ This mod would be nothing without the numerous modders, testers and users in the
 
 **IchigoRXC**: Ichi has graciously created a number of spell icons for this mod (and Faiths and Powers)
 
-**Pecca**: For allowing me to include his amazing Spontaneous Casting mod as a component in Spells and Magic.  
+**Pecca**: For allowing me to include his amazing Spontaneous Casting mod as a component in Spells and Magic. 
+
+**Bubb**: For his brilliant work on EEex.  A lot of things in this mod would not be possible without him.  
+
+**OlvynChuru**: OlvynChuru has also contributed greatly to EEex, and again, this mod would not be possible without his work.  
 
 
 ## Acknowledgements
@@ -89,8 +93,7 @@ The following people have been patiently giving me feedback on this and other mo
 * **NotePad++**, by Don Ho
 * **homebrewery.naturalcrit.com**, for this readme you are looking at: http://www.naturalcrit.com/
 
-```
-```
+
 ## Links: 
 ##### These mods and resources have inspired me.  Check them out:
 
