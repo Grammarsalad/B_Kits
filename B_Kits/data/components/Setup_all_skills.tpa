@@ -1,10 +1,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
-/////////////////////////////////////             ALL THIEF SKILLS            //////////////////////////////////////
+/////////////////////////////////////                ALL SKILLS               //////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Here's a function for adding a new skill to the game. Feel free to put this function in your own mod.
 DEFINE_ACTION_FUNCTION ADD_EXTENDED_SKILL
 	INT_VAR
 		stat=~-1~ //ID of the stat (either from STATS.IDS, or some big number if you're using an extended stat).
@@ -44,317 +45,471 @@ BEGIN
 	},~
 END
 
-//Thief Skills
-INCLUDE ~%mod_folder%/data/components/Setup_thief_skills.tpa~
+/////////////////////////////////////////////////////////
+/////////// Append stats.ids
+//////////////////////////////////////////////////////////////////////////////
 
-//Bard Skills
-INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+APPEND ~STATS.ids~ ~2000%TAB%USE_POISON~           //USE_POISON
+APPEND ~STATS.ids~ ~2001%TAB%READ_SCROLLS~         //Read Scrolls
+APPEND ~STATS.ids~ ~2002%TAB%MAGE_LEVEL~          //Mage level scroll use
+APPEND ~STATS.ids~ ~2003%TAB%BARTER~               //BARTER
+APPEND ~STATS.ids~ ~2004%TAB%BARDIC_KNOWLEDGE~     //BARDIC_KNOWLEDGE
+APPEND ~STATS.ids~ ~2005%TAB%PERFORMANCE~          //PERFORMANCE
+APPEND ~STATS.ids~ ~2006%TAB%PRIEST_LEVEL~          //Priest level scroll use
 
-//Apply to base classes:
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////               THIEF SKILLS              //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////        Class Description         /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+//TO Do
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////              Buttons             /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//none required
+
+//--------------------------------
+//    Use Scroll
+//--------------------------------
+
+//scroll based splprot: scroll greater than (only)
+	INCLUDE ~B_Kits/lib/splprot_scrolls.tpa~
+
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 2001 //
+	name = RESOLVE_STR_REF(@501002)         //USe Scroll
+	description = RESOLVE_STR_REF(@501003)  //US description
+	opcode = 401 //Modify stat
+	visibility = 2 // if value not 0
+STR_VAR
+	class_include = ~{4, 5}~ //Usable by thief, and bard
+	kit_include = ~{}~ //
+	kit_exclude = ~{0x400D, 0x400F}~ //Blade and skald excluded
+ 	stat_exclude = ~{{34, 10, 2}, {38, 9, 2}}~ //stat 2002 at least 1, and int at least 9
+END
+
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 2001 //
+	name = RESOLVE_STR_REF(@501002)         //USe Scroll
+	description = RESOLVE_STR_REF(@501003)  //US description
+	opcode = 401 //Modify stat
+	visibility = 2 // if value not 0
+STR_VAR
+	class_include = ~{9, 13, 15}~ //Usable by fighter/thief, mage/thief, and cleric/thief
+	kit_include = ~{}~ //
+	kit_exclude = ~{0x400D, 0x400F}~ //Blade and skald excluded
+ 	stat_exclude = ~{{68, 10, 2}, {38, 9, 2}}~ //stat 2002 at least 1, and int at least 9
+END
+
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 2001 //
+	name = RESOLVE_STR_REF(@501002)         //USe Scroll
+	description = RESOLVE_STR_REF(@501003)  //US description
+	opcode = 401 //Modify stat
+	visibility = 2 // if value not 0
+STR_VAR
+	class_include = ~{10}~ //fighter/mage/thief
+	kit_include = ~{}~ //
+	kit_exclude = ~{0x400D, 0x400F}~ //Blade and skald excluded
+ 	stat_exclude = ~{{69, 10, 2}, {38, 9, 2}}~ //stat 2002 at least 1, and int at least 9
+END
+
+// 	stat_exclude = ~{{2002, 1, 2}, {38, 9, 2}}~ //stat 2002 at least 1, and int at least 9
+
+///////////////////////////////////////
+///////////// STAT 2002 (Allowing USE of Mage Scrolls (give a value of 9 to all mages at level 1)
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//spl that increments stat 2002 to (at least) 1 so that the thief can add skill to read scroll (applied in clab at level 9, takes effect at level 10 as it should)
+
+//B_USS01.spl - the mage version that allows use of lev 9 scrolls given at lev 1 to ALL mages
+COPY ~%mod_folder%/data/extra/use_scroll/B_USS01.spl~ ~override~   //
+//priest version
+COPY ~%mod_folder%/data/extra/use_scroll/B_USS05.spl~ ~override~   //Sets 2006 to 8 (for base priests)
+
+//This set of spells and effs will set stat 2002 based on value of stat 2001 (i.e. 1 if greater than 0, 2 if 10, 3 if 20, ... 10 if 90+ (each set cumulatively)
+COPY ~%mod_folder%/data/extra/use_scroll/B_USS02.spl~ ~override~   //applies the eff
+//the eff
+COPY ~%mod_folder%/data/extra/use_scroll/B_USS02.eff~ ~override~   //applies B_USS03.spl
+//the spl that applies the stat based bonuses to stat 2002 and 2006
+COPY ~%mod_folder%/data/extra/use_scroll/B_USS03.spl~ ~override~   //applies the bonus values to 2002 or 2006 based on 2001
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS04~ END  //If 2001 >0, increment 2002 by 1 (i.e. to use pos 0 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 9 parameter2 = %scr_gr% STR_VAR END  //If 2001 >9, increment 2002 by 1 (i.e. to use 1 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 19 parameter2 = %scr_gr% STR_VAR END  //If 2001 >19, increment 2002 by 1 (i.e. to use 2 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 29 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS04~  END  //If 2001 >29, increment 2002 by 1 (i.e. to use 3 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 39 parameter2 = %scr_gr% STR_VAR END  //If 2001 >39, increment 2002 by 1 (i.e. to use 4 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 49 parameter2 = %scr_gr% STR_VAR END  //If 2001 >49, increment 2002 by 1 (i.e. to use 5 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 59 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS04~  END  //If 2001 >59, increment 2002 by 1 (i.e. to use 6 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 69 parameter2 = %scr_gr% STR_VAR END  //If 2001 >69, increment 2002 by 1 (i.e. to use 7 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 79 parameter2 = %scr_gr% STR_VAR END  //If 2001 >79, increment 2002 by 1 (i.e. to use 8 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 89 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS04~ END  //If 2001 >89, increment 2002 by 1 (i.e. to use 9 level scrolls)
+//priest scrolls
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS05~ END  //If 2001 >0, increment 2006 by 1 (i.e. to use pos 0 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 14 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS05~ END  //If 2001 >14, increment 2006 by 1 (i.e. to use 1 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 29 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS05~ END  //If 2001 >29, increment 2006 by 1 (i.e. to use 2 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 44 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS05~ END  //If 2001 >44, increment 2006 by 1 (i.e. to use 3 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 59 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS05~ END  //If 2001 >59, increment 2006 by 1 (i.e. to use 4 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 74 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS05~ END  //If 2001 >74, increment 2006 by 1 (i.e. to use 5 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 89 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS05~ END  //If 2001 >89, increment 2006 by 1 (i.e. to use 6 level scrolls)
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 99 parameter2 = %scr_gr% STR_VAR match_resource = ~B_USS05~ END  //If 2001 >89, increment 2006 by 1 (i.e. to use 7 level scrolls)
+
+COPY ~%mod_folder%/data/extra/use_scroll/B_USS04.spl~ ~override~   //Increments 2002 by 1 (up to 10x) for mage scrolls
+COPY ~%mod_folder%/data/extra/use_scroll/B_USS05.spl~ ~override~   //Increments 2006 by 1 (up to 8x) for priest scrolls
+///...WHAT ABOUT DRUID SCROLLS??? SHOULD I DIFFERENTIATE OR JUST ALLOW PRIEST AND DRUID SCROLLS TO BE INTERCHANGABLE????
+///WHAT ABOUT PALLY AND RANGER SCROLL USE???
+
+
+//copy over B_USS02.spl--again, the spl that sets stat 2002 to 1--to override
+// COPY ~%mod_folder%/class/thief/skills/read_scroll/B_USS02.spl~ ~override~
+
+
+////////////////////////////////////////////////////
+// change scroll usability and incorporate the skill
+////////////////////////////////////////////////////
+
+//TO DO
+//add scroll usability to thieves (and any others that can use scrolls)
+//2002 mage use (lev 1 scrolls requires 2 points in 2002, +1/level
+//NOTES ON CSTOM USABILITY
+//1) Make the item usable by all classes, or some subset as desired. (by patching all items of the desired type)
+//2) In the clab, apply a spl with a number of 180 effects (I haven't tried 181, but iirc it doesn't work) for each item of said type.
+//3) also in the clab, apply a spl using 326 tied to the relevant proficiency (or whatever) that applies a spl using effect 321 that removes the first spl.
+
+//WHAT ABOUT USE ANY ITEM HLA???  Maybe change it so that the thief can apply their use scroll to any other usable magic item?
+
+
+
+
+
+//--------------------------------
+//    Barter
+//--------------------------------
+//CONTINUE w Barter
 
 /*
-The patches to UI.MENU are done in an awkward way. Basically, at the point in UI.MENU where I
-want to insert some code, I see if there is a line of code that doesn't exist anywhere else in
-the file. The patch replaces that line with itself and my own code. If another UI mod adds copies
-of the line I replace, that mod might conflict with this one.
+//need to make functional
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 2003 //Add some specific ids to modifify and check for effects
+	name = RESOLVE_STR_REF(@501004)         //Barter
+	description = RESOLVE_STR_REF(@501005)  //Barter description
+	opcode = 401 //New opcode: Extend stat
+	visibility = 3 //Show if skill != 0 and character can put points in skill
+STR_VAR
+	class_include = ~{4, 5, 9, 10, 13, 15}~ //Usable by thief, fighter/thief, fighter/mage/thief, mage/thief, and cleric/thief and bard
+	kit_include = ~{}~ //Anyboy???
+	kit_exclude = ~{0x400D, 0x400F}~ //Blade and skald excluded
+	stat_exclude = ~{{38, 9, 2},{}}~ //Req Int 9 + NEED TO RESTRICT TO 10+Lev Set an added stat to a specific value for lev 10 thieves and bards (except blades)
+END
+
+///////STORES
+//Change how stores work so that they can be bartered down.  AAAhh
+//TO DO
+//
 */
-COPY_EXISTING ~ui.menu~ ~override~
-	SPRINT aiscriptstring ~oogleblah~
-	SPRINT turnundeadstring ~oogleblah~
-	SPRINT backstabmultiplierstring ~oogleblah~
-	SPRINT racialenemystring ~oogleblah~
-	TEXT_SPRINT donebuttonstring ~oogleblah~
-	PATCH_IF GAME_IS ~bgee~ BEGIN
-		SPRINT aiscriptstring ~AI Script~
-		SPRINT turnundeadstring ~Turn Undead Level~
-		SPRINT backstabmultiplierstring ~Backstab Multiplier~
-		SPRINT racialenemystring ~Racial Enemy~
-		TEXT_SPRINT donebuttonstring ~area 762 704 230 40~
-	END
-	PATCH_IF GAME_IS ~bg2ee eet~ BEGIN
-		SPRINT aiscriptstring ~AI Script~
-		SPRINT turnundeadstring ~Turn Undead Level~
-		SPRINT backstabmultiplierstring ~Backstab Damage~
-		SPRINT racialenemystring ~Racial Enemy~
-		TEXT_SPRINT donebuttonstring ~area 360 70 302 44~
-	END
-	PATCH_IF GAME_IS ~iwdee~ BEGIN
-		SPRINT aiscriptstring ~Current Script~
-		SPRINT turnundeadstring ~Turn Undead Level~
-		SPRINT backstabmultiplierstring ~Backstab Damage~
-		SPRINT racialenemystring ~Racial Enemy~
-		TEXT_SPRINT donebuttonstring ~area 762 704 230 44~
-		TEXT_SPRINT donebuttonstring2 ~area 440 654 234 46~
-	END
-	REPLACE_TEXTUALLY CASE_INSENSITIVE ~helpTextString = characters\[currentID\]\.proficiencies\.details~ ~~~~~helpTextString = characters[currentID].proficiencies.details
-		local gsubBase = "%aiscriptstring%:"
-		if string.find(helpTextString, "%turnundeadstring%:") ~= nil then
-			gsubBase = "%turnundeadstring%:"
-		end
-		if string.find(helpTextString, "%backstabmultiplierstring%:") ~= nil then
-			gsubBase = "%backstabmultiplierstring%:"
-		end
-		if string.find(helpTextString, "%racialenemystring%:") ~= nil then
-			gsubBase = "%racialenemystring%:"
-		end
-		for i = 1, #extendedskilllist, 1 do
-			local skill = extendedskilllist[i]
-			local skillValue = EEex_GetActorStat(currentID, skill.stat)
-			local visibility = skill.visibility
-			local skillVisible = true
-			if bit32.band(visibility, 0x4) > 0 then
-				skillVisible = false
-			end
-			if bit32.band(visibility, 0x2) > 0 and skillValue == 0 then
-				skillVisible = false
-			end
-			if bit32.band(visibility, 0x1) > 0 and not canUseExtendedSkill(currentID, skill) then
-				skillVisible = false
-			end
-			if string.find(helpTextString, Infinity_FetchString(skill.name)) ~= nil then
-				skillVisible = false
-			end
-			if skillVisible then
-				helpTextString = string.gsub(helpTextString, gsubBase, Infinity_FetchString(skill.name) .. ": " .. skillValue .. "\n" .. gsubBase)
-			end
-		end~~~~~
 
-	REPLACE_TEXTUALLY CASE_INSENSITIVE ~for k, v in ipairs(characters\[currentID\]\.proficiencies\.class_skills) do~ ~local skillInsertPoint = #characters[currentID].proficiencies.class_skills + 1
-		for i = #characters[currentID].proficiencies.class_skills, 1, -1 do
-			local skillName = Infinity_FetchString(characters[currentID].proficiencies.class_skills[i].strRef)
-			if skillName == "%turnundeadstring%" or skillName == "%backstabmultiplierstring%" or skillName == "%racialenemystring%" then
-				 skillInsertPoint = i
-			end
-		end
-		for i = 1, #extendedskilllist, 1 do
-			local skill = extendedskilllist[i]
-			local skillValue = EEex_GetActorStat(currentID, skill.stat)
-			local visibility = skill.visibility
-			local skillVisible = true
-			if bit32.band(visibility, 0x4) > 0 then
-				skillVisible = false
-			end
-			if bit32.band(visibility, 0x2) > 0 and skillValue == 0 then
-				skillVisible = false
-			end
-			if bit32.band(visibility, 0x1) > 0 and not canUseExtendedSkill(currentID, skill) then
-				skillVisible = false
-			end
-			if skillVisible then
-				table.insert(characters[currentID].proficiencies.class_skills, skillInsertPoint, {['strRef'] = skill.name, ['current'] = skillValue})
-				skillInsertPoint = skillInsertPoint + 1
-			end
-		end
-		for k, v in ipairs(characters[currentID].proficiencies.class_skills) do~
+//--------------------------------
+//    Use Poison
+//--------------------------------
 
-	REPLACE_TEXTUALLY CASE_INSENSITIVE ~function isChargenProficienciesBackButtonClickable()~ ~~~~~function canUseExtendedSkill(actorID, skill)
-	local canUseSkill = false
-	local class = EEex_GetActorClass(actorID)
-	local kit = EEex_GetActorKit(actorID)
-	for j = 1, #skill['class_include'], 1 do
-		if skill['class_include'][j] == class then
-			canUseSkill = true
-		end
-	end
-	for j = 1, #skill['kit_include'], 1 do
-		if skill['kit_include'][j] == kit then
-			canUseSkill = true
-		end
-	end
-	for j = 1, #skill['kit_exclude'], 1 do
-		if skill['kit_exclude'][j] == kit then
-			canUseSkill = false
-		end
-	end
-	for j = 1, #skill['stat_exclude'], 1 do
-		local check_stat = EEex_GetActorStat(actorID, skill['stat_exclude'][j][1])
-		local check_value = skill['stat_exclude'][j][2]
-		local check_relation = skill['stat_exclude'][j][3]
-		if check_relation == 0 and check_stat <= check_value then
-			canUseSkill = false
-		elseif check_relation == 1 and check_stat == check_value then
-			canUseSkill = false
-		elseif check_relation == 2 and check_stat < check_value then
-			canUseSkill = false
-		elseif check_relation == 3 and check_stat > check_value then
-			canUseSkill = false
-		elseif check_relation == 4 and check_stat >= check_value then
-			canUseSkill = false
-		elseif check_relation == 5 and check_stat ~= check_value then
-			canUseSkill = false
-		elseif check_relation == 6 and bit32.bor(check_stat, check_value) == check_value then
-			canUseSkill = false
-		elseif check_relation == 7 and bit32.band(check_stat, check_value) >= check_value then
-			canUseSkill = false
-		elseif check_relation == 8 and bit32.band(check_stat, check_value) > 0 then
-			canUseSkill = false
-		elseif check_relation == 9 and bit32.band(check_stat, check_value) == 0 then
-			canUseSkill = false
-		elseif check_relation == 10 and bit32.bor(check_stat, check_value) > check_value then
-			canUseSkill = false
-		elseif check_relation == 11 and bit32.band(check_stat, check_value) < check_value then
-			canUseSkill = false
-		end
-	end
-	return canUseSkill
-end
+//CONTINUE w USE POISON
 
-function displayExtendedSkills()
-	if firstExtendedSkillIndex ~= nil and firstExtendedSkillIndex > 0 then
-		for i = 1, #extendedSkills, 1 do
-			local skill = extendedSkills[i]
-			chargen.thief_skill[firstExtendedSkillIndex + i] = {['description'] = skill.description, ['name'] = skill.name, ['value'] = skill.value, ['id'] = firstExtendedSkillIndex + i - 1}
-		end
-	end
-end
 
-function isChargenProficienciesBackButtonClickable()~~~~~
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 2000 //
+	name = RESOLVE_STR_REF(@501006)         //Use Poison
+	description = RESOLVE_STR_REF(@501006)  //Use Poison Desc
+	opcode = 401 //
+	visibility = 2 // if value not 0
+STR_VAR
+	class_include = ~{4, 9, 10, 13, 15}~ //Usable by thief, fighter/thief, fighter/mage/thief, mage/thief, and cleric/thief
+	kit_include = ~{}~ //Not usable by ANYBODY else
+	kit_exclude = ~{0x400C}~ //Not usable by swashbuckler
+	stat_exclude = ~{}~ //
+END
 
-	PATCH_IF !(GAME_IS ~iwdee~) BEGIN
-		REPLACE_EVALUATE ~name \'CHARGEN_PROFICIENCIES\'\([^\"]*\)\"~
-		BEGIN
-		END
-		~name 'CHARGEN_PROFICIENCIES'%MATCH1%"
-	firstExtendedSkillIndex = #chargen.thief_skill
-	extendedSkills = {}
-	for i = 1, #extendedskilllist, 1 do
-		local skill = extendedskilllist[i]
-		if canUseExtendedSkill(currentID, skill) then
-			table.insert(extendedSkills, {['description'] = skill['description'], ['name'] = skill['name'], ['stat'] = skill['stat'], ['value'] = EEex_GetActorStat(currentID, skill['stat']), ['base'] = EEex_GetActorStat(currentID, skill['stat']), ['opcode'] = skill['opcode'],})
-		end
-	end
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                BARD SKILLS              //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	displayExtendedSkills()
-~
-	END ELSE BEGIN
-		REPLACE_EVALUATE ~name \'CHARGEN_SKILLS\'\([^\"]*\)\"~
-		BEGIN
-		END
-		~name 'CHARGEN_SKILLS'%MATCH1%"
-	firstExtendedSkillIndex = #chargen.thief_skill
-	extendedSkills = {}
-	for i = 1, #extendedskilllist, 1 do
-		local skill = extendedskilllist[i]
-		if canUseExtendedSkill(currentID, skill) then
-			table.insert(extendedSkills, {['description'] = skill['description'], ['name'] = skill['name'], ['stat'] = skill['stat'], ['value'] = EEex_GetActorStat(currentID, skill['stat']), ['base'] = EEex_GetActorStat(currentID, skill['stat']), ['opcode'] = skill['opcode'],})
-		end
-	end
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////        Class Description         /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+//TO Do
 
-	displayExtendedSkills()
-~
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////              Buttons             /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
 
-		REPLACE_EVALUATE ~name \'LEVELUP_PROFICIENCIES\'\([^\"]*\)\"~
-		BEGIN
-		END
-		~name 'LEVELUP_PROFICIENCIES'%MATCH1%"
-	firstExtendedSkillIndex = #chargen.thief_skill
-	extendedSkills = {}
-	for i = 1, #extendedskilllist, 1 do
-		local skill = extendedskilllist[i]
-		if canUseExtendedSkill(currentID, skill) then
-			table.insert(extendedSkills, {['description'] = skill['description'], ['name'] = skill['name'], ['stat'] = skill['stat'], ['value'] = EEex_GetActorStat(currentID, skill['stat']), ['base'] = EEex_GetActorStat(currentID, skill['stat']), ['opcode'] = skill['opcode'],})
-		end
-	end
 
-	displayExtendedSkills()
-~
-	END
+///////////////////////////////////////////////////////////
+//Bard button functionality  (req EEex)
+///////////////////////////////////////////////////////////
+//pick locks
+//if EEEx is installed, let's give bards basic thievery
+// COPY ~%mod_folder%/lib/M_DEBUG.lua~ ~override~  //debug
+ COPY_EXISTING ~EEex_Brd.lua~ ~override~
+  SPRINT old @500016//
+  SPRINT new @500017//
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~        //replacing old with new (Enable thievery for all bards)
 
-	REPLACE_TEXTUALLY CASE_INSENSITIVE ~createCharScreen:OnProficiencyPlusMinusButtonClick(chargen\.proficiency\[currentChargenProficiency\]\.id, true)~ ~createCharScreen:OnProficiencyPlusMinusButtonClick(chargen.proficiency[currentChargenProficiency].id, true)
-					displayExtendedSkills()~
-
-	REPLACE_TEXTUALLY CASE_INSENSITIVE ~createCharScreen:OnProficiencyPlusMinusButtonClick(chargen\.proficiency\[currentChargenProficiency\]\.id, false)~ ~createCharScreen:OnProficiencyPlusMinusButtonClick(chargen.proficiency[currentChargenProficiency].id, false)
-					displayExtendedSkills()~
-
-	REPLACE_TEXTUALLY CASE_INSENSITIVE ~if createCharScreen:IsThiefSkillPlusMinusButtonClickable() +then~ ~if createCharScreen:IsThiefSkillPlusMinusButtonClickable() then
-					exIndex = currentChargenThiefSkill - firstExtendedSkillIndex~
-
-	REPLACE_TEXTUALLY CASE_INSENSITIVE ~createCharScreen:OnThiefSkillPlusMinusButtonClick(chargen\.thief_skill\[currentChargenThiefSkill\]\.id, true)~ ~						if currentChargenThiefSkill > firstExtendedSkillIndex then
-								if chargen.thief_skill[currentChargenThiefSkill].value < 255 and chargen.extraSkillPoints > 0 then
-									chargen.thief_skill[currentChargenThiefSkill].value = chargen.thief_skill[currentChargenThiefSkill].value + 1
-									extendedSkills[exIndex].value = extendedSkills[exIndex].value + 1
-									chargen.extraSkillPoints = chargen.extraSkillPoints - 1
-								end
-							end
-							createCharScreen:OnThiefSkillPlusMinusButtonClick(chargen.thief_skill[currentChargenThiefSkill].id, true)
-							displayExtendedSkills()~
-
-	REPLACE_TEXTUALLY CASE_INSENSITIVE ~createCharScreen:OnThiefSkillPlusMinusButtonClick(chargen\.thief_skill\[currentChargenThiefSkill\]\.id, false)~ ~						if currentChargenThiefSkill > firstExtendedSkillIndex then
-							if chargen.levelingUp and chargen.thief_skill[currentChargenThiefSkill].value > extendedSkills[exIndex].base then
-								chargen.thief_skill[currentChargenThiefSkill].value = chargen.thief_skill[currentChargenThiefSkill].value - 1
-								extendedSkills[exIndex].value = extendedSkills[exIndex].value - 1
-								chargen.extraSkillPoints = chargen.extraSkillPoints + 1
-								createCharScreen:OnThiefSkillPlusMinusButtonClick(chargen.thief_skill[currentChargenThiefSkill].id, false)
-								displayExtendedSkills()
-							end
-						else
-							createCharScreen:OnThiefSkillPlusMinusButtonClick(chargen.thief_skill[currentChargenThiefSkill].id, false)
-							displayExtendedSkills()
-						end~
-
-	REPLACE_EVALUATE ~%donebuttonstring%\([^`]*\)createCharScreen:OnDoneButtonClick()~
-	BEGIN
-	END
-		~~~~~%donebuttonstring%%MATCH1%
-
-		for i = 1, #extendedSkills, 1 do
-			local skill = extendedSkills[i]
-			extendedSkillIncrement = skill.value - skill.base
-			if extendedSkillIncrement ~= 0 then
-				EEex_ApplyEffectToActor(currentID, {
-['opcode'] = skill.opcode,
-['target'] = 1,
-['timing'] = 9,
-['parameter1'] = extendedSkillIncrement,
-['special'] = skill.stat,
-['source_target'] = currentID,
-['source_id'] = currentID
-})
-			end
-		end
-		createCharScreen:OnDoneButtonClick()~~~~~
-
-	PATCH_IF (GAME_IS ~iwdee~) BEGIN
-		REPLACE_EVALUATE ~%donebuttonstring2%\([^`]*\)createCharScreen:OnDoneButtonClick();~
-		BEGIN
-		END
-		~~~~~%donebuttonstring2%%MATCH1%
-
-		for i = 1, #extendedSkills, 1 do
-			local skill = extendedSkills[i]
-			extendedSkillIncrement = skill.value - skill.base
-			if extendedSkillIncrement ~= 0 then
-				EEex_ApplyEffectToActor(currentID, {
-['opcode'] = skill.opcode,
-['target'] = 1,
-['timing'] = 9,
-['parameter1'] = extendedSkillIncrement,
-['special'] = skill.stat,
-['source_target'] = currentID,
-['source_id'] = currentID
-})
-			end
-		end
-		createCharScreen:OnDoneButtonClick();~~~~~
-	END
 /*
-	REPLACE_EVALUATE ~createCharScreen:OnHighLevelAbilitiesButtonClick()~
-	BEGIN
-	END
-		~~~~~for i = 1, #extendedSkills, 1 do
-			local skill = extendedSkills[i]
-			extendedSkillIncrement = skill.value - skill.base
-			if extendedSkillIncrement ~= 0 then
-				EEex_ApplyEffectToActor(currentID, {
-['opcode'] = skill.opcode,
-['target'] = 1,
-['timing'] = 9,
-['parameter1'] = extendedSkillIncrement,
-['special'] = skill.stat,
-['source_target'] = currentID,
-['source_id'] = currentID
-})	
-			end
-		end
-		createCharScreen:OnHighLevelAbilitiesButtonClick()~~~~~
+//Probably for a different component (i.e. both the search and stealth)
+
+//class button changes --Put search in 5th slot 
+COPY ~%mod_folder%/lib/M_B_BRD.lua~ ~override~
+
+ COPY_EXISTING ~UI.MENU~ ~override~
+  SPRINT old @500014//
+  SPRINT new @500015//
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~        //replacing old with new (stealth as a alt to search in slot 5)
 */
+
+///////////////////////////////////////////////////////////
+//2das  (req EEex)
+///////////////////////////////////////////////////////////
+
+APPEND ~THIEFSKL.2da~ ~BARD%TAB%25%TAB%15~ //giving them an actual progression (25 at 1st, 10 at level up)
+APPEND ~THIEFSKL.2da~ ~BLADE%TAB%15%TAB%10~ //giving them an actual progression (15 at 1st, 5 at level up)
+APPEND ~THIEFSKL.2da~ ~JESTER%TAB%25%TAB%15~ //giving them an actual progression (25 at 1st, 10 at level up)
+APPEND ~THIEFSKL.2da~ ~SKALD%TAB%10%TAB%5~ //giving them an actual progression (10 at 1st, 10 at level up)
+
+COPY_EXISTING ~THIEFSCL.2da~ ~override~   //to allow them to put points in pick
+  SET_2DA_ENTRY_LATER ~b_lock~ 4 5  100   // Standard Bard
+  SET_2DA_ENTRY_LATER ~b_lock~ 3 39  100   // Standard Blade
+  SET_2DA_ENTRY_LATER ~b_lock~ 4 39  100   // Standard Blade
+  SET_2DA_ENTRY_LATER ~b_lock~ 4 40  100   // Standard Jest
+  SET_2DA_ENTRY_LATER ~b_lock~ 4 41  100   // Standard Skald
+  SET_2DA_ENTRY_LATER ~b_lock~ 3 41  100   // Standard Skald
+//set
+  SET_2DA_ENTRIES_NOW ~b_lock~ 1
+BUT_ONLY
+COPY_EXISTING ~skillbrd.2da~ ~override~ //get rid of auto progression
+  SET_2DA_ENTRY_LATER ~b_pick~ 3 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 4 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 5 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 6 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 7 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 8 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 9 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 10 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 11 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 12 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 13 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 14 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 15 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 16 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 17 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 18 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 19 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 20 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 21 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 22 1  0   //
+//set
+  SET_2DA_ENTRIES_NOW ~b_pick~ 1
+BUT_ONLY
+COPY_EXISTING ~clasiskl.2da~ ~override~ //get rid of 1st level boni
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 5  0   //
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 39  0   //
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 40 0   //
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 41 0   //
+//set
+  SET_2DA_ENTRIES_NOW ~b_1pick~ 1
+BUT_ONLY
+
+//--------------------------------
+//    Bardic Knowledge
+//--------------------------------
+
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 2004 //Bardic Knowedge
+	name = RESOLVE_STR_REF(@500111)
+	description = RESOLVE_STR_REF(@500112)
+	opcode = 401 //Modify Lore
+	visibility = 1 // iff char can put points into it
+STR_VAR
+	class_include = ~{5}~ //Bard Only
+	kit_include = ~{}~ //none
+	kit_exclude = ~{0x400D}~ //Blade excluded
+	stat_exclude = ~{}~ //No restrictions
+END
+
+
+///////////////////////////////////////////////////////////////////////////
+//give a bonus to lore based on Bardic Knowledge score  (say, +1/10 points)
+/////////////////////////////
+
+//TO DO
+
+
+//////////////////////////////////////////
+//  Add Bardic Knowledge checks to dialog
+//////////////////////////////////////////
+//TO DO
+
+//--------------------------------
+//    Performance
+//--------------------------------
+
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 2005 //Add some specific ids to modifify and check for effects
+	name = RESOLVE_STR_REF(@500113)
+	description = RESOLVE_STR_REF(@500114)
+	opcode = 401 //New opcode: Extend stat
+	visibility = 1 //Display if a character can put points into it
+STR_VAR
+	class_include = ~{5}~ //Bard Only
+	kit_include = ~{}~ //none
+	kit_exclude = ~{}~ //
+	stat_exclude = ~{}~ //No restrictions
+END
+
+/////////////////////////////////////////
+//  ADD FUNCTIONALITY
+/////////////////////////////////////////
+//To do
+//Performance should reduce fatigue penalty for bard song (if installed)
+
+//modify songs...somehow
+
+
+
+///////////////////////////////////////
+///////////// Add all nec abilities to clab
+////////////////////////////////////////////////////////////////////////////
+
+//Mages (check for clab...)
+//Credit for this code belongs to Aquadrizzt
+<<<<<<<< qd_blank_clab_inline.2da
+2DA V1.0
+****
+			1           2           3           4           5           6           7           8           9           10          11          12          13          14          15          16          17          18          19          20     21          22          23          24          25          26          27          28          29          30          31          32          33          34          35          36          37          38          39          40    41      42      43      44             45       46      47      48      49      50
+ABILITY1    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****     ****        ****        ****        ****        ****        ****        ****        ****        ****        ****
+>>>>>>>>
+
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~clabma01.2da~ BEGIN
+	  COPY ~qd_blank_clab_inline.2da~ ~override/clabma01.2da~
+	END
+
+ APPEND ~CLABMA01.2da~ ~NEW_SKILLS    AP_B_USS01  ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        **** ~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA02.2da~ BEGIN
+ APPEND ~CLABMA03.2da~ ~NEW_SKILLS    AP_B_USS01  ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        **** ~
+END ELSE
+BEGIN
+  COPY_EXISTING ~CLABMA01.2da~ ~override/CLABMA02.2da~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA03.2da~ BEGIN
+ APPEND ~CLABMA03.2da~ ~NEW_SKILLS    AP_B_USS01  ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        **** ~
+END ELSE
+BEGIN
+  COPY_EXISTING ~CLABMA01.2da~ ~override/CLABMA03.2da~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA04.2da~ BEGIN
+ APPEND ~CLABMA04.2da~ ~NEW_SKILLS    AP_B_USS01  ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+END ELSE
+BEGIN
+  COPY_EXISTING ~CLABMA01.2da~ ~override/CLABMA04.2da~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA05.2da~ BEGIN
+ APPEND ~CLABMA05.2da~ ~NEW_SKILLS    AP_B_USS01  ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+END ELSE
+BEGIN
+  COPY_EXISTING ~CLABMA01.2da~ ~override/CLABMA05.2da~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA06.2da~ BEGIN
+ APPEND ~CLABMA06.2da~ ~NEW_SKILLS    AP_B_USS01  ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+END ELSE
+BEGIN
+  COPY_EXISTING ~CLABMA01.2da~ ~override/CLABMA06.2da~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA07.2da~ BEGIN
+ APPEND ~CLABMA07.2da~ ~NEW_SKILLS    AP_B_USS01  ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+END ELSE
+BEGIN
+  COPY_EXISTING ~CLABMA01.2da~ ~override/CLABMA07.2da~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA08.2da~ BEGIN
+ APPEND ~CLABMA08.2da~ ~NEW_SKILLS    AP_B_USS01  ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+END ELSE
+BEGIN
+  COPY_EXISTING ~CLABMA01.2da~ ~override/CLABMA08.2da~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA09.2da~ BEGIN
+ APPEND ~CLABMA09.2da~ ~NEW_SKILLS    AP_B_USS01  ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+END ELSE
+BEGIN
+  COPY_EXISTING ~CLABMA01.2da~ ~override/CLABMA09.2da~
+END
+
+//Base Thief
+APPEND ~CLABTH01.2da~ ~NEW_SKILLS    ****    ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+//base bard
+APPEND ~CLABBA01.2da~ ~NEW_SKILLS    ****    ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+
+//thansk subtle
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+//  COUNT_2DA_COLS cols
+  COUNT_2DA_ROWS 10 rows
+  FOR (row = 3 ; row < rows ; ++row) BEGIN
+	READ_2DA_ENTRY %row% 1 10 modname
+	READ_2DA_ENTRY %row% 5 10 modclab
+	READ_2DA_ENTRY %row% 8 10 modclass
+	PATCH_IF (%modclass% = 4)/* && NOT (%modname% STRING_MATCHES_REGEXP ~C0SA+~ = 0) */ OR
+                 (%modclass% = 5)/* && NOT (%modname% STRING_MATCHES_REGEXP ~C0SA+~ = 0) */ BEGIN   //thief or bard kits
+	  INNER_ACTION BEGIN
+		APPEND ~%modclab%.2da~ ~NEW_SKILLS    ****    ****        ****        ****        ****        ****        ****        ****        ****    ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+	  END
+	END
+  END
+BUT_ONLY

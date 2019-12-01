@@ -2,7 +2,7 @@ BACKUP ~Backup/B_Kits~
 AUTHOR ~Grammarsalad~
 
 
-VERSION ~0.01.15~
+VERSION ~0.01.16~
 
 README ~B_Kits/readme-pnp.html~
 
@@ -14,8 +14,6 @@ ALWAYS
         ACTION_IF ((!FILE_CONTAINS_EVALUATED(~spell.ids~ ~CLERIC_OBSCURING_MIST~)) AND (FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~)) BEGIN
 	   INCLUDE ~B_Kits/lib/add_ids.tpa~
         END
-        
-//	INCLUDE ~B_Kits/lib/ExtendedSkills.tpa~
 
 	INCLUDE ~B_Kits/lib/remove_lines.tpa~
 
@@ -39,8 +37,6 @@ ALWAYS
 
 	INCLUDE ~B_Kits/lib/splprot_kits.tpa~
 END
-
-// ASK_EVERY_COMPONENT
 
 LANGUAGE ~English~ ~english~
          ~B_Kits/language/english/setup.tra~

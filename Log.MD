@@ -50,7 +50,27 @@ TO DO 23: Finish Use Scroll skill
 
 TO DO 24: Spon Casting for Druids/Cleric: Detect if EEEx is installed and use their method instead if so
 
+2019-09-07
+
+- 
+
+2019-09-06
+
+- Updated mage scroll use using qd_multi
+
+2019-09-03
+
+- Use Scroll: changed stat 2002 to use base as original use no longer needed, and added to mage (though, check base mage, wildmage and sorcerer)
+
+- Use Scroll: 1st part of usability 
+
+- Added splprot_scrolls.tpa 
+
 Version 0.01.15
+
+2019-08-31
+
+- Updated Use Scroll to actually check level (seems to work)
 
 2019-08-28
 
