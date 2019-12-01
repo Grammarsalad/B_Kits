@@ -42,7 +42,7 @@ TBD
 > - IWDification (?) 
 > - More Style for Mages (?) 
 > - Tome and Blood (?)  
-> - Deities of Faerûn (?) 
+> - Deities of FaerÃ»n (?) 
 
 > ##### Spells and Magic should be installed *before* the following mods: 
 
@@ -99,7 +99,7 @@ The following people have been patiently giving me feedback on this and other mo
 **Scales of Balance**: https://forums.beamdog.com/discussion/33657/scales-of-balance-post-hac-kits-and-tweaks/p1
 **Spell Revisions**: http://gibberlings3.net/forums/index.php?showforum=153
 **Faiths of Faerun**: https://forums.beamdog.com/discussion/17118/mod-faiths-of-faerun-kitpack-v0-5c-ready-for-testing/p1  
-**Deities of Faerûn**:  https://forums.beamdog.com/discussion/69241/kit-pack-deities-of-faerun-v-1-9-7-3-49-cleric-kits-and-more-for-iwd-bg-2-ee-and-eet/p1  
+**Deities of FaerÃ»n**:  https://forums.beamdog.com/discussion/69241/kit-pack-deities-of-faerun-v-1-9-7-3-49-cleric-kits-and-more-for-iwd-bg-2-ee-and-eet/p1  
 
 ### Inspiration: 
 **d20 Pathfinder SRD**: http://www.d20pfsrd.com/magic/spell-lists-and-domains  
@@ -323,13 +323,13 @@ CLERIC: The Cleric is an adventuring priest who does not exclusively worship a s
 - May wear helmets.
 - May wear any armor.
 - Domain Spells^: Each day, a cleric can select one sphere from which <PRO_HESHE> can draw spells from.  The selected sphere need not be one that the cleric normally has access to.  Once selected, <PRO_HESHE> will be able to cast a single spell each level <PRO_HESHE> can cast of the relevant level from that domain per day.  In any given day, if <PRO_HESHE> casts a domain spell before selecting a domain, <PRO_HESHE> will have to wait for the next day select a new domain.
-– May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
-– May only become Proficient (one slot) in any weapon class.
-– May only become Proficient (one slot) in two weapon fighting.
-– May Specialize (two slots) in any fighting style except two weapon fighting.
-– May Turn Undead.
-– May cast priest spells.
-– Hit Die: d8
+â€“ May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
+â€“ May only become Proficient (one slot) in any weapon class.
+â€“ May only become Proficient (one slot) in two weapon fighting.
+â€“ May Specialize (two slots) in any fighting style except two weapon fighting.
+â€“ May Turn Undead.
+â€“ May cast priest spells.
+â€“ Hit Die: d8
 
 Prime Requisites For Dual-Classing: Wisdom
 
