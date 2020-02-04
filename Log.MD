@@ -50,9 +50,35 @@ TO DO 23: Finish Use Scroll skill
 
 TO DO 24: Spon Casting for Druids/Cleric: Detect if EEEx is installed and use their method instead if so
 
-2019-09-07
+TO DO 25: Check war_tools.tph for compatibility with wiz identify alternate (also finish tools of war--add check armor version for lev 5--I mean with 326).
 
-- 
+TO DO 26: Maybe change tools of war so it only works if you have prof with weapon.
+
+Version 0.02.00
+
+2020-01-25
+
+- A lot of work on revised fighter (text)
+
+- Tools of War first draft
+
+2020-01-18
+
+- Started Kensai Ki Focus spl
+
+2019-12-04
+
+- Continued work on component skeleton
+
+2019-12-03
+
+- Updated kit.tp2 with additional skill based components
+
+Version 0.01.16
+
+2019-12-01
+
+- Checking readme
 
 2019-09-06
 

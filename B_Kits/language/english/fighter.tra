@@ -3,7 +3,66 @@
 @504002 = ~Beginning at first level, the fighter can enter a stance to either improve <PRO_HISHER> combat capacity in various ways. Once <PRO_HESHE> enters a stance, <PRO_HESHE> gains the bonuses and penalties described by the stance until either <PRO_HESHE> exits the stance, or enters the other stance.~
 @504003 = ~Reckless Onslaught~
 @504004 = ~This fighting style is exactly what it sounds like: the fighter throws <PRO_HIMHER>self into the fray, aggressively attacking <PRO_HISHER> enemies with little regard for defense.  While in this stance, the fighter gains a +2 bonus to melee damage, +1 for every two levels <PRO_HESHE> has after first level to a maximum of +11 at level 19. However, while in this stance, <PRO_HESHE> suffers a -2 penalty to AC.~
+@504005 = ~Ki Focus~
+@504006 = ~Ki Focus
+The Kensai can take a few moments to focus <PRO_HISHER> ki. As<PRO_HESHE> concentrates, <PRO_HESHE> focus <PRO_HISHER>ki into a special ability from the list below. <PRO_HESHE> can must use the ability within the next 8 hours, or <PRO_HESHE> loses it.
 
+<PRO_HESHE> cannot activate Ki Focus in the presence of enemies, as they will interrupt <PRO_HISHER> concentration.~
+@504007 = ~<DOTS5>~
+@504008 = ~<DOTS5>
 
+Supreme Grand Mastery (6 slots): The character recieves +4 to hit, +7 to damage and -3 bonus to weapon speed and, (for warriors only) an extra attack per round with the selected weapon.
 
+Legendary Grand Mastery (7 slots): The character recieves +5 to hit, +9 to damage and -5 bonus to weapon speed and, (for warriors only) an extra attack per round with the selected weapon.
+~
+@504009 = ~FIGHTER: The Fighter is a champion, swords<PRO_MANWOMAN>, soldier, and brawler who lives or dies by <PRO_HISHER> knowledge of weapons and tactics. Fighters can be found at the front of any battle, contesting toe-to-toe with monsters and villains. A good Fighter needs to be strong and healthy if <PRO_HESHE> hopes to survive.
+  
+Class Features:
+- May wear helmets.
+- May wear any armor and use any weapon.
+- Rolls d10 for hit points.
+- Can achieve supreme grandmastery (six slots) in any weapon proficiency.
+- May achieve Specialization (two slots) in any fighting style and allocate three slots in Two-Weapon Style.
+- Stance: Starting at first level, the fighter can enter a stance to improve <PRO_HISHER> combat capacities in various ways. Once <PRO_HESHE> enters a stance, <PRO_HESHE> gains the bonuses and penalties described by the stance until either <PRO_HESHE> exits the stance, or enters another stance.  The Base Fighter has access to Offensive Stance, and Defensive Stance.  The fighter improves one of <PRO_HISHER> stances at levels 4, and each additional 4 levels after that (i.e. 8, 12, etc.) by selecting an Advanced Stance, to a maximum of five advanced stances at level 20.  <PRO_HESHE> does not have to improve the same stance at each of these levels.  When <PRO_HESHE> selects an advanced stance, it improves its associated base stance such that, whenever <PRO_HESHE> is in the base stance, <PRO_HESHE> gains the bonuses and penalties associated with the base stance, as well as any bonuses or penalties associated with any advanced stances <PRO_HESHE> has selected for that base stance.   
+- Tools of War: Starting at 1st level, fighters can identify the properties of magical weapons if they are able to swing them around for a bit.  At fifth level, they can identify armor and helmets that they are wearing.  This ability does not protect them from curses, so care should be taken.  At first level, <PRO_HESHE> can use tools of war once per day.  <PRO_HESHE> gains an additional use of tools of war at levels 6, 11 and, 19.  
+- Second Wind: Beginning at 3rd level, the fighter can 'take a break' to recover <PRO_HISHER> hit points and stamina.  <PRO_HESHE> gains an additional use of second wind at level 10, and every 5 levels after that (15, 20, etc.)
+- Weapon Versatility: Beginning at 5th level, the fighter gains one proficiency in all weapon types (one slot).  This ability cannot bring any weapon above specialization (two slots).  At 17th level, <PRO_HESHE> gains an additional proficiency point (one slot) in all weapon types.  This ability cannot bring any weapon above high mastery (four slots).   
+
+OFFENSIVE STANCE:  When the fighter is in this stance, <PRO_HESHE> gains a +2 bonus to attack, but suffers a -2 penalty to AC.  The bonus to attack improves by 1 at levels 7, 14 and 21.  Additionally, at various levels, <PRO_HESHE> can improve <PRO_HISHER> stance in the following ways:
+
+- Reckless Attack: This aggressive stance focuses on offense, but leaves the warrior open to attack. All melee attacks gain a bonus of +4 to damage, but the warrior suffers an additional -2 penalty to AC (for a total of -4 to AC).
+Requirement: 4th level
+
+- Surging Assault: When in this stance, the warrior's moment rate increases by 50%.
+Requirement: 4th level
+
+- Killer Instinct: When in this stance, the warrior has an increased chance to inflict critical strikes.  <PRO_HESHE> inflicts a critical strike on a roll of a 19 rather than a 20.
+Requirement: 8th level
+
+- Thicket of Blades: Enemies find it dangerous just to be near a warrior in this stance.  When in this stance, once each round, <PRO_HESHE> automatically inflicts damage equal to <PRO_HISHER> melee attack against any enemy within 5 feet.
+Requirement: 12th level
+ 
+DEFENSIVE STANCE:  When the fighter is in this stance, <PRO_HESHE> gains a +2 bonus to AC, but suffers a -2 penalty to attack rolls.  The bonus to AC improves by 1 at levels 7, 14 and 21.  Additionally, at various levels, <PRO_HESHE> can improve <PRO_HISHER> stance in the following ways:
+
+- Iron Guard:  While in this stance, the warrior constantly threatens all adjacent opponents within melee range (about 5 feet radius). All opponents within melee range thus suffer a -2 penalty to their attack rolls.
+Requirement: 4th level
+
+- Beacon of Defiance: When in this stance, you receive a +2 bonus to save against spells.  Any ally within 10' of you also receives this bonus.
+Requirement: 4th level
+
+- Diamond Defense: When in this stance, the warrior goes all out in <PRO_HISHER> defense, making it virtually impossible for an enemy to get through, whether by sword or magic.  <PRO_HESHE> gains an additional +1 bonus to AC and saves.
+Requirement: 8th level
+
+- Defensive Rebuke: When in this stance, the warrior turns direct hits into glancing blows, reducing the damage that might have killed <PRO_HIMHER> into a scar and a story.  <PRO_HESHE> gains 10% resistance to all physical attacks while in this stance.
+Requirement: 12th level  
+
+SECOND WIND: Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% of <PRO_HISHER> hit point total.  Additionally, <PRO_HESHE> recovers fatigue.  
+  
+The warrior cannot use Second Wind if there are enemies present.~
+
+@504010 = ~Tools of War~
+@504011 = ~Tools of War
+The character can 'test' a weapon out to discover it's magical properties.  At 5th level, <PRO_HESHE> can test out armor to determine it's magical properties.  
+
+Warning: the character must use the equipment in order to identify it and this ability does not protect <PRO_HIMHER> from curses.~
 

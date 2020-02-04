@@ -2,9 +2,9 @@
 //Tra Ref @503001 To @504000
 
 //Ranger Base @970 To @996
-@970 = ~Set Natural Snare only works in natural environments~
-@971 = ~Set Natural Snare~
-@972 = ~Set Natural Snare
+@970 = ~Set Natural Snares only works in natural environments~
+@971 = ~Set Natural Snares~
+@972 = ~Set Natural Snares
 Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the character's level and can only be triggered by enemies.
   1st Level: Deals 2d8+5 missile damage.
   11th Level: Deals 2d8+5 missile damage, plus 2d6 poison damage per round for the next 3 rounds.

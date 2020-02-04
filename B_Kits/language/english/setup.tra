@@ -11,6 +11,8 @@
 @15  = ~Install Only Revised Kits and Classes (Conservative Version)~
 @17  = ~EE games only!~
 @18  = ~Component has been depreciated~
+@19  = ~Replace Potion of Healing with Healer's Kit?~
+
 
 @21  = ~EE games only!~
 @22  = ~Skipping EE content~
@@ -92,12 +94,22 @@
 @183 = ~Barbarian Rage and Berserker Enrage Fatigue~
 @184 = ~Everybody gets Fatigued~
 
-@190 = ~Class Skills~
+@190 = ~Class Skills - Performance~
 @191 = ~Everybody Can Search (requires EEex)~
-@192 = ~Only Bard Skills (requires EEX)~
-@193 = ~Only New Thief Skills (requires EEX)~
+@192 = ~Performance - Bard only (requires EEex)~
+@193 = ~Only New Thief Skills (requires EEex)~
 @194 = ~Variant Attribute Bonuses for base skills.~
 @195 = ~All New Skills.~
 @196 = ~Variant Attribute Bonuses.~
+@197 = ~Appraisal (requires EEex)~
+@198 = ~Class Skills - Appraisal~
+@199 = ~Performance - Rogues only (requires EEex)~
+@200 = ~Barter (requires EEex)~
+@201 = ~Class Skills - Barter~
+@202 = ~Use Scroll - 10th level (requires EEex)~
+@203 = ~Class Skills - Use Scroll~
+@204 = ~Use Scroll - No Restrictions (requires EEex)~
+@205 = ~Use Scroll - Pseudo-skill~
+@206 = ~Class Skills - Set Natural Snares~
 
 

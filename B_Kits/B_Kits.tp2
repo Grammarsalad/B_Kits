@@ -2,7 +2,7 @@ BACKUP ~Backup/B_Kits~
 AUTHOR ~Grammarsalad~
 
 
-VERSION ~0.01.16~
+VERSION ~0.02.00~
 
 README ~B_Kits/readme-pnp.html~
 
@@ -16,6 +16,8 @@ ALWAYS
         END
 
 	INCLUDE ~B_Kits/lib/remove_lines.tpa~
+
+        INCLUDE ~B_Kits/lib/replace_multiline.tpa~
 
 	INCLUDE ~B_Kits/lib/spon_cast_functions.tpa~
 
@@ -600,35 +602,38 @@ INCLUDE ~%mod_folder%/data/components/Setup_Spontaneous_Casting.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//			1601-1603: New Class Skills
+//			1601-???: New Class Skills
 //__________________________________________________________________________________
 //__________________________________________________________________________________
+
+
+//Appraisal
+//________________________
 
 //________________________
 //
-// 1600: All New Skills
-//________________________ 
+// 1601:Appraisal (requires EEex)
+//________________________
 
-//CONTINUE
-
-BEGIN @195 // All New Skills
-SUBCOMPONENT @190 //Class Skills
+BEGIN @197  // Appraisal (requires EEX)
+SUBCOMPONENT @198 //Class Skills - Appraisal
 DESIGNATED 1601
 GROUP @162    //Class 'Extras'
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~m__skill.lua~ ~EEex required!~  //~EE games only!~  ...for now
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
-INCLUDE ~%mod_folder%/data/components/Setup_all_skills.tpa~
+
+//Performance
+//________________________
 
 //________________________
 //
-// 1602: Only Bard Skills (requires EEX)
+// 1701:Performance - Bard only (requires EEex)
 //________________________ 
 
-//CONTINUE
 
-BEGIN @192  //  Only Bard Skills (requires EEX)
-SUBCOMPONENT @190 //Class Skills
-DESIGNATED 1602
+BEGIN @192  // Performance- Bard Only (requires EEex)
+SUBCOMPONENT @190 //Class Skills - Performance
+DESIGNATED 1701
 GROUP @162    //Class 'Extras'
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
@@ -636,36 +641,114 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
 //________________________
 //
-// 1603: Only New Thief Skills (requires EEX)
+// 1702:Performance - Rogues only (requires EEex)
 //________________________ 
 
-//CONTINUE--USE Scroll Lev 10 requirement!!!!
 
-BEGIN @193  //  Only New Thief Skills (requires EEX)
-SUBCOMPONENT @190 //Class Skills
-DESIGNATED 1603
+BEGIN @199  // Performance- Rogues only (requires EEex)
+SUBCOMPONENT @190 //Class Skills - Performance
+DESIGNATED 1702
 GROUP @162    //Class 'Extras'
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
-//INCLUDE ~%mod_folder%/data/components/Setup_thief_skills.tpa~
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+//Barter
+//________________________
+
+//________________________
+//
+// 1801: Barter (requires EEex)
+//________________________ 
+
+
+BEGIN @200  // Barter (requires EEex)
+SUBCOMPONENT @201 //Class Skills - Barter
+DESIGNATED 1801
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+
+//Use Scroll
+//________________________
+
+//________________________
+//
+// 1901:Use Scroll - 10th level (requires EEex)
+//________________________ 
+
+
+BEGIN @202  // Use Scroll - 10th level (requires EEex)
+SUBCOMPONENT @203 //Class Skills - Use Scroll
+DESIGNATED 1901
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+//________________________
+//
+// 1902:Use Scroll - No Restriction (requires EEex)
+//________________________ 
+
+
+BEGIN @204  // Use Scroll - No Restrictions (requires EEex)
+SUBCOMPONENT @203 //Class Skills - Use Scroll
+DESIGNATED 1902
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+//________________________
+//
+// 1903:Use Scroll - Pseudo-skill
+//________________________ 
+
+
+BEGIN @205  // Use Scroll - Pseudo-skill
+SUBCOMPONENT @203 //Class Skills - Use Scroll
+DESIGNATED 1903
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+//Set Natural Snares
+//________________________
+
+//________________________
+//
+// 2001: Set Natural Snares
+//________________________ 
+
+
+BEGIN @971  // Set Natural Snares
+SUBCOMPONENT @206 //Class Skills - Set Natural Snares
+DESIGNATED 2001
+GROUP @162    //Class 'Extras'
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//			1701: Everybody Can Search (requires EEX)
+//			2101: Everybody Can Search (requires EEX)
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 //________________________
 //
-// 1701: Everybody Can Search
+// 2101: Everybody Can Search
 //________________________ 
 
-//CONTINUE
 
 BEGIN @191  //  Everybody Can Search (requires EEX)
 SUBCOMPONENT @191  //  Everybody Can Search (requires EEX)
-DESIGNATED 1701
+DESIGNATED 2101
 GROUP @162    //Class 'Extras'
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
@@ -675,20 +758,20 @@ INCLUDE ~%mod_folder%/data/components/Setup_all_search.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//			1801-???: Variant Attribute Bonuses for Skills
+//			2201-???: Variant Attribute Bonuses for Skills
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 //________________________
 //
-// 1801: Variant Attribute Bonuses for base skills
+// 2201: Attribute bonus changes to all skills only
 //________________________ 
 
 //CONTINUE--Actually make the component!
 
 BEGIN @194  //  Variant Attribute Bonuses for base skills
 SUBCOMPONENT @196 //Variant Attribute Bonuses
-DESIGNATED 1801
+DESIGNATED 2201
 GROUP @162    //Class 'Extras'
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
