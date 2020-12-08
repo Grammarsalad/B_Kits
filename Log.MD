@@ -54,6 +54,37 @@ TO DO 25: Check war_tools.tph for compatibility with wiz identify alternate (als
 
 TO DO 26: Maybe change tools of war so it only works if you have prof with weapon.
 
+Version 0.02.01 CHECK ENTIRE UPDATE
+
+2020-06-19
+
+- Added setup for various attribut spell power bonuses
+
+2020-06-03
+
+- tp2 restructuring
+
+- split Weapon Prof expansion from Fighter Revision
+
+2020-06-02
+
+- tp2 restructuring
+
+2020-05-30
+
+- tp2 restructuring
+
+- Fighter revision restructure: Conservative version
+
+2020-02-08
+
+- Changed icon for select stance (poison weapon icon for now) and reduced casting speed to 0
+
+- Created Second Wind
+
+- Started creating prof spls (fighter)
+
+EVERYTHING ABOVE THIS LINE NEEEDS TO BE CHECKED 
 Version 0.02.00
 
 2020-01-25

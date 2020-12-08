@@ -18,8 +18,38 @@
 @22  = ~Skipping EE content~
 @23  = ~EEX required!~
 
-
-
+@24  = ~0001: Install ALL Revised Classes and Kits: Conservative (or most conservative) Versions~
+@25  = ~0002: Install ALL Revised Classes and Kits: Radical (or most radical) Versions~
+@26  = ~Install selected class options~
+@27  = ~This component requires some ~
+@28  = ~0003: Install Revised classes/kits by B_Kits_settings.ini~
+@29  = ~7001: Double Hit Points at first level~
+@30  = ~HP Revision~
+@31  = ~7002: Radical Hit Point Revision~
+@32  = ~7003: Increased Hit Die (mages and rogues)~
+@33  = ~7004: Double Hit Points at first level and Increased Hit Die (mages and rogues)~
+@34  = ~7005: Radical Hit Point Revision and Increased Hit Die (mages and rogues)~
+@35  = ~7006: Fighter Con Bonus for all classes~
+@36  = ~7010: Expanded Weapon Proficiency Table~
+@37  = ~7020: Revised Weapon Proficiency Table~
+@38  = ~1001: Illusion immunity for high int~
+@39  = ~1011: Magical Defense Adjustment for high wis~
+@40  = ~1021: Spell Power for high int for all arcane classes~
+@41  = ~Spell Power for high Intelligence~
+@42  = ~1022: Spell Power for high int for mages and sorcerers only~
+@43  = ~1023: Spell Power for high int for mages and bards only~
+@44  = ~1024: Spell Power for high int for mages only~
+@45  = ~1031: Spell Power for high cha for all arcane and divine classes~
+@46  = ~Spell Power for high Charisma~
+@47  = ~1032: Spell Power for high cha for all arcane classes~
+@48  = ~1034: Spell Power for high cha for all primary casters~
+@49  = ~1035: Spell Power for high cha for all sorcerers and bards~
+@50  = ~1036: Spell Power for high cha for all sorcerers, enchanters and bards~
+@51  = ~1041: Spell Power for high wis for all divine classes~
+@52  = ~Spell Power for high Wisdom~
+@53  = ~1042: Spell Power for high wis for all divine classes and necromancers~
+@54  = ~1043: Spell Power for high wis for all primary divine classes~
+@55  = ~1044: Spell Power for high wis for all primary divine classes and necromancers~
 //
 @100  = ~Select an installation package~
 @101  = ~ALL the new kits, the kit selection dialogue, and the sphere system ('radical version')~
@@ -27,6 +57,8 @@
 @103  = ~choose components individually~
 @105  = ~no new kits - JUST install the sphere system~
 @110  = ~Change item usability for priests~
+@111  = ~7001: 'Extras': HP Revision: Double Hit Points at first level~
+@112  = ~New and Revised Classes and Kits~
 
 @117= ~Cleric Revisions~
 
@@ -80,8 +112,9 @@
 @153= ~Performance Fatigue: Shaman Dance Fatigue~
 @154= ~Performance Fatigue: Bard Song and Shaman Dance Fatigue~
 
-@161= ~Class 'Extras': Unique Arcane Spell Selection~
-@162= ~Class 'Extras'~
+@161 = ~Class 'Extras': Unique Arcane Spell Selection~
+@162 = ~'Extras'~
+@163  = ~Expanded Abilities and Attributes~
 
 @170= ~All Priests and Paladins: Turn bonus by charisma~
 @171= ~Turn bonus by charisma~

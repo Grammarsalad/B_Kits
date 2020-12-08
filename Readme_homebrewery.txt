@@ -42,7 +42,7 @@ TBD
 > - IWDification (?) 
 > - More Style for Mages (?) 
 > - Tome and Blood (?)  
-> - Deities of FaerÃ»n (?) 
+> - Deities of Faerûn (?) 
 
 > ##### Spells and Magic should be installed *before* the following mods: 
 
@@ -102,7 +102,7 @@ The following people have been patiently giving me feedback on this and other mo
 **Scales of Balance**: https://forums.beamdog.com/discussion/33657/scales-of-balance-post-hac-kits-and-tweaks/p1
 **Spell Revisions**: http://gibberlings3.net/forums/index.php?showforum=153
 **Faiths of Faerun**: https://forums.beamdog.com/discussion/17118/mod-faiths-of-faerun-kitpack-v0-5c-ready-for-testing/p1  
-**Deities of FaerÃ»n**:  https://forums.beamdog.com/discussion/69241/kit-pack-deities-of-faerun-v-1-9-7-3-49-cleric-kits-and-more-for-iwd-bg-2-ee-and-eet/p1  
+**Deities of Faerûn**:  https://forums.beamdog.com/discussion/69241/kit-pack-deities-of-faerun-v-1-9-7-3-49-cleric-kits-and-more-for-iwd-bg-2-ee-and-eet/p1  
 
 ### Inspiration: 
 **d20 Pathfinder SRD**: http://www.d20pfsrd.com/magic/spell-lists-and-domains  
@@ -122,7 +122,8 @@ GIVE AN OVERVIEW OF EACH COMPONENT HERE.  Describe them more fully below
 
 \page
 
-<div class='wide'>
+<div class='wide'>  
+   
 # Class Revisions
 Class revisions alter existing classes in some manner, as opposed to adding kits or interchangeable class features.  Class features themselves are divided into 'Conservative' and 'Radical' versions of a given class/kit structure. This mod tries, as much as possible, to allow players to mix and match conservative and radical versions together.  So, for example, a player could install conservative fighter revisions with radical bard revisions.  However, players should be warned that there might be balance issues, especially when the various class features are added to the mix.  We cannot account for everything.  That said, we will try to note where balance issues might exist, both here and in individual class sections below.  
   
@@ -131,14 +132,15 @@ Class revisions alter existing classes in some manner, as opposed to adding kits
 
 \page
 
-<div class='wide'>
-## 101-???: The Bard
+<div class='wide'>  
+  
+### 101-???: The Bard
 
 **Description**
 
 Also see the Performance Fatigue component in the 'extra' class modifications.  That component was originally meant to be a part of all Bard revisions, but I decided to separate it out as that might be too extreme of a change for some.  
 
-### 101: The Bard: Conservative Version
+#### 101: The Bard: Conservative Version
 
 This component will install the 'conservative' bard revision.  The overall changes to the Bard class are as follows (see the revised descriptions below for more detail): 
 
@@ -165,7 +167,8 @@ This component will install the 'conservative' bard revision.  The overall chang
 
 \page
 
-<div class='wide'>
+<div class='wide'>  
+  
 ## Bard Base Class (Revised Base Class)
 
 BARD: The Bard is a rogue, but <PRO_HESHE> is very different from the Thief. The Bard's strength is <PRO_HISHER> pleasant and charming personality. With it and <PRO_HISHER> wits, <PRO_HESHE> makes <PRO_HISHER> way through the world. A Bard is a talented musician and a walking storehouse of gossip, tall tales, and lore; <PRO_HESHE> learns a little bit about everything that crosses <PRO_HISHER> path and is a jack-of-all-trades but master of none. While many Bards are scoundrels, their stories and songs are welcome almost everywhere.
@@ -191,7 +194,8 @@ The bard's movement is reduced by half while performing countersong.
 The bard must remain still while performing fascinate. If <PRO_HESHE> moves, the effect ends.
 
 \page
-<div class='wide'>
+<div class='wide'>  
+  
 ## Blade Kit
 
 BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome than <PRO_HESHE> is. This Bard's fighting style is flashy and entertaining but is also lethally dangerous.
@@ -229,7 +233,8 @@ Finally, Weapon Display cannot be performed while the blade is in a Stance.
 
 
 \page
-<div class='wide'>
+<div class='wide'>  
+  
 ## Jester Kit
 
 JESTER: This Bard is well versed in the arts of ridicule and hilarity, and uses <PRO_HISHER> abilities to distract and confuse <PRO_HISHER> enemies, cavorting madly during combat. Do not mistake <PRO_HIMHER> for a true fool, however, as <PRO_HESHE> can also be quite deadly.
@@ -262,7 +267,7 @@ At 10th level, allies recover from , and are immune to, fear and charm effects w
 <div class='wide'>
 ## Skald Kit (TO BE CONTINUED)
 
-SKALD: This nordic Bard is also a warrior of great strength, skill, and virtue; <PRO_HISHER> songs are inspiring sagas of battle and valor, and the Skald devotes <PRO_HISHER> life to those pursuits.
+SKALD: This Nordic Bard is also a warrior of great strength, skill, and virtue; <PRO_HISHER> songs are inspiring sagas of battle and valor, and the Skald devotes <PRO_HISHER> life to those pursuits.
 </div>
 
 ### Advantages:
@@ -291,14 +296,15 @@ The Skald's songs last for as long as <PRO_HESHE> continues to perform, plus 1 r
 
 
 \page
-<div class='wide'>
-## 201-???: The Cleric
+<div class='wide'>  
+  
+### 201-???: The Cleric
 
 **Description**
 
 Also see the Turn Bonus by Charisma, Spontaneous Casting, Cleric Weapon Training and Cleric Armor Training components in the 'extra' class modifications.  Note that if users install spontaneous casting and any cleric revision, it is recommended that they select the option to Replace Domain spells with Spontaneous casting for balance reasons unless they also install Cleric Armor Training.  
 
-### 201: The Cleric: Conservative Version
+#### 201: The Cleric: Conservative Version
 
 This component will install the 'conservative' cleric revision.  The overall changes to the Cleric class are minimal, as the cleric is a pretty good class as it is.  However, there are a number of optional 'extra' classes that the user is invited to check out (See below).  The Conservative changes are as follows (see the revised descriptions below for more detail): 
 
@@ -315,7 +321,8 @@ This component will install the 'conservative' cleric revision.  The overall cha
 
 \page
 
-<div class='wide'>
+<div class='wide'>  
+  
 ## The Cleric (Revised Base Class) (TO BE CONTINUED)
 
 CLERIC: The Cleric is an adventuring priest who does not exclusively worship a single deity, but venerates the pantheon as a whole, .  <PRO_HESHE> understands that no single deity can or should represent every important aspect of life.  Rather, each deity has their place, their portfolios contributing to a whole that is greater than any single part.  As such, these clerics are particularly versatile as they can petition different deities for spells on different occasions, though they lack the power that only a specialist can wield.  
@@ -326,13 +333,13 @@ CLERIC: The Cleric is an adventuring priest who does not exclusively worship a s
 - May wear helmets.
 - May wear any armor.
 - Domain Spells^: Each day, a cleric can select one sphere from which <PRO_HESHE> can draw spells from.  The selected sphere need not be one that the cleric normally has access to.  Once selected, <PRO_HESHE> will be able to cast a single spell each level <PRO_HESHE> can cast of the relevant level from that domain per day.  In any given day, if <PRO_HESHE> casts a domain spell before selecting a domain, <PRO_HESHE> will have to wait for the next day select a new domain.
-â€“ May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
-â€“ May only become Proficient (one slot) in any weapon class.
-â€“ May only become Proficient (one slot) in two weapon fighting.
-â€“ May Specialize (two slots) in any fighting style except two weapon fighting.
-â€“ May Turn Undead.
-â€“ May cast priest spells.
-â€“ Hit Die: d8
+– May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
+– May only become Proficient (one slot) in any weapon class.
+– May only become Proficient (one slot) in two weapon fighting.
+– May Specialize (two slots) in any fighting style except two weapon fighting.
+– May Turn Undead.
+– May cast priest spells.
+– Hit Die: d8
 
 Prime Requisites For Dual-Classing: Wisdom
 
@@ -372,14 +379,15 @@ Here is a list of each spell that the cleric can cast once per day for each sele
 | 7th | Death Ward x3(?) | 
 
 \page
-<div class='wide'>
-## 501-???: The Fighter (TO BE CONTINUED)
+<div class='wide'>  
+   
+### 501-???: The Fighter (TO BE CONTINUED)
 
 **Description**
 
 Also see the Performance Fatigue component in the 'extra' class modifications.  That component was originally meant to be a part of all Fighter revisions, at least Barbarian and Berserker Revisions, but I decided to separate it out as that might be too extreme of a change for some.  
 
-### 501: The Fighter: Conservative Version
+#### 501: The Fighter: Conservative Version
 
 This component will install the 'conservative' fighter revision.  The overall changes to the Fighter class are as follows (see the revised descriptions below for more detail): 
 
@@ -408,17 +416,22 @@ Class Features:
  
 
 \page
-<div class='wide'>
+<div class='wide'>  
+  
 # Class 'Extras'
 
 ## Known Issues (Class 'Extras'): 
 
-- **Thief Skills: Read Scrolls**: Read Scrolls will not display for a character created in Throne of Bhaal.  The skill will display upon level up, however.  
+- **Thief Skills: Use Scrolls**: 
+- 'Component 1901: Use scrolls - 10th level' will not display for a character created in Throne of Bhaal.  The skill will display upon level up, however.  
+- 'Component 1902: Use scrolls - no level requirement' is likely *very* overpowered.  
+
 
 </div>
 
 \page
-<div class='wide'>
+<div class='wide'>  
+   
 ### 1201-1207: Class 'Extras': Performance Fatigue
  
 If this tweak is installed, either the Bard Song or the Shaman Dance or both cause 1 point of fatigue for each round the character performs. Fatigue caused by performing recovers after 1 turn.
@@ -428,6 +441,7 @@ If installed for other class abilities, fatigue will only accrue by 1 point per 
 When the character reaches 7 points of fatigue, they gain the 'fatigued' condition.    
 
 This component is meant to coincide with the revisions to the various classes presented in this mod as a kind of balance, but I decided to separate it out as that might be too extreme of a change for some. 
+
 </div>
 
 #### 1201: Performance Fatigue: Bard Song Fatigue
@@ -459,15 +473,18 @@ This component imposes 1 point of fatigue whenever the Rage or Enrage Class feat
 This component imposes 1 point of fatigue whenever the Rage or Enrage Class feature is used.
 
 This component  adds performance fatigue to both the Shaman Dance and the Bard Song. 
-<div class='wide'>
-### 1301: Unique Arcane Spell Lists (TO BE DETERMINED)
+<div class='wide'>  
+  
+### 1301: Unique Arcane Spell Lists (TO BE DETERMINED)  
+  
 
 This component will allow unique spell lists for all arcane classes and kits.  
 
 
 </div>
 
-<div class='wide'>
+<div class='wide'> 
+   
 ### 1401-1403: Turn bonus by charisma
 
 **Turn Undead**: This group of components modifies the turn undead level of characters based on their charisma.  There are three subcomponents described below.  The turn level modification is as follows:
@@ -494,33 +511,88 @@ This component will modify only priests' turn undead level by their current char
 
 This component will modify only paladins' turn undead level by their current charisma as per the table above.
 
-<div class='wide'>
+<div class='wide'>  
+   
 ### 1501: Spontaneous Casting (By Pecca) (TO BE DETERMINED)
+
 </div>
 
 \page
-<div class='wide'>
-### 1601-1603: Class 'Extras': New Class Skills
-This group of components adds (thief-like) class skills to the game or modifies class skills to allow other classes to perform them where possible.  
+<div class='wide'>  
+  
+## 1601-???: Class 'Extras': Class Skills
+This group of components adds (thief-like) class skills to the game or modifies class skill points to be distributed differently, or allows other classes to perform them where possible.  
+
+
+### 1601: Appraisal (EEex required)
+This component adds the appraisal skill to the game.  This skill works like Lore, and its value is identical to lore. The main difference is that players can add to this skill if they can distribute skill points as the thief.  Thieves get access to this skill, as do bards if they can distribute their skill points (see below).  See the next section for skill descriptions.  The base skill is as normal for Lore.
+
+
+
+### 1701-1702: Performance (EEex required)
+These components add the performance skill to the game.  There are two versions of this component: a version that gives the skill to Bards only, and one that gives it to bards and thieves.  The performance skill allows characters to use magical instruments and gives them skill at bardic performance.  See the next section--'Extra descriptions--for details.  
+</div>
+#### 1701: Performance: Bards only
+This component adds the performance skill, and gives it to bards only.  The base skill is 30% (15% for blades).  Most Bards gain +5% per level (Blades gain 3% per level) unless they gain the ability to distribute (in which case, they can allot points to performance as they see fit).   
+
+#### 1702: Performance: Rogues only
+This component adds the performance skill, and gives it to rogues.  The base skill for bards is 30% (15% for blades).  Most Bards gain +5% per level (Blades gain 3% per level) unless they gain the ability to distribute (in which case, they can allot points to performance as they see fit). The Base skill for thieves is 0%.  
+
+<div class='wide'>  
+  
+### 1801: Barter (EEex required)
+This component adds the barter skill to the game.  This skill allows the character to barter with merchants and others to get better prices on goods, and sometimes better rewards for quests, etc.  See the next section for skill descriptions.  The base skill is 0% and is available to thieves and bards.  Bards gain 3% per level if they cannot distribute skill points as thieves (otherwise, they can increase the skill ask they like).
+
+### 1901-1903: Use Scrolls 
+These components add the use scrolls skill to the game.  Both thieves and bards have access to this skill.  There are three versions of this component: a version that does not allow thieves progression in this skill until 10th level, a version that allows thieves access to this skill at 1st level, and a version that allows rogues to use scrolls starting at 10th level that does not make use of skill points.  
 </div>
 
-#### 1601: All New Skills (Requires EEex) 
-This component installs both the new bard skills and new thief skills (see below for descriptions).  
+#### 1901: Use Scrolls: 10th level (EEex required)
+This component adds the use scrolls skill, and gives it to both bards and thieves.  This component restricts characters from putting points into the skill until 10th level.  At 10th level, bards (except skalds and blades) have 20% in this skill.  If they cannot distribute skills as a thief, they gain gain 2% in use scrolls per level.  At 10th level, thieves have no skill in use scrolls.  Note that this skill only applies to cleric scrolls for bards (as they can already use mage scrolls).  
+
+#### 1902: Use Scrolls: no level requirement (EEex required)
+This component adds the use scrolls skill, and gives it to both bards and thieves.  Bards (not skalds or blades) gain 2% per level in this skill if they cannot distribute skills as a thief. 
+**Note**: This component is likely to imbalance the game.  Note that this skill only applies to cleric scrolls for bards (as they can already use mage scrolls).  
+
+<div style='margin-top:140px'></div>
 
 
-#### 1602: Only Bard Skills (requires EEX)
-This component adds bard specific skills to the game--Bardic Knowledge and Performance--and enables the bard to pick locks.  This component also allows the bard to assign points into their skills, as a thief.  The Bard and Jester get 25 points at first level and 15 points per additional level.  The Blade gets 15 points at first level, and 10 points per level.  The Skald gets 10 points at level 1 and 5 points per level.  See the next section for skill descriptions.  These new thief skills gain a bonus as per Variant Attribute bonuses to skills described in the next section.  
+#### 1903: Use Scrolls: pseudo-skill
+This component adds the use scrolls skill, and gives it to both bards and thieves.  Beginning at 10th level, bards (not skalds or blades) and thieves can use mage and/or cleric scrolls of 1st level (and 0 level if they exist in the game).  They can use a scroll of 1 level higher ever two levels thereafter (i.e. level 2 scrolls at 12th level, 3rd level scrolls at 14th level, etc.).  Note that this skill only applies to cleric scrolls for bards (as they can already use mage scrolls).  
 
-#### 1603: Only New Thief Skills (requires EEX)
-This component adds thief specific skills to the game--use scroll and WHAT???--and allows the thief to select those skills as normal.  See the next section for skill descriptions. These new thief skills gain a bonus as per Variant Attribute bonuses to skills described in the next section.  
+\page
+<div class='wide'>
+  
+### 2001: Set Natural Snares 
+This component adds the set natural snares skill to the game and gives a progression to rangers.  Additionally, it gives the special ability to rangers at a set rate. Set natural snares works like the thief's set snares ability, but it only works in natural environments.  See the next section--'Extra' Descriptions--for details.  Rangers gain proficiency in set natural snares equal to their stealth skill.  
+
+  
+### 2001: Class 'Extras': Everybody Can Search (requires EEX)
+This component gives all characters a chance, if small, to search for traps (if not disable them). Every class gets a base 5% chance to detect traps (modified by dexterity--or otherwise--as normal).
+
+### 2101: Class 'Extras': Only Variant Attribute bonuses to skills
+This component makes a few changes to the standard thief skills such that rogues gain bonuses (and penalties) to these skills based off of attributes other than dexterity.  See the next section for details.   
+
+
+### 2201: Scroll Level Restrictions 
+This component restricts scroll use more than the vanilla game.  As normal, creatures can only use scroll types of spells that they can cast.  They are further restricted, however, in that they can only use scrolls if they can cast spells of the level of spell that is on the spell.  So, for example, a creature can only use a *fireball* scroll if they can cast 3rd level mage spells.  
+
+
+</div>
+
+
+   
 
 <div class='wide'>
   
-### 1701: Class 'Extras': Everybody Can Search (requires EEX)
-This component gives all characters a chance, if small, to search for traps (if not disable them). Every class gets a base 5% chance to detect traps (modified by dexterity--or otherwise--as normal).
 
-#### 1801: Class 'Extras': Only Variant Attribute bonuses to skills
-This component makes a few changes to the standard thief skills such that rogues gain bonuses (and penalties) to these skills based off of attributes other than dexterity.  See the next section for details.   
+</div>
+
+
+  
+
+<div class='wide'>
+  
 
 </div>
 
@@ -566,7 +638,8 @@ In this section you can find more detailed descriptions of the class 'extras'.
 
 \page
 
-<div class='wide'>
+<div class='wide'>  
+  
 # New Kits
 Class revisions alter existing classes in some manner, as opposed to adding kits or interchangeable class features.  Class features themselves are divided into 'Conservative' and 'Radical' versions of a given class/kit structure. This mod tries, as much as possible, to allow players to mix and match conservative and radical versions together.  So, for example, a player could install conservative fighter revisions with radical bard revisions.  However, players should be warned that there might be balance issues, especially when the various class features are added to the mix.  We cannot account for everything.  That said, we will try to note where balance issues might exist, both here and in individual class sections below.  
   

@@ -1,37 +1,686 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////                                         //////////////////////////////////////
-/////////////////////////////////////              ALL FIGHTERS               //////////////////////////////////////
-/////////////////////////////////////                                         //////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Core Fighter: Conservative
-ACTION_IF (%b_class_global% = 1) OR ((%b_class_global% = 3) AND (%b_fighter_revision% = 1)) BEGIN
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////// Class and kit descriptions
+//////////////////////////////////////////////// Supreme Grandmastery
 
+COPY_EXISTING ~WEAPPROF.2da~ ~override~   //to allow them to put points in pick
+//fighter
+  SET_2DA_ENTRY_LATER ~supe~ 11 5  6   // bastard sword
+  SET_2DA_ENTRY_LATER ~supe~ 12 5  6   // l.swd
+  SET_2DA_ENTRY_LATER ~supe~ 13 5  6   // ssword
+  SET_2DA_ENTRY_LATER ~supe~ 14 5  6   // axe
+  SET_2DA_ENTRY_LATER ~supe~ 15 5  6   // 2hs
+  SET_2DA_ENTRY_LATER ~supe~ 16 5  6   // katana
+  SET_2DA_ENTRY_LATER ~supe~ 17 5  6   // scim
+  SET_2DA_ENTRY_LATER ~supe~ 18 5  6   // dagg
+  SET_2DA_ENTRY_LATER ~supe~ 19 5  6   // war
+  SET_2DA_ENTRY_LATER ~supe~ 20 5  6   // club
+  SET_2DA_ENTRY_LATER ~supe~ 21 5  6   // spear
+  SET_2DA_ENTRY_LATER ~supe~ 22 5  6   // halberd
+  SET_2DA_ENTRY_LATER ~supe~ 23 5  6   // flail
+  SET_2DA_ENTRY_LATER ~supe~ 24 5  6   // mace
+  SET_2DA_ENTRY_LATER ~supe~ 25 5  6   // staff
+  SET_2DA_ENTRY_LATER ~supe~ 26 5  6   // xbow
+  SET_2DA_ENTRY_LATER ~supe~ 27 5  6   // lbow
+  SET_2DA_ENTRY_LATER ~supe~ 28 5  6   // sbow
+  SET_2DA_ENTRY_LATER ~supe~ 29 5  6   // dart
+  SET_2DA_ENTRY_LATER ~supe~ 30 5  6   // sling
+//kensai
+  SET_2DA_ENTRY_LATER ~supe~ 11 32  7   // bastard sword
+  SET_2DA_ENTRY_LATER ~supe~ 12 32  7   // l.swd
+  SET_2DA_ENTRY_LATER ~supe~ 13 32  7   // ssword
+  SET_2DA_ENTRY_LATER ~supe~ 14 32  7   // axe
+  SET_2DA_ENTRY_LATER ~supe~ 15 32  7   // 2hs
+  SET_2DA_ENTRY_LATER ~supe~ 16 32  7   // katana
+  SET_2DA_ENTRY_LATER ~supe~ 17 32  7   // scim
+  SET_2DA_ENTRY_LATER ~supe~ 18 32  7   // dagg
+  SET_2DA_ENTRY_LATER ~supe~ 19 32  7   // war
+  SET_2DA_ENTRY_LATER ~supe~ 20 32  7   // club
+  SET_2DA_ENTRY_LATER ~supe~ 21 32  7   // spear
+  SET_2DA_ENTRY_LATER ~supe~ 22 32  7   // halberd
+  SET_2DA_ENTRY_LATER ~supe~ 23 32  7   // flail
+  SET_2DA_ENTRY_LATER ~supe~ 24 32  7   // mace
+  SET_2DA_ENTRY_LATER ~supe~ 25 32  7   // staff
+7
+//set
+  SET_2DA_ENTRIES_NOW ~supe~ 1
+BUT_ONLY
+
+//make the numbers meaningful
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~WSPECIAL.2da~ ~6~)) BEGIN  //if no "6" in wspecial (ie not otherwise modified)
+  APPEND ~WSPECIAL.2da~ ~6%TAB%4%TAB%7%TAB%-3~  // 6 pips
+  APPEND ~WSPECIAL.2da~ ~7%TAB%5%TAB%9%TAB%-5~  //7 pips
+END //end ws not modified
+
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~WSPATCK.2da~ ~6%TAB%1%TAB%1~)) BEGIN  //if no "6[space]1[space]1" in wspecial (ie not otherwise modified)
+  APPEND ~WSPATCK.2da~ ~6%TAB%1%TAB%1%TAB%1%TAB%1%TAB%1%TAB%1%TAB%-2%TAB%-2%TAB%-2%TAB%-2%TAB%-2%TAB%-2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2~  //con Greater than
+  APPEND ~WSPATCK.2da~ ~7%TAB%1%TAB%1%TAB%1%TAB%1%TAB%1%TAB%1%TAB%-2%TAB%-2%TAB%-2%TAB%-2%TAB%-2%TAB%-2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2%TAB%2~  //con Greater than
+END
+
+//description updates
 ACTION_IF GAME_IS ~bgee~ BEGIN //BGEE ONLY STRINGS
 
-  STRING_SET 9556 @504009 //base fighter
+ OUTER_SPRINT old @504007  //old text
+ OUTER_SPRINT new @504008  //new text
+
+//Bastard sword
+ACTION_GET_STRREF 25024 b_swd_description
+
+OUTER_PATCH_SAVE b_swd_description ~%b_swd_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
 
 END
 
-ACTION_IF GAME_IS ~bg2ee~ BEGIN //BGEE ONLY STRINGS
+STRING_SET_EVALUATE 25024 ~%b_swd_description%~
 
-  STRING_SET 9556 @504009 //base fighter
+//Long sword
+ACTION_GET_STRREF 25025 l_swd_description
+
+OUTER_PATCH_SAVE l_swd_description ~%l_swd_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
 
 END
+
+STRING_SET_EVALUATE 25025 ~%l_swd_description%~
+
+//Short sword
+ACTION_GET_STRREF 25026 s_swd_description
+
+OUTER_PATCH_SAVE s_swd_description ~%s_swd_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25026 ~%s_swd_description%~
+
+//Axe
+ACTION_GET_STRREF 25027 axe_description
+
+OUTER_PATCH_SAVE axe_description ~%axe_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25027 ~%axe_description%~
+
+//Two-Handed
+ACTION_GET_STRREF 25028 2hs_description
+
+OUTER_PATCH_SAVE 2hs_description ~%2hs_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25028 ~%2hs_description%~
+
+//Katana
+ACTION_GET_STRREF 25029 kat_description
+
+OUTER_PATCH_SAVE kat_description ~%kat_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25029 ~%kat_description%~
+
+//Scimitar (etc.)
+ACTION_GET_STRREF 25030 sci_description
+
+OUTER_PATCH_SAVE sci_description ~%sci_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25030 ~%sci_description%~
+
+//Dagger (etc.
+ACTION_GET_STRREF 25031 dag_description
+
+OUTER_PATCH_SAVE dag_description ~%dag_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25031 ~%dag_description%~
+
+//War Hammer
+ACTION_GET_STRREF 25032 war_description
+
+OUTER_PATCH_SAVE war_description ~%war_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25032 ~%war_description%~
+
+
+//club
+ACTION_GET_STRREF 25033 club_description
+
+OUTER_PATCH_SAVE club_description ~%club_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25033 ~%club_description%~
+
+//Spear
+ACTION_GET_STRREF 25034 spe_description
+
+OUTER_PATCH_SAVE spe_description ~%spe_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25034 ~%spe_description%~
+//Halberd
+ACTION_GET_STRREF 25035 hal_description
+
+OUTER_PATCH_SAVE hal_description ~%hal_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25035 ~%hal_description%~
+
+//Flail
+ACTION_GET_STRREF 25036 fla_description
+
+OUTER_PATCH_SAVE fla_description ~%fla_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25036 ~%fla_description%~
+
+
+//Mace
+ACTION_GET_STRREF 25037 mace_description
+
+OUTER_PATCH_SAVE mace_description ~%mace_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25037 ~%mace_description%~
+
+//Staff
+ACTION_GET_STRREF 25038 staff_description
+
+OUTER_PATCH_SAVE staff_description ~%staff_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25038 ~%staff_description%~
+
+//X-Bow
+ACTION_GET_STRREF 25039 xbow_description
+
+OUTER_PATCH_SAVE xbow_description ~%xbow_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25039 ~%xbow_description%~
+
+//Longbow
+ACTION_GET_STRREF 25040 lbow_description
+
+OUTER_PATCH_SAVE lbow_description ~%lbow_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25040 ~%lbow_description%~
+
+//Short Bow
+ACTION_GET_STRREF 25041 sbow_description
+
+OUTER_PATCH_SAVE sbow_description ~%sbow_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25041 ~%sbow_description%~
+//Dart
+ACTION_GET_STRREF 25042 dart_description
+
+OUTER_PATCH_SAVE dart_description ~%dart_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25042 ~%dart_description%~
+
+//Sling
+ACTION_GET_STRREF 25043 sling_description
+
+OUTER_PATCH_SAVE sling_description ~%sling_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 25043 ~%sling_description%~
+
+END//end bgee
+
+
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN //BGEE ONLY STRINGS
+
+ OUTER_SPRINT old @504007  //old text
+ OUTER_SPRINT new @504008  //new text
+
+//Bastard sword
+ACTION_GET_STRREF 34146 b_swd_description
+
+OUTER_PATCH_SAVE b_swd_description ~%b_swd_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34146 ~%b_swd_description%~
+
+//Long sword
+ACTION_GET_STRREF 34147 l_swd_description
+
+OUTER_PATCH_SAVE l_swd_description ~%l_swd_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34147 ~%l_swd_description%~
+
+//Short sword
+ACTION_GET_STRREF 34148 s_swd_description
+
+OUTER_PATCH_SAVE s_swd_description ~%s_swd_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34148 ~%s_swd_description%~
+
+//Axe
+ACTION_GET_STRREF 34149 axe_description
+
+OUTER_PATCH_SAVE axe_description ~%axe_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34149 ~%axe_description%~
+
+//Two-Handed
+ACTION_GET_STRREF 34150 2hs_description
+
+OUTER_PATCH_SAVE 2hs_description ~%2hs_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34150 ~%2hs_description%~
+
+//Katana
+ACTION_GET_STRREF 34151 kat_description
+
+OUTER_PATCH_SAVE kat_description ~%kat_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34151 ~%kat_description%~
+
+//Scimitar (etc.)
+ACTION_GET_STRREF 34152 sci_description
+
+OUTER_PATCH_SAVE sci_description ~%sci_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34152 ~%sci_description%~
+
+//Dagger (etc.
+ACTION_GET_STRREF 34153 dag_description
+
+OUTER_PATCH_SAVE dag_description ~%dag_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34153 ~%dag_description%~
+
+//War Hammer
+ACTION_GET_STRREF 34156 war_description
+
+OUTER_PATCH_SAVE war_description ~%war_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34156 ~%war_description%~
+
+
+//club
+ACTION_GET_STRREF 35442 club_description
+
+OUTER_PATCH_SAVE club_description ~%club_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 35442 ~%club_description%~
+
+//Spear
+ACTION_GET_STRREF 34157 spe_description
+
+OUTER_PATCH_SAVE spe_description ~%spe_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34157 ~%spe_description%~
+//Halberd
+ACTION_GET_STRREF 34158 hal_description
+
+OUTER_PATCH_SAVE hal_description ~%hal_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34158 ~%hal_description%~
+
+//Flail
+ACTION_GET_STRREF 34159 fla_description
+
+OUTER_PATCH_SAVE fla_description ~%fla_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34159 ~%fla_description%~
+
+
+//Mace
+ACTION_GET_STRREF 34160 mace_description
+
+OUTER_PATCH_SAVE mace_description ~%mace_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34160 ~%mace_description%~
+
+//Staff
+ACTION_GET_STRREF 34161 staff_description
+
+OUTER_PATCH_SAVE staff_description ~%staff_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34161 ~%staff_description%~
+
+//X-Bow
+ACTION_GET_STRREF 34162 xbow_description
+
+OUTER_PATCH_SAVE xbow_description ~%xbow_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34162 ~%xbow_description%~
+
+//Longbow
+ACTION_GET_STRREF 34163 lbow_description
+
+OUTER_PATCH_SAVE lbow_description ~%lbow_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34163 ~%lbow_description%~
+
+//Short Bow
+ACTION_GET_STRREF 34164 sbow_description
+
+OUTER_PATCH_SAVE sbow_description ~%sbow_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34164 ~%sbow_description%~
+//Dart
+ACTION_GET_STRREF 34165 dart_description
+
+OUTER_PATCH_SAVE dart_description ~%dart_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34165 ~%dart_description%~
+
+//Sling
+ACTION_GET_STRREF 34166 sling_description
+
+OUTER_PATCH_SAVE sling_description ~%sling_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 34166 ~%sling_description%~
+
+END//end bg2ee
+
+
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN //iwdee ONLY STRINGS
 
-  STRING_SET 37090 @504009 //base fighter
+ OUTER_SPRINT old @504007  //old text
+ OUTER_SPRINT new @504008  //new text
+
+//Bastard sword
+ACTION_GET_STRREF 36800 b_swd_description
+
+OUTER_PATCH_SAVE b_swd_description ~%b_swd_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
 
 END
 
-//need to account for expanded weapon proficiency if installed in description of Fighter and Kensai
-//CONTINUE
+STRING_SET_EVALUATE 36800 ~%b_swd_description%~
+
+//Long sword
+ACTION_GET_STRREF 36802 l_swd_description
+
+OUTER_PATCH_SAVE l_swd_description ~%l_swd_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36802 ~%l_swd_description%~
+
+//Short sword
+ACTION_GET_STRREF 36804 s_swd_description
+
+OUTER_PATCH_SAVE s_swd_description ~%s_swd_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36804 ~%s_swd_description%~
+
+//Axe
+ACTION_GET_STRREF 36806 axe_description
+
+OUTER_PATCH_SAVE axe_description ~%axe_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36806 ~%axe_description%~
+
+//Two-Handed
+ACTION_GET_STRREF 36808 2hs_description
+
+OUTER_PATCH_SAVE 2hs_description ~%2hs_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36808 ~%2hs_description%~
+
+//Katana
+ACTION_GET_STRREF 36810 kat_description
+
+OUTER_PATCH_SAVE kat_description ~%kat_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36810 ~%kat_description%~
+
+//Scimitar (etc.)
+ACTION_GET_STRREF 36812 sci_description
+
+OUTER_PATCH_SAVE sci_description ~%sci_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36812 ~%sci_description%~
+
+//Dagger (etc.
+ACTION_GET_STRREF 36814 dag_description
+
+OUTER_PATCH_SAVE dag_description ~%dag_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36814 ~%dag_description%~
+
+//War Hammer
+ACTION_GET_STRREF 36816 war_description
+
+OUTER_PATCH_SAVE war_description ~%war_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36816 ~%war_description%~
+
+
+//club
+ACTION_GET_STRREF 36818 club_description
+
+OUTER_PATCH_SAVE club_description ~%club_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36818 ~%club_description%~
+
+//Spear
+ACTION_GET_STRREF 36820 spe_description
+
+OUTER_PATCH_SAVE spe_description ~%spe_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36820 ~%spe_description%~
+//Halberd
+ACTION_GET_STRREF 36822 hal_description
+
+OUTER_PATCH_SAVE hal_description ~%hal_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 36822 ~%hal_description%~
+
+//Flail
+ACTION_GET_STRREF 37712 fla_description
+
+OUTER_PATCH_SAVE fla_description ~%fla_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 37712 ~%fla_description%~
+
+
+//Mace
+ACTION_GET_STRREF 37714 mace_description
+
+OUTER_PATCH_SAVE mace_description ~%mace_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 37714 ~%mace_description%~
+
+//Staff
+ACTION_GET_STRREF 37716 staff_description
+
+OUTER_PATCH_SAVE staff_description ~%staff_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 37716 ~%staff_description%~
+
+//X-Bow
+ACTION_GET_STRREF 37718 xbow_description
+
+OUTER_PATCH_SAVE xbow_description ~%xbow_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 37718 ~%xbow_description%~
+
+//Longbow
+ACTION_GET_STRREF 37720 lbow_description
+
+OUTER_PATCH_SAVE lbow_description ~%lbow_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 37720 ~%lbow_description%~
+
+//Short Bow
+ACTION_GET_STRREF 37722 sbow_description
+
+OUTER_PATCH_SAVE sbow_description ~%sbow_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 37722 ~%sbow_description%~
+//Dart
+ACTION_GET_STRREF 37724 dart_description
+
+OUTER_PATCH_SAVE dart_description ~%dart_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 37724 ~%dart_description%~
+
+//Sling
+ACTION_GET_STRREF 37726 sling_description
+
+OUTER_PATCH_SAVE sling_description ~%sling_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+END
+
+STRING_SET_EVALUATE 37726 ~%sling_description%~
+
+END//end bg2ee
 
 
 
